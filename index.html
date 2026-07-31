@@ -1,0 +1,3171 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>USC Iovine and Young Academy Enrollment and Capacity Tracker</title>
+  <style>
+    :root {
+      --cardinal: #9d1b1e;
+      --cardinal-dark: #7b0000;
+      --gold: #b99a46;
+      --olive: #3f4a35;
+      --olive-dark: #273121;
+      --teal: #0e766f;
+      --clay: #bd5a46;
+      --taupe: #807a6b;
+      --ink: #111820;
+      --muted: #5d5d56;
+      --line: #ded7ca;
+      --paper: #f3f0e8;
+      --panel: #fffefa;
+      --table-head: #e7e1d5;
+      --full: #a11d21;
+      --near: #8a6030;
+      --healthy: #49664d;
+      --low: #647b86;
+      --watch: #7d7565;
+      --shadow: 0 14px 30px rgba(48, 42, 34, 0.08);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      background: var(--paper);
+      color: var(--ink);
+      font-family: "Aptos", "Segoe UI", Arial, Helvetica, sans-serif;
+      line-height: 1.45;
+    }
+
+    header {
+      background: var(--paper);
+      color: var(--ink);
+      border: 0;
+      box-shadow: none;
+    }
+
+    .wrap {
+      width: min(1320px, calc(100% - 96px));
+      margin: 0 auto;
+    }
+
+    .hero {
+      padding: 28px 0 24px;
+      display: block;
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+    }
+
+    h1,
+    h2,
+    h3 {
+      margin: 0;
+      letter-spacing: 0;
+    }
+
+    h1 {
+      color: var(--olive-dark);
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: clamp(2.1rem, 3.8vw, 3.85rem);
+      line-height: 1;
+      max-width: 1040px;
+      font-weight: 800;
+    }
+
+    .subtitle {
+      margin: 14px 0 0;
+      color: var(--muted);
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: clamp(1.15rem, 1.8vw, 1.55rem);
+      max-width: 760px;
+    }
+
+    .term-timing {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      margin-top: 16px;
+      padding: 8px 12px;
+      border: 1px solid var(--line);
+      border-left: 4px solid var(--gold);
+      border-radius: 8px;
+      background: rgba(255, 254, 250, 0.72);
+      color: var(--olive-dark);
+      font-size: 0.9rem;
+      box-shadow: 0 10px 26px rgba(46, 55, 39, 0.06);
+    }
+
+    .term-timing strong {
+      font-size: 0.74rem;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+    }
+
+    .term-timing span {
+      color: var(--muted);
+    }
+
+    .term-timing b {
+      color: var(--cardinal-dark);
+    }
+
+    .quick-nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 9px;
+      padding: 22px 0 0;
+    }
+
+    .quick-nav a,
+    .sort-button {
+      border: 1px solid rgba(157, 27, 30, 0.14);
+      background: rgba(255, 254, 250, 0.76);
+      color: var(--cardinal-dark);
+      text-decoration: none;
+      font: inherit;
+      font-weight: 800;
+      padding: 8px 12px;
+      min-height: 36px;
+      cursor: pointer;
+      box-shadow: none;
+    }
+
+    .quick-nav a:hover,
+    .quick-nav a:focus-visible {
+      border-color: var(--gold);
+      background: #f8efd0;
+      color: var(--cardinal-dark);
+      outline: 3px solid rgba(185, 154, 70, 0.25);
+      outline-offset: 2px;
+    }
+
+    main {
+      padding: 28px 0 56px;
+    }
+
+    section {
+      margin-top: 28px;
+    }
+
+    .section-head {
+      display: flex;
+      align-items: end;
+      justify-content: space-between;
+      gap: 16px;
+      margin-bottom: 14px;
+    }
+
+    .section-head p {
+      margin: 4px 0 0;
+      color: var(--muted);
+      max-width: 780px;
+    }
+
+    h2 {
+      color: var(--olive-dark);
+      font-size: clamp(1.35rem, 2vw, 1.9rem);
+      font-weight: 900;
+    }
+
+    .section-head h2::before {
+      content: "";
+      display: inline-block;
+      width: 32px;
+      height: 4px;
+      margin-right: 10px;
+      vertical-align: 0.25em;
+      background: var(--cardinal);
+    }
+
+    .collapsible-section {
+      margin-top: 34px;
+    }
+
+    .collapsible-section summary {
+      list-style: none;
+      cursor: pointer;
+      user-select: none;
+    }
+
+    .collapsible-section summary::-webkit-details-marker {
+      display: none;
+    }
+
+    .collapsible-section .section-head {
+      align-items: center;
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      background: rgba(255, 254, 250, 0.74);
+      box-shadow: var(--shadow);
+      padding: 18px 20px;
+      transition: border-color 160ms ease, background 160ms ease;
+    }
+
+    .collapsible-section summary:hover .section-head,
+    .collapsible-section summary:focus-visible .section-head {
+      border-color: rgba(157, 27, 30, 0.25);
+      background: #fffefa;
+    }
+
+    .collapse-control {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 116px;
+      border: 1px solid rgba(157, 27, 30, 0.18);
+      border-radius: 999px;
+      padding: 7px 12px;
+      color: var(--cardinal-dark);
+      background: #fbf7ee;
+      font-weight: 800;
+      font-size: 0.82rem;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+
+    .collapsible-section[open] .collapse-control::before {
+      content: "Hide";
+    }
+
+    .collapsible-section:not([open]) .collapse-control::before {
+      content: "Show";
+    }
+
+    .collapsible-content {
+      margin-top: 16px;
+    }
+
+    h3 {
+      color: var(--olive-dark);
+      font-weight: 900;
+    }
+
+    .kpi-grid {
+      display: grid;
+      grid-template-columns: repeat(7, minmax(120px, 1fr));
+      gap: 14px;
+    }
+
+    .kpi-card {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-top: 5px solid var(--olive-dark);
+      border-radius: 10px;
+      box-shadow: var(--shadow);
+      padding: 16px;
+      min-height: 116px;
+      display: grid;
+      align-content: space-between;
+    }
+
+    .kpi-card .name {
+      color: var(--muted);
+      font-weight: 700;
+      font-size: 0.82rem;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+    }
+
+    .kpi-card .value {
+      margin-top: 12px;
+      font-size: 1.85rem;
+      font-weight: 800;
+      color: var(--olive-dark);
+    }
+
+    .kpi-card .detail {
+      color: var(--muted);
+      font-size: 0.84rem;
+    }
+
+    .panel {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      box-shadow: var(--shadow);
+      overflow: hidden;
+    }
+
+    .panel-pad {
+      padding: 22px;
+    }
+
+    .grid-two {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(300px, 0.42fr);
+      gap: 18px;
+    }
+
+    .table-wrap {
+      overflow-x: auto;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      min-width: 720px;
+      background: var(--panel);
+    }
+
+    th,
+    td {
+      padding: 9px 10px;
+      border-bottom: 1px solid var(--line);
+      text-align: left;
+      vertical-align: middle;
+      white-space: nowrap;
+    }
+
+    th {
+      background: var(--table-head);
+      color: var(--olive-dark);
+      font-size: 0.82rem;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      user-select: none;
+    }
+
+    th:hover {
+      background: #ded6c8;
+    }
+
+    .sort-button {
+      width: 100%;
+      min-height: 34px;
+      padding: 0;
+      border: 0;
+      background: transparent;
+      color: inherit;
+      text-align: inherit;
+      text-transform: inherit;
+      letter-spacing: inherit;
+    }
+
+    .sort-button::after {
+      content: " sort";
+      color: #776b5c;
+      font-size: 0.68rem;
+      font-weight: 700;
+      text-transform: none;
+      letter-spacing: 0;
+    }
+
+    .sort-button:hover,
+    .sort-button:focus-visible {
+      color: var(--cardinal);
+      outline: 3px solid rgba(157, 27, 30, 0.18);
+      outline-offset: 3px;
+    }
+
+    td.num,
+    th.num {
+      text-align: right;
+    }
+
+    tr:hover td {
+      background: #f8f2e6;
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 3px 9px;
+      border-radius: 999px;
+      border: 1px solid var(--line);
+      background: #f7f3ea;
+      color: var(--olive-dark);
+      font-size: 0.78rem;
+      font-weight: 800;
+    }
+
+    .badge.full {
+      border-color: #d9aaa5;
+      background: #fbefed;
+      color: #8d2424;
+    }
+
+    .badge.near {
+      border-color: #d9c39d;
+      background: #f8f0df;
+      color: #715229;
+    }
+
+    .badge.healthy {
+      border-color: #bdcdbf;
+      background: #eef4ee;
+      color: #3f5f42;
+    }
+
+    .badge.low {
+      border-color: #bfccd2;
+      background: #eef3f5;
+      color: #4f6873;
+    }
+
+    .badge.tbd {
+      border-color: #d7cec0;
+      background: #f5f1ea;
+      color: #716a5d;
+    }
+
+    .badge.crosslisted {
+      border-color: #d9c39d;
+      background: #f8f0df;
+      color: #715229;
+    }
+
+    .badge.cancelled {
+      border-color: #d7cec0;
+      background: #f5f1ea;
+      color: #716a5d;
+    }
+
+    .badge.watch {
+      border-color: #d0c7b7;
+      background: #f2eee5;
+      color: #635d50;
+    }
+
+    .program-pill {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 48px;
+      padding: 2px 8px;
+      border-radius: 999px;
+      border: 1px solid #d8cdbf;
+      background: #f7f2ea;
+      color: #4a2b20;
+      font-size: 0.76rem;
+      font-weight: 800;
+      letter-spacing: 0.02em;
+    }
+
+    .course-cell {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      min-width: 360px;
+    }
+
+    .course-cell .program-pill {
+      flex: 0 0 auto;
+    }
+
+    .course-name {
+      display: block;
+      white-space: normal;
+      line-height: 1.25;
+    }
+
+    .row-note {
+      display: block;
+      margin-top: 4px;
+      color: var(--muted);
+      font-size: 0.78rem;
+      line-height: 1.25;
+    }
+
+    .program-pill.acad {
+      border-color: #e2b9b6;
+      background: #fff1ef;
+      color: #7a1d18;
+    }
+
+    .program-pill.idsn {
+      border-color: #b9d5c5;
+      background: #eef8f2;
+      color: #1f5f3e;
+    }
+
+    .program-pill.prin {
+      border-color: #e5c896;
+      background: #fff7df;
+      color: #7a4a00;
+    }
+
+    .trend-up {
+      color: var(--healthy);
+      font-weight: 800;
+    }
+
+    .trend-down {
+      color: var(--full);
+      font-weight: 800;
+    }
+
+    .trend-flat {
+      color: var(--muted);
+      font-weight: 800;
+    }
+
+    .cards-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(220px, 1fr));
+      gap: 18px;
+    }
+
+    .status-card {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      box-shadow: var(--shadow);
+      padding: 18px;
+    }
+
+    .status-card h3 {
+      margin-bottom: 10px;
+      font-size: 1rem;
+    }
+
+    .course-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: grid;
+      gap: 8px;
+    }
+
+    .course-list li {
+      display: flex;
+      justify-content: space-between;
+      gap: 10px;
+      border-top: 1px solid #eee8de;
+      padding-top: 8px;
+      font-size: 0.92rem;
+    }
+
+    .course-list li:first-child {
+      border-top: 0;
+      padding-top: 0;
+    }
+
+    .course-list strong {
+      white-space: nowrap;
+    }
+
+    .note-list {
+      margin: 0;
+      padding-left: 20px;
+    }
+
+    .note-list li {
+      margin: 8px 0;
+    }
+
+    .faculty-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(220px, 1fr));
+      gap: 12px;
+    }
+
+    .faculty-card {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      padding: 14px;
+    }
+
+    .faculty-card h3 {
+      font-size: 1rem;
+      color: var(--cardinal-dark);
+    }
+
+    .faculty-card p {
+      margin: 8px 0 0;
+      color: #4e4943;
+      font-size: 0.92rem;
+    }
+
+    .edit-note {
+      background: transparent;
+      padding: 0;
+      color: #403421;
+    }
+
+    .toolbar {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 10px;
+      margin-top: 0;
+    }
+
+    .toolbar label {
+      font-weight: 800;
+      color: var(--olive-dark);
+    }
+
+    .toolbar select {
+      min-height: 42px;
+      border: 1px solid var(--line);
+      background: var(--panel);
+      color: var(--ink);
+      padding: 8px 12px;
+      font: inherit;
+      min-width: 240px;
+    }
+
+    .table-filters {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      align-items: end;
+      margin: 12px 0;
+      padding: 18px;
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 10px;
+    }
+
+    .filter-field {
+      display: grid;
+      gap: 5px;
+      min-width: 190px;
+    }
+
+    .filter-field label {
+      font-size: 0.78rem;
+      font-weight: 800;
+      color: var(--muted);
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+    }
+
+    .filter-field input,
+    .filter-field select {
+      min-height: 40px;
+      border: 1px solid var(--line);
+      background: var(--panel);
+      color: var(--ink);
+      padding: 8px 10px;
+      font: inherit;
+    }
+
+    .filter-reset {
+      min-height: 40px;
+      border: 1px solid var(--cardinal);
+      background: var(--panel);
+      color: var(--cardinal);
+      font: inherit;
+      font-weight: 800;
+      padding: 8px 12px;
+      cursor: pointer;
+    }
+
+    .filter-reset:hover,
+    .filter-reset:focus-visible {
+      background: var(--cardinal-dark);
+      color: #fff;
+      outline: 3px solid rgba(153, 0, 0, 0.18);
+      outline-offset: 2px;
+    }
+
+    .back-to-top {
+      position: fixed;
+      right: 22px;
+      bottom: 22px;
+      z-index: 20;
+      width: 46px;
+      height: 46px;
+      border: 1px solid rgba(39, 49, 33, 0.22);
+      border-radius: 999px;
+      background: var(--olive-dark);
+      color: #fff;
+      font-size: 1.45rem;
+      font-weight: 900;
+      line-height: 1;
+      cursor: pointer;
+      box-shadow: 0 12px 28px rgba(39, 49, 33, 0.22);
+      opacity: 0;
+      transform: translateY(10px);
+      pointer-events: none;
+      transition: opacity 160ms ease, transform 160ms ease, background 160ms ease;
+    }
+
+    .back-to-top.visible {
+      opacity: 1;
+      transform: translateY(0);
+      pointer-events: auto;
+    }
+
+    .back-to-top:hover,
+    .back-to-top:focus-visible {
+      background: var(--cardinal-dark);
+      outline: 3px solid rgba(185, 154, 70, 0.32);
+      outline-offset: 3px;
+    }
+
+    .program-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(280px, 340px));
+      justify-content: center;
+      gap: 24px;
+      margin-top: 22px;
+    }
+
+    .program-card {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-left: 5px solid var(--olive);
+      border-radius: 10px;
+      padding: 22px 24px;
+      box-shadow: var(--shadow);
+    }
+
+    .program-card h3 {
+      font-size: 1.08rem;
+      color: var(--olive-dark);
+      margin-bottom: 18px;
+    }
+
+    .program-card dl {
+      margin: 0;
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 10px 22px;
+      color: var(--olive-dark);
+    }
+
+    .program-card dt {
+      color: var(--muted);
+    }
+
+    .program-card dd {
+      margin: 0;
+      font-weight: 800;
+    }
+
+    .chart-panel {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      box-shadow: var(--shadow);
+      padding: 22px;
+    }
+
+    .chart-wrap {
+      overflow-x: auto;
+      margin-top: 12px;
+    }
+
+    .trend-chart {
+      display: block;
+      min-width: 760px;
+      width: 100%;
+      height: 340px;
+    }
+
+    .chart-axis {
+      stroke: #9b9287;
+      stroke-width: 1;
+    }
+
+    .chart-grid {
+      stroke: #eee6dc;
+      stroke-width: 1;
+    }
+
+    .chart-label {
+      fill: var(--muted);
+      font-size: 12px;
+      font-weight: 700;
+    }
+
+    .chart-value {
+      fill: var(--olive-dark);
+      font-size: 12px;
+      font-weight: 800;
+    }
+
+    .chart-legend {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px 18px;
+      margin-top: 10px;
+      color: var(--olive-dark);
+      font-size: 0.9rem;
+    }
+
+    .legend-item {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+    }
+
+    .legend-swatch {
+      width: 14px;
+      height: 14px;
+      display: inline-block;
+      border-radius: 3px;
+    }
+
+    .trend-list {
+      display: grid;
+      gap: 10px;
+      max-height: 720px;
+      overflow-y: auto;
+      padding: 18px;
+      background: var(--panel);
+      border-top: 1px solid var(--line);
+    }
+
+    .trend-period {
+      border: 1px solid var(--line);
+      background: var(--panel);
+      border-radius: 10px;
+      overflow: hidden;
+    }
+
+    .trend-period > summary {
+      display: grid;
+      grid-template-columns: minmax(220px, 1fr) auto auto;
+      gap: 12px;
+      align-items: center;
+      padding: 16px 18px;
+      cursor: pointer;
+      list-style: none;
+    }
+
+    .trend-period > summary::-webkit-details-marker {
+      display: none;
+    }
+
+    .trend-period > summary::after {
+      content: "+";
+      color: var(--cardinal);
+      font-weight: 900;
+      font-size: 1.2rem;
+      justify-self: end;
+    }
+
+    .trend-period[open] > summary::after {
+      content: "-";
+    }
+
+    .trend-period-title {
+      color: var(--cardinal-dark);
+      font-weight: 900;
+      font-size: 1.08rem;
+    }
+
+    .trend-period-meta {
+      color: var(--muted);
+      font-weight: 800;
+    }
+
+    .trend-period-net {
+      font-weight: 900;
+      min-width: 48px;
+      text-align: right;
+    }
+
+    .trend-period-body {
+      padding: 0 18px 18px;
+    }
+
+    .trend-change-list {
+      display: grid;
+      gap: 8px;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .trend-change-list li {
+      display: grid;
+      grid-template-columns: minmax(280px, 1fr) 90px 90px 90px 120px;
+      gap: 12px;
+      align-items: center;
+      border-top: 1px solid #eee6dd;
+      padding: 10px 0;
+      color: var(--olive-dark);
+    }
+
+    .trend-change-list li:first-child {
+      border-top: 0;
+    }
+
+    .trend-date {
+      color: var(--muted);
+      font-weight: 800;
+      font-size: 0.92rem;
+    }
+
+    .trend-course {
+      font-weight: 800;
+      color: var(--ink);
+    }
+
+
+    .leadership-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(280px, 0.38fr);
+      gap: 18px;
+    }
+
+    .summary-list {
+      margin: 0;
+      padding-left: 20px;
+      color: var(--olive-dark);
+    }
+
+    .summary-list li {
+      margin: 9px 0;
+    }
+
+    .decision-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(190px, 1fr));
+      gap: 18px;
+    }
+
+    .decision-card {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-top: 4px solid var(--olive);
+      border-radius: 10px;
+      padding: 18px;
+      min-height: 170px;
+    }
+
+    .decision-card h3 {
+      color: var(--olive-dark);
+      font-size: 0.96rem;
+      margin-bottom: 8px;
+    }
+
+    .decision-card ul {
+      margin: 0;
+      padding-left: 18px;
+      color: var(--olive-dark);
+      font-size: 0.9rem;
+    }
+
+    .decision-card li {
+      margin: 6px 0;
+    }
+
+    .metric-table {
+      min-width: 760px;
+    }
+
+    .sections-table th:nth-child(2),
+    .sections-table td:nth-child(2) {
+      width: 92px;
+    }
+
+    .callout {
+      border-left: 5px solid var(--olive);
+      background: #ebe7dc;
+      border-radius: 8px;
+      padding: 14px 16px;
+      color: var(--olive-dark);
+      margin-top: 12px;
+    }
+
+    footer {
+      color: var(--muted);
+      border-top: 1px solid var(--line);
+      padding: 24px 0;
+      font-size: 0.9rem;
+    }
+
+    @media (max-width: 980px) {
+      .hero,
+      .grid-two,
+      .leadership-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .kpi-grid,
+      .cards-grid,
+      .faculty-grid,
+      .decision-grid,
+      .trend-change-list li {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .program-grid {
+        grid-template-columns: repeat(2, minmax(260px, 1fr));
+      }
+
+    }
+
+    @media (max-width: 620px) {
+      .wrap {
+        width: min(100% - 32px, 1180px);
+      }
+
+      .hero {
+        padding: 26px 0 22px;
+      }
+
+      .quick-nav a {
+        flex: 1 1 150px;
+        text-align: center;
+      }
+
+      .kpi-grid,
+      .cards-grid,
+      .faculty-grid,
+      .decision-grid,
+      .trend-change-list li,
+      .trend-period > summary {
+        grid-template-columns: 1fr;
+      }
+
+      .program-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .section-head {
+        display: block;
+      }
+
+      table {
+        min-width: 680px;
+      }
+    }
+
+    @media print {
+      body {
+        background: #fff;
+      }
+
+      header {
+        color: #111;
+        background: #fff;
+        border-bottom: 4px solid #111;
+      }
+
+      .panel,
+      .kpi-card,
+      .status-card,
+      .faculty-card {
+        box-shadow: none;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="wrap hero">
+      <div>
+        <h1>USC Iovine and Young Academy's Enrollment and Capacity Tracker</h1>
+        <p class="subtitle">Fall 2026 enrollment management brief</p>
+        <div class="term-timing" aria-label="Fall 2026 class start timing">
+          <strong>Classes Begin</strong>
+          <span>8/24/26</span>
+          <span><b id="daysUntilClasses">--</b> days remaining</span>
+        </div>
+        <nav class="quick-nav" aria-label="Dashboard sections">
+          <a href="#kpiTitle">KPIs</a>
+          <a href="#leadershipTitle">Leadership</a>
+          <a href="#capacityTitle">Capacity</a>
+          <a href="#revenueTitle">Revenue</a>
+          <a href="#programTitle">Programs</a>
+          <a href="#trendTitle">Trends</a>
+          <a href="#sectionsTitle">All Sections</a>
+          <a href="#assistantsTitle">Course Assistants</a>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <section class="edit-note">
+      <div class="toolbar">
+        <label for="programFilter">View program</label>
+        <select id="programFilter" aria-label="Filter dashboard by program">
+          <option value="All Programs">All Programs</option>
+        </select>
+      </div>
+    </section>
+
+    <details class="collapsible-section" open aria-labelledby="kpiTitle">
+      <summary>
+        <div class="section-head">
+          <div>
+            <h2 id="kpiTitle">KPIs</h2>
+          </div>
+          <span class="collapse-control" aria-hidden="true"></span>
+        </div>
+      </summary>
+      <div class="collapsible-content">
+        <div class="kpi-grid" id="kpiGrid"></div>
+      </div>
+    </details>
+
+    <details class="collapsible-section" open aria-labelledby="leadershipTitle">
+      <summary>
+        <div class="section-head">
+          <div>
+            <h2 id="leadershipTitle">Leadership Summary</h2>
+          </div>
+          <span class="collapse-control" aria-hidden="true"></span>
+        </div>
+      </summary>
+      <div class="collapsible-content">
+        <div class="panel">
+          <div class="panel-pad">
+            <ul class="summary-list" id="leadershipSummary"></ul>
+          </div>
+        </div>
+      </div>
+    </details>
+
+    <details class="collapsible-section" open aria-labelledby="revenueTitle">
+      <summary>
+        <div class="section-head">
+          <div>
+            <h2 id="revenueTitle">Revenue and Capacity View</h2>
+            <p>Program-level enrolled seats, remaining seats, utilization, and low-enrollment exposure.</p>
+          </div>
+          <span class="collapse-control" aria-hidden="true"></span>
+        </div>
+      </summary>
+      <div class="collapsible-content">
+        <div class="panel">
+          <div class="table-wrap">
+            <table class="metric-table" data-table="revenue">
+              <thead>
+                <tr>
+                  <th>Program</th>
+                  <th class="num">Sections</th>
+                  <th class="num">Enrolled Seats</th>
+                  <th class="num">Capacity</th>
+                  <th class="num">Open Seats</th>
+                  <th class="num">Utilization</th>
+                  <th class="num">Full</th>
+                  <th class="num">Low</th>
+                </tr>
+              </thead>
+              <tbody id="revenueBody"></tbody>
+            </table>
+          </div>
+        </div>
+        <div class="callout" id="revenueCallout"></div>
+      </div>
+    </details>
+
+    <details class="collapsible-section" open aria-labelledby="capacityTitle">
+      <summary>
+        <div class="section-head">
+          <div>
+            <h2 id="capacityTitle">Capacity Watch</h2>
+            <p>Sections grouped by current enrollment pressure and planning attention.</p>
+          </div>
+          <span class="collapse-control" aria-hidden="true"></span>
+        </div>
+      </summary>
+      <div class="collapsible-content">
+        <div class="cards-grid" id="capacityCards"></div>
+      </div>
+    </details>
+
+    <details class="collapsible-section" open aria-labelledby="programTitle">
+      <summary>
+        <div class="section-head">
+          <div>
+            <h2 id="programTitle">Program Summary</h2>
+            <p>Enrollment and capacity totals by program. This will expand automatically when undergraduate and other program data is added.</p>
+          </div>
+          <span class="collapse-control" aria-hidden="true"></span>
+        </div>
+      </summary>
+      <div class="collapsible-content">
+        <div class="program-grid" id="programGrid"></div>
+        <div class="callout" id="programSummaryNote"></div>
+      </div>
+    </details>
+
+    <details class="collapsible-section" open aria-labelledby="trendTitle">
+      <summary>
+        <div class="section-head">
+          <div>
+            <h2 id="trendTitle">Enrollment Trend Log</h2>
+            <p>Each dropdown represents one report run. Open a timeframe to see only the classes that changed during that update.</p>
+          </div>
+          <span class="collapse-control" aria-hidden="true"></span>
+        </div>
+      </summary>
+      <div class="collapsible-content">
+        <div class="panel">
+          <div class="trend-list" id="trendList"></div>
+        </div>
+      </div>
+    </details>
+
+    <details class="collapsible-section" open aria-labelledby="chartTitle">
+      <summary>
+        <div class="section-head">
+          <div>
+            <h2 id="chartTitle">Enrollment Trend Chart</h2>
+            <p>Total enrollment by program from the earliest saved report through the latest update. Use the program filter above to focus the chart.</p>
+          </div>
+          <span class="collapse-control" aria-hidden="true"></span>
+        </div>
+      </summary>
+      <div class="collapsible-content">
+        <div class="chart-panel">
+          <div class="chart-wrap">
+            <svg class="trend-chart" id="trendChart" role="img" aria-labelledby="chartTitle"></svg>
+          </div>
+          <div class="chart-legend" id="chartLegend"></div>
+        </div>
+      </div>
+    </details>
+
+    <details class="collapsible-section" open aria-labelledby="sectionsTitle">
+      <summary>
+        <div class="section-head">
+          <div>
+            <h2 id="sectionsTitle">All Sections</h2>
+            <p>Sortable master table for daily review. Use any column button to sort.</p>
+          </div>
+          <span class="collapse-control" aria-hidden="true"></span>
+        </div>
+      </summary>
+      <div class="collapsible-content">
+        <div class="table-filters" aria-label="All sections filters">
+          <div class="filter-field">
+            <label for="sectionProgramFilter">Program</label>
+            <select id="sectionProgramFilter">
+              <option value="All Programs">All Programs</option>
+            </select>
+          </div>
+          <div class="filter-field">
+            <label for="sectionStatusFilter">Status</label>
+            <select id="sectionStatusFilter">
+              <option value="All Statuses">All Statuses</option>
+              <option value="Full">Full</option>
+              <option value="Near Capacity">Near Capacity</option>
+              <option value="Healthy">Healthy</option>
+              <option value="Low">Low</option>
+              <option value="TBD">TBD</option>
+            </select>
+          </div>
+          <div class="filter-field">
+            <label for="sectionSearchFilter">Search</label>
+            <input id="sectionSearchFilter" type="search" placeholder="Course, section, instructor">
+          </div>
+          <button class="filter-reset" type="button" id="sectionFilterReset">Reset Filters</button>
+        </div>
+        <div class="panel">
+          <div class="table-wrap">
+            <table class="sections-table" data-table="sections">
+              <thead>
+                <tr>
+                  <th>Course</th>
+                  <th>Section</th>
+                  <th>Instructor</th>
+                  <th class="num">Enrolled</th>
+                  <th class="num">Capacity</th>
+                  <th class="num">Available</th>
+                  <th class="num">% Full</th>
+                  <th>Status</th>
+                </tr>
+              </thead>
+              <tbody id="sectionsBody"></tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </details>
+
+    <details class="collapsible-section" aria-labelledby="assistantsTitle">
+      <summary>
+        <div class="section-head">
+          <div>
+            <h2 id="assistantsTitle">Course Assistant Hiring Needs</h2>
+          </div>
+          <span class="collapse-control" aria-hidden="true"></span>
+        </div>
+      </summary>
+      <div class="collapsible-content">
+        <div class="panel">
+          <div class="table-wrap">
+            <table class="metric-table" data-table="assistants">
+              <thead>
+                <tr>
+                  <th>Priority</th>
+                  <th>Course</th>
+                  <th>Section(s)</th>
+                  <th>Instructor</th>
+                  <th class="num">Enrollment</th>
+                  <th>Need</th>
+                  <th>Status</th>
+                  <th>Notes</th>
+                </tr>
+              </thead>
+              <tbody id="assistantsBody"></tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </details>
+
+  </main>
+
+  <footer>
+    <div class="wrap">Static HTML dashboard. No external libraries, logos, tracking, or server required.</div>
+  </footer>
+
+  <button class="back-to-top" id="backToTop" type="button" aria-label="Back to top">↑</button>
+
+  <script>
+    /*
+      DAILY EDIT AREA
+      Update this object when a new registration snapshot is available.
+      The page recalculates KPIs, statuses, availability, and percent full.
+    */
+    const dashboardData = {
+      "title": "USC Iovine and Young Academy Enrollment and Capacity Tracker",
+      "currentSnapshot": "July 31, 2026 - afternoon ACAD + IDSN + PRIN update",
+      "baselineSnapshot": "July 28, 2026",
+      "lowThreshold": 50,
+      "nearThreshold": 80,
+      "defaultProgram": "All Programs",
+      "courseAssistants": [
+            {
+                  "priority": "High",
+                  "course": "ACAD 309 Dreams and Madness: The Art of Japan's Golden Age of Animation",
+                  "section": "10253",
+                  "instructor": "Doug Thomas",
+                  "enrollment": "140/140",
+                  "need": "Confirm CA coverage",
+                  "status": "To review",
+                  "notes": "Full, very high enrollment section."
+            },
+            {
+                  "priority": "High",
+                  "course": "ACAD 174 Innovators Forum",
+                  "section": "10200",
+                  "instructor": "Stephen Child, Thomas Dadourian",
+                  "enrollment": "76/90",
+                  "need": "Review support level",
+                  "status": "To review",
+                  "notes": "Large enrollment and near-capacity pressure."
+            },
+            {
+                  "priority": "High",
+                  "course": "ACAD 183 Product Management for Challenge-Based Innovation",
+                  "section": "10210",
+                  "instructor": "Michael Kanazawa",
+                  "enrollment": "74/90",
+                  "need": "Review support level",
+                  "status": "To review",
+                  "notes": "Large enrollment and near-capacity pressure."
+            },
+            {
+                  "priority": "Medium",
+                  "course": "ACAD 376 Industry Practicum I: Designing and Implementing Real-World Solutions",
+                  "section": "10269",
+                  "instructor": "Yihyun Lim, Thomas Dadourian",
+                  "enrollment": "74/75",
+                  "need": "Confirm practicum support",
+                  "status": "To review",
+                  "notes": "Nearly full practicum section."
+            },
+            {
+                  "priority": "High",
+                  "course": "ACAD 406 Purpose-Driven Innovation Incubator",
+                  "section": "10256 / 10257",
+                  "instructor": "Chris Swain",
+                  "enrollment": "48/50 + 6/25",
+                  "need": "Review CA coverage",
+                  "status": "Hybrid pair",
+                  "notes": "Same course meeting pattern with a separate hybrid section."
+            },
+            {
+                  "priority": "High",
+                  "course": "IDSN 524 Physical Product Design",
+                  "section": "34079",
+                  "instructor": "Safir Bellali",
+                  "enrollment": "20/32",
+                  "need": "Review CA coverage",
+                  "status": "To review",
+                  "notes": "Confirmed section; removed unconfirmed TBD hybrid placeholder."
+            },
+            {
+                  "priority": "High",
+                  "course": "IDSN 542 Introduction to Machine Intelligence",
+                  "section": "34198 / 34197",
+                  "instructor": "Thanassis Rikakis",
+                  "enrollment": "14/32 + 16/30",
+                  "need": "Review CA coverage",
+                  "status": "Hybrid pair",
+                  "notes": "Same course with a hybrid online section."
+            },
+            {
+                  "priority": "High",
+                  "course": "IDSN 577 Finance for Entrepreneurs",
+                  "section": "34167 / 34147",
+                  "instructor": "Eric Quick",
+                  "enrollment": "9/25 + 14/25",
+                  "need": "Review CA coverage",
+                  "status": "Hybrid pair",
+                  "notes": "Same course with a hybrid online section."
+            },
+            {
+                  "priority": "High",
+                  "course": "IDSN 581 Introduction to the Global Fashion System",
+                  "section": "34170 / 34169",
+                  "instructor": "Keanan Duffty",
+                  "enrollment": "24/30 + 0/20",
+                  "need": "Review CA coverage",
+                  "status": "Hybrid pair",
+                  "notes": "Same course meeting pattern with a separate hybrid section."
+            },
+            {
+                  "priority": "High",
+                  "course": "IDSN 597 Industry Practicum in Fashion Innovation",
+                  "section": "34191 / 34192",
+                  "instructor": "Keanan Duffty",
+                  "enrollment": "23/35 + 0/20",
+                  "need": "Review CA coverage",
+                  "status": "Hybrid pair",
+                  "notes": "New hybrid section added; same course meeting pattern with separate section numbers."
+            },
+            {
+                  "priority": "High",
+                  "course": "IDSN 599 Special Topics: Product Management for Challenge-Based Innovation",
+                  "section": "34153 / 34154",
+                  "instructor": "Michael Kanazawa",
+                  "enrollment": "18/25 + 10/25",
+                  "need": "Review CA coverage",
+                  "status": "Hybrid pair",
+                  "notes": "Hybrid in-person and online sections taught at the same day/time."
+            }
+      ],
+      "sections": [
+            {
+                  "program": "Undergraduate ACAD",
+                  "course": "ACAD 174 Innovators Forum",
+                  "section": "10200",
+                  "instructor": "Stephen Child, Thomas Dadourian",
+                  "enrolled": 76,
+                  "capacity": 90
+            },
+            {
+                  "program": "Undergraduate ACAD",
+                  "course": "ACAD 176 Rapid Visualization",
+                  "section": "10203",
+                  "instructor": "Aaron Siegel",
+                  "enrolled": 22,
+                  "capacity": 32
+            },
+            {
+                  "program": "Undergraduate ACAD",
+                  "course": "ACAD 176 Rapid Visualization",
+                  "section": "10201",
+                  "instructor": "Stephen Child",
+                  "enrolled": 32,
+                  "capacity": 32
+            },
+            {
+                  "program": "Undergraduate ACAD",
+                  "course": "ACAD 176 Rapid Visualization",
+                  "section": "10202",
+                  "instructor": "Kia McCormick",
+                  "enrolled": 32,
+                  "capacity": 32
+            },
+            {
+                  "program": "Undergraduate ACAD",
+                  "course": "ACAD 177 Digital Toolbox: Design",
+                  "section": "10204",
+                  "instructor": "Olamiposi Somoye",
+                  "enrolled": 21,
+                  "capacity": 32
+            },
+            {
+                  "program": "Undergraduate ACAD",
+                  "course": "ACAD 182 Disruptive Validation",
+                  "section": "10211",
+                  "instructor": "Chris Swain",
+                  "enrolled": 13,
+                  "capacity": 32
+            },
+            {
+                  "program": "Undergraduate ACAD",
+                  "course": "ACAD 183 Product Management for Challenge-Based Innovation",
+                  "section": "10210",
+                  "instructor": "Michael Kanazawa",
+                  "enrolled": 74,
+                  "capacity": 90
+            },
+            {
+                  "program": "Undergraduate ACAD",
+                  "course": "ACAD 185 Analytics and Marketing for Challenge-Based Innovation",
+                  "section": "10212",
+                  "instructor": "Chris Swain",
+                  "enrolled": 40,
+                  "capacity": 80
+            },
+            {
+                  "program": "Undergraduate ACAD",
+                  "course": "ACAD 188 Modeling Products with Solidworks",
+                  "section": "10215",
+                  "instructor": "Kia McCormick",
+                  "enrolled": 32,
+                  "capacity": 32
+            },
+            {
+                  "program": "Undergraduate ACAD",
+                  "course": "ACAD 189 3D Tools for Product Design",
+                  "section": "10217",
+                  "instructor": "Aaron Siegel",
+                  "enrolled": 24,
+                  "capacity": 32
+            },
+            {
+                  "program": "Undergraduate ACAD",
+                  "course": "ACAD 190 Making with Materials",
+                  "section": "10218",
+                  "instructor": "Kia McCormick",
+                  "enrolled": 32,
+                  "capacity": 32
+            },
+            {
+                  "program": "Undergraduate ACAD",
+                  "course": "ACAD 191 Python for Machine Intelligence",
+                  "section": "10219",
+                  "instructor": "John Bruneau",
+                  "enrolled": 39,
+                  "capacity": 40
+            },
+            {
+                  "program": "Undergraduate ACAD",
+                  "course": "ACAD 217 Extended Reality Design",
+                  "section": "10225",
+                  "instructor": "Carsten Becker",
+                  "enrolled": 18,
+                  "capacity": 30
+            },
+            {
+                  "program": "Undergraduate ACAD",
+                  "course": "ACAD 230 Introduction to Interactive Physical Computing",
+                  "section": "10227",
+                  "instructor": "John Bruneau",
+                  "enrolled": 32,
+                  "capacity": 32
+            },
+            {
+                  "program": "Undergraduate ACAD",
+                  "course": "ACAD 245 Fundamentals of Product Design",
+                  "section": "10231",
+                  "instructor": "Safir Bellali",
+                  "enrolled": 19,
+                  "capacity": 35
+            },
+            {
+                  "program": "Undergraduate ACAD",
+                  "course": "ACAD 245 Fundamentals of Product Design",
+                  "section": "10232",
+                  "instructor": "Grant Delgatty",
+                  "enrolled": 19,
+                  "capacity": 35
+            },
+            {
+                  "program": "Undergraduate ACAD",
+                  "course": "ACAD 261 Human Health and Technology",
+                  "section": "10237",
+                  "instructor": "Armine Lulejian",
+                  "enrolled": 6,
+                  "capacity": 32
+            },
+            {
+                  "program": "Undergraduate ACAD",
+                  "course": "ACAD 274 Designing Interactive Data Systems",
+                  "section": "10238",
+                  "instructor": "Patrick Dent",
+                  "enrolled": 27,
+                  "capacity": 40
+            },
+            {
+                  "program": "Undergraduate ACAD",
+                  "course": "ACAD 276 Dev II",
+                  "section": "10242",
+                  "instructor": "Patrick Dent",
+                  "enrolled": 15,
+                  "capacity": 40
+            },
+            {
+                  "program": "Undergraduate ACAD",
+                  "course": "ACAD 309g Dreams and Madness: The Art of Japan's Golden Age of Animation",
+                  "section": "10253",
+                  "instructor": "Doug Thomas",
+                  "enrolled": 140,
+                  "capacity": 140
+            },
+            {
+                  "program": "Undergraduate ACAD",
+                  "course": "ACAD 324g The Practice of Design: Ideation to Innovation",
+                  "section": "10248",
+                  "instructor": "Davina Wolter, Olamiposi Somoye",
+                  "enrolled": 41,
+                  "capacity": 41
+            },
+            {
+                  "program": "Undergraduate ACAD",
+                  "course": "ACAD 324g The Practice of Design: Ideation to Innovation",
+                  "section": "10249",
+                  "instructor": "Davina Wolter, Olamiposi Somoye",
+                  "enrolled": 41,
+                  "capacity": 41
+            },
+            {
+                  "program": "Undergraduate ACAD",
+                  "course": "ACAD 325 Human Technology Interaction and the User Experience",
+                  "section": "10250",
+                  "instructor": "SeoYoon Sung",
+                  "enrolled": 19,
+                  "capacity": 40
+            },
+            {
+                  "program": "Undergraduate ACAD",
+                  "course": "ACAD 376 Industry Practicum I: Designing and Implementing Real-World Solutions",
+                  "section": "10269",
+                  "instructor": "Yihyun Lim, Thomas Dadourian",
+                  "enrolled": 74,
+                  "capacity": 75
+            },
+            {
+                  "program": "Undergraduate ACAD",
+                  "course": "ACAD 406 Purpose-Driven Innovation Incubator",
+                  "section": "10256",
+                  "instructor": "Chris Swain",
+                  "enrolled": 48,
+                  "capacity": 50
+            },
+            {
+                  "program": "Undergraduate ACAD",
+                  "course": "ACAD 406 Purpose-Driven Innovation Incubator",
+                  "section": "10257",
+                  "instructor": "Chris Swain",
+                  "enrolled": 6,
+                  "capacity": 25
+            },
+            {
+                  "program": "Undergraduate ACAD",
+                  "course": "ACAD 419 Professional Internship",
+                  "section": "10259",
+                  "instructor": "Patrick Dent",
+                  "enrolled": 1,
+                  "capacity": 20
+            },
+            {
+                  "program": "Undergraduate ACAD",
+                  "course": "ACAD 444 Designing Products for Industry",
+                  "section": "10280",
+                  "instructor": "Grant Delgatty",
+                  "enrolled": 30,
+                  "capacity": 40
+            },
+            {
+                  "program": "Undergraduate ACAD",
+                  "course": "ACAD 450 Industry and Impact Projects",
+                  "section": "10283",
+                  "instructor": "Kia McCormick",
+                  "enrolled": 15,
+                  "capacity": 15
+            },
+            {
+                  "program": "Undergraduate ACAD",
+                  "course": "ACAD 475A The Garage Experience",
+                  "section": "10286",
+                  "instructor": "Matthew Manos",
+                  "enrolled": 53,
+                  "capacity": 54
+            },
+            {
+                  "program": "Undergraduate ACAD",
+                  "course": "ACAD 490x Directed Research",
+                  "section": "10288",
+                  "instructor": "Chris Swain",
+                  "enrolled": 1,
+                  "capacity": 1
+            },
+            {
+                  "program": "Undergraduate ACAD",
+                  "course": "ACAD 490x Directed Research",
+                  "section": "10289",
+                  "instructor": "Grant Delgatty",
+                  "enrolled": 1,
+                  "capacity": 1
+            },
+            {
+                  "program": "Undergraduate ACAD",
+                  "course": "ACAD 490x Directed Research",
+                  "section": "10290",
+                  "instructor": "Matthew Manos",
+                  "enrolled": 1,
+                  "capacity": 2
+            },
+            {
+                  "program": "Undergraduate ACAD",
+                  "course": "ACAD 490x Directed Research",
+                  "section": "10294",
+                  "instructor": "Chris Swain",
+                  "enrolled": 1,
+                  "capacity": 1
+            },
+            {
+                  "program": "Undergraduate ACAD",
+                  "course": "ACAD 490x Directed Research",
+                  "section": "10295",
+                  "instructor": "Matthew Manos",
+                  "enrolled": 1,
+                  "capacity": 1
+            },
+            {
+                  "program": "Undergraduate ACAD",
+                  "course": "ACAD 499 Special Topics",
+                  "section": "10292",
+                  "instructor": "Doug Thomas",
+                  "enrolled": 34,
+                  "capacity": 49,
+                  "note": "Understanding AI"
+            },
+            {
+                  "program": "Graduate IDSN",
+                  "course": "IDSN 500 Rapid Visualization for Complex Challenges",
+                  "section": "34160",
+                  "instructor": "Stephen Child",
+                  "enrolled": 0,
+                  "capacity": 25,
+                  "note": "Cancelled 7/29/26",
+                  "metrics": false
+            },
+            {
+                  "program": "Graduate IDSN",
+                  "course": "IDSN 515 Professional Practices Residential",
+                  "section": "34062",
+                  "instructor": "Stephen Child",
+                  "enrolled": 16,
+                  "capacity": 30
+            },
+            {
+                  "program": "Graduate IDSN",
+                  "course": "IDSN 515 Professional Practices Residential",
+                  "section": "34063",
+                  "instructor": "Safir Bellali",
+                  "enrolled": 19,
+                  "capacity": 30
+            },
+            {
+                  "program": "Graduate IDSN",
+                  "course": "IDSN 519 Professional Internship",
+                  "section": "34199",
+                  "instructor": "Patrick Dent",
+                  "enrolled": 1,
+                  "capacity": 3
+            },
+            {
+                  "program": "Graduate IDSN",
+                  "course": "IDSN 521 Designing Brand Identity for Startups",
+                  "section": "34060",
+                  "instructor": "Sue-Tze Tan",
+                  "enrolled": 2,
+                  "capacity": 25
+            },
+            {
+                  "program": "Graduate IDSN",
+                  "course": "IDSN 521 Designing Brand Identity for Startups",
+                  "section": "34076",
+                  "instructor": "Stephen Child",
+                  "enrolled": 35,
+                  "capacity": 35
+            },
+            {
+                  "program": "Graduate IDSN",
+                  "course": "IDSN 523 Product Design for User Experience",
+                  "section": "34058",
+                  "instructor": "Yihyun Lim",
+                  "enrolled": 35,
+                  "capacity": 40
+            },
+            {
+                  "program": "Graduate IDSN",
+                  "course": "IDSN 524 Physical Product Design",
+                  "section": "34079",
+                  "instructor": "Safir Bellali",
+                  "enrolled": 21,
+                  "capacity": 32
+            },
+            {
+                  "program": "Graduate IDSN",
+                  "course": "IDSN 529 Marketing Strategy for Startups",
+                  "section": "34091",
+                  "instructor": "Tina Sharkey",
+                  "enrolled": 38,
+                  "capacity": 40
+            },
+            {
+                  "program": "Graduate IDSN",
+                  "course": "IDSN 532 Data and Back-End Development",
+                  "section": "34066",
+                  "instructor": "Jake Spurlock",
+                  "enrolled": 1,
+                  "capacity": 25
+            },
+            {
+                  "program": "Graduate IDSN",
+                  "course": "IDSN 533 iOS Application Design and Development",
+                  "section": "34155",
+                  "instructor": "John Bruneau",
+                  "enrolled": 19,
+                  "capacity": 25
+            },
+            {
+                  "program": "Graduate IDSN",
+                  "course": "IDSN 538 Extended Reality Technologies",
+                  "section": "34070",
+                  "instructor": "Carsten Becker",
+                  "enrolled": 17,
+                  "capacity": 32
+            },
+            {
+                  "program": "Graduate IDSN",
+                  "course": "IDSN 538 Extended Reality Technologies",
+                  "section": "34094",
+                  "instructor": "Carsten Becker",
+                  "enrolled": 19,
+                  "capacity": 30
+            },
+            {
+                  "program": "Graduate IDSN",
+                  "course": "IDSN 540 Processes and Perspectives",
+                  "section": "34101",
+                  "instructor": "Aaron Siegel",
+                  "enrolled": 22,
+                  "capacity": 40
+            },
+            {
+                  "program": "Graduate IDSN",
+                  "course": "IDSN 540 Processes and Perspectives",
+                  "section": "34080",
+                  "instructor": "Yihyun Lim",
+                  "enrolled": 24,
+                  "capacity": 40
+            },
+            {
+                  "program": "Graduate IDSN",
+                  "course": "IDSN 542 Introduction to Machine Intelligence",
+                  "section": "34198",
+                  "instructor": "Thanassis Rikakis",
+                  "enrolled": 14,
+                  "capacity": 32
+            },
+            {
+                  "program": "Graduate IDSN",
+                  "course": "IDSN 542 Introduction to Machine Intelligence",
+                  "section": "34197",
+                  "instructor": "Thanassis Rikakis",
+                  "enrolled": 17,
+                  "capacity": 30
+            },
+            {
+                  "program": "Graduate IDSN",
+                  "course": "PRIN 550 / IDSN 547 Industry and Impact Projects",
+                  "section": "34782",
+                  "instructor": "Matthew Manos",
+                  "enrolled": 39,
+                  "capacity": 39,
+                  "note": "Cross-listed; counted as PRIN 550 in summaries",
+                  "metrics": false
+            },
+            {
+                  "program": "Graduate IDSN",
+                  "course": "PRIN 550 / IDSN 547 Industry and Impact Projects",
+                  "section": "34785",
+                  "instructor": "Yihyun Lim",
+                  "enrolled": 7,
+                  "capacity": 30,
+                  "note": "Cross-listed; counted as PRIN 550 in summaries",
+                  "metrics": false
+            },
+            {
+                  "program": "Graduate IDSN",
+                  "course": "IDSN 577 Finance for Entrepreneurs",
+                  "section": "34167",
+                  "instructor": "Eric Quick",
+                  "enrolled": 9,
+                  "capacity": 25,
+                  "note": "Hybrid - online; paired with section 34147 in-person"
+            },
+            {
+                  "program": "Graduate IDSN",
+                  "course": "IDSN 577 Finance for Entrepreneurs",
+                  "section": "34147",
+                  "instructor": "Eric Quick",
+                  "enrolled": 14,
+                  "capacity": 25,
+                  "note": "Hybrid - in-person; paired with section 34167 online"
+            },
+            {
+                  "program": "Graduate IDSN",
+                  "course": "IDSN 579 Social Media Incubator: Data-Driven Growth for Founders",
+                  "section": "34151",
+                  "instructor": "Thomas Dadourian",
+                  "enrolled": 43,
+                  "capacity": 43
+            },
+            {
+                  "program": "Graduate IDSN",
+                  "course": "IDSN 579 Social Media Incubator: Data-Driven Growth for Founders",
+                  "section": "34150",
+                  "instructor": "Thomas Dadourian",
+                  "enrolled": 14,
+                  "capacity": 25
+            },
+            {
+                  "program": "Graduate IDSN",
+                  "course": "IDSN 581 Introduction to the Global Fashion System",
+                  "section": "34170",
+                  "instructor": "Keanan Duffty",
+                  "enrolled": 24,
+                  "capacity": 30,
+                  "note": "Hybrid - in-person; paired with section 34169 online"
+            },
+            {
+                  "program": "Graduate IDSN",
+                  "course": "IDSN 581 Introduction to the Global Fashion System",
+                  "section": "34169",
+                  "instructor": "Keanan Duffty",
+                  "enrolled": 0,
+                  "capacity": 20,
+                  "note": "Hybrid - online; paired with section 34170 in-person"
+            },
+            {
+                  "program": "Graduate IDSN",
+                  "course": "IDSN 590 Directed Research",
+                  "section": "34172",
+                  "instructor": "John Bruneau",
+                  "enrolled": 1,
+                  "capacity": 1
+            },
+            {
+                  "program": "Graduate IDSN",
+                  "course": "IDSN 590 Directed Research",
+                  "section": "34173",
+                  "instructor": "Chris Swain",
+                  "enrolled": 0,
+                  "capacity": 1
+            },
+            {
+                  "program": "Graduate IDSN",
+                  "course": "IDSN 597 Industry Practicum in Fashion Innovation",
+                  "section": "34191",
+                  "instructor": "Keanan Duffty",
+                  "enrolled": 23,
+                  "capacity": 35,
+                  "note": "Hybrid - in-person; paired with section 34192 online"
+            },
+            {
+                  "program": "Graduate IDSN",
+                  "course": "IDSN 597 Industry Practicum in Fashion Innovation",
+                  "section": "34192",
+                  "instructor": "Keanan Duffty",
+                  "enrolled": 0,
+                  "capacity": 20,
+                  "note": "Hybrid - online; paired with section 34191 in-person"
+            },
+            {
+                  "program": "Graduate IDSN",
+                  "course": "IDSN 599 Special Topics",
+                  "section": "34153",
+                  "instructor": "Michael Kanazawa",
+                  "enrolled": 18,
+                  "capacity": 25,
+                  "note": "Hybrid - in-person; paired with section 34154 online"
+            },
+            {
+                  "program": "Graduate IDSN",
+                  "course": "IDSN 599 Special Topics",
+                  "section": "34154",
+                  "instructor": "Michael Kanazawa",
+                  "enrolled": 10,
+                  "capacity": 25,
+                  "note": "Hybrid - online; paired with section 34153 in-person"
+            },
+            {
+                  "program": "Product Innovation",
+                  "course": "PRIN 520 Creators Studio",
+                  "section": "34730",
+                  "instructor": "Grant Delgatty",
+                  "enrolled": 12,
+                  "capacity": 30
+            },
+            {
+                  "program": "Product Innovation",
+                  "course": "PRIN 550 / IDSN 547 Industry and Impact Projects",
+                  "section": "34782",
+                  "instructor": "Matthew Manos",
+                  "enrolled": 39,
+                  "capacity": 39,
+                  "note": "Cross-listed with IDSN 547",
+                  "metrics": false
+            },
+            {
+                  "program": "Product Innovation",
+                  "course": "PRIN 550 / IDSN 547 Industry and Impact Projects",
+                  "section": "34785",
+                  "instructor": "Yihyun Lim",
+                  "enrolled": 7,
+                  "capacity": 30,
+                  "note": "Cross-listed with IDSN 547",
+                  "metrics": false
+            }
+      ],
+      "trendLog": [
+            {
+                  "date": "7/31/2026 Afternoon",
+                  "course": "IDSN 515 Professional Practices Residential",
+                  "section": "34063",
+                  "previous": 18,
+                  "current": 19
+            },
+            {
+                  "date": "7/31/2026 Afternoon",
+                  "course": "IDSN 524 Physical Product Design",
+                  "section": "34079",
+                  "previous": 20,
+                  "current": 21
+            },
+            {
+                  "date": "7/31/2026 Afternoon",
+                  "course": "IDSN 538 Extended Reality Technologies",
+                  "section": "34070",
+                  "previous": 18,
+                  "current": 17
+            },
+            {
+                  "date": "7/31/2026 Afternoon",
+                  "course": "IDSN 542 Introduction to Machine Intelligence",
+                  "section": "34197",
+                  "previous": 16,
+                  "current": 17
+            },
+            {
+                  "date": "7/31/2026 Afternoon",
+                  "course": "IDSN 599 Special Topics",
+                  "section": "34153",
+                  "previous": 17,
+                  "current": 18
+            },
+            {
+                  "date": "7/31/2026 AM",
+                  "course": "ACAD 444 Designing Products for Industry",
+                  "section": "10280",
+                  "previous": 31,
+                  "current": 30
+            },
+            {
+                  "date": "7/31/2026 AM",
+                  "course": "ACAD 450 Industry and Impact Projects",
+                  "section": "10283",
+                  "previous": 14,
+                  "current": 15
+            },
+            {
+                  "date": "7/31/2026 AM",
+                  "course": "IDSN 515 Professional Practices Residential",
+                  "section": "34062",
+                  "previous": 15,
+                  "current": 16
+            },
+            {
+                  "date": "7/31/2026 AM",
+                  "course": "IDSN 523 Product Design for User Experience",
+                  "section": "34058",
+                  "previous": 36,
+                  "current": 35
+            },
+            {
+                  "date": "7/31/2026 AM",
+                  "course": "IDSN 529 Marketing Strategy for Startups",
+                  "section": "34091",
+                  "previous": 39,
+                  "current": 38
+            },
+            {
+                  "date": "7/31/2026 AM",
+                  "course": "IDSN 577 Finance for Entrepreneurs",
+                  "section": "34167",
+                  "previous": 8,
+                  "current": 9
+            },
+            {
+                  "date": "7/31/2026 AM",
+                  "course": "IDSN 597 Industry Practicum in Fashion Innovation",
+                  "section": "34191",
+                  "previous": 22,
+                  "current": 23
+            },
+            {
+                  "date": "7/31/2026 AM",
+                  "course": "IDSN 599 Special Topics",
+                  "section": "34153",
+                  "previous": 16,
+                  "current": 17
+            },
+            {
+                  "date": "7/30/2026 AM",
+                  "course": "ACAD 174 Innovators Forum",
+                  "section": "10200",
+                  "previous": 74,
+                  "current": 76
+            },
+            {
+                  "date": "7/30/2026 AM",
+                  "course": "ACAD 176 Rapid Visualization",
+                  "section": "10203",
+                  "previous": 19,
+                  "current": 22
+            },
+            {
+                  "date": "7/30/2026 AM",
+                  "course": "ACAD 183 Product Management for Challenge-Based Innovation",
+                  "section": "10210",
+                  "previous": 72,
+                  "current": 74
+            },
+            {
+                  "date": "7/30/2026 AM",
+                  "course": "ACAD 189 3D Tools for Product Design",
+                  "section": "10217",
+                  "previous": 23,
+                  "current": 24
+            },
+            {
+                  "date": "7/30/2026 AM",
+                  "course": "ACAD 191 Python for Machine Intelligence",
+                  "section": "10219",
+                  "previous": 38,
+                  "current": 39
+            },
+            {
+                  "date": "7/30/2026 AM",
+                  "course": "ACAD 274 Designing Interactive Data Systems",
+                  "section": "10238",
+                  "previous": 25,
+                  "current": 27
+            },
+            {
+                  "date": "7/30/2026 AM",
+                  "course": "IDSN 500 Rapid Visualization for Complex Challenges",
+                  "section": "34160",
+                  "previous": 2,
+                  "current": 0
+            },
+            {
+                  "date": "7/29/2026 Afternoon",
+                  "course": "IDSN 521 Designing Brand Identity for Startups",
+                  "section": "34060",
+                  "previous": 1,
+                  "current": 2
+            },
+            {
+                  "date": "7/29/2026 Afternoon",
+                  "course": "IDSN 523 Product Design for User Experience",
+                  "section": "34058",
+                  "previous": 35,
+                  "current": 36
+            },
+            {
+                  "date": "7/29/2026 Afternoon",
+                  "course": "IDSN 533 iOS Application Design  and Development",
+                  "section": "34155",
+                  "previous": 18,
+                  "current": 19
+            },
+            {
+                  "date": "7/29/2026 Afternoon",
+                  "course": "IDSN 538 Extended Reality Technologies",
+                  "section": "34070",
+                  "previous": 17,
+                  "current": 18
+            },
+            {
+                  "date": "7/29/2026 Afternoon",
+                  "course": "ACAD 324 The Practice of Design: Ideation to Innovation",
+                  "section": "10248",
+                  "previous": 40,
+                  "current": 41
+            },
+            {
+                  "date": "7/29/2026 Afternoon",
+                  "course": "ACAD 324 The Practice of Design: Ideation to Innovation",
+                  "section": "10249",
+                  "previous": 39,
+                  "current": 41
+            },
+            {
+                  "date": "7/29/2026 AM",
+                  "course": "IDSN 515 Professional Practices Residential",
+                  "section": "34062",
+                  "previous": 14,
+                  "current": 15
+            },
+            {
+                  "date": "7/29/2026 AM",
+                  "course": "IDSN 523 Product Design for User Experience",
+                  "section": "34058",
+                  "previous": 34,
+                  "current": 35
+            },
+            {
+                  "date": "7/29/2026 AM",
+                  "course": "IDSN 524 Physical Product Design",
+                  "section": "34079",
+                  "previous": 19,
+                  "current": 20
+            },
+            {
+                  "date": "7/29/2026 AM",
+                  "course": "IDSN 533 iOS Application Design and Development",
+                  "section": "34155",
+                  "previous": 17,
+                  "current": 18
+            },
+            {
+                  "date": "7/29/2026 AM",
+                  "course": "IDSN 542 Introduction to Machine Intelligence",
+                  "section": "34198",
+                  "previous": 13,
+                  "current": 14
+            },
+            {
+                  "date": "7/29/2026 AM",
+                  "course": "IDSN 547 (PRIN 550) Industry and Impact Projects",
+                  "section": "34782",
+                  "previous": 39,
+                  "current": 39
+            },
+            {
+                  "date": "7/29/2026 AM",
+                  "course": "IDSN 547 (PRIN 550) Industry and Impact Projects",
+                  "section": "34785",
+                  "previous": 7,
+                  "current": 7
+            },
+            {
+                  "date": "7/29/2026 AM",
+                  "course": "IDSN 579 Social Media Incubator: Data-Driven Growth for Founders",
+                  "section": "34151",
+                  "previous": 43,
+                  "current": 43
+            },
+            {
+                  "date": "7/28/2026 PM Baseline",
+                  "course": "IDSN 515 Professional Practices",
+                  "section": "34063",
+                  "previous": 16,
+                  "current": 18
+            },
+            {
+                  "date": "7/28/2026 PM Baseline",
+                  "course": "IDSN 540 Processes & Perspectives",
+                  "section": "34080",
+                  "previous": 23,
+                  "current": 24
+            },
+            {
+                  "date": "7/28/2026 PM Baseline",
+                  "course": "IDSN 547 Industry & Impact Projects",
+                  "section": "34785",
+                  "previous": 6,
+                  "current": 7
+            },
+            {
+                  "date": "7/28/2026 PM Baseline",
+                  "course": "IDSN 577 Finance for Entrepreneurs",
+                  "section": "34167",
+                  "previous": 7,
+                  "current": 8
+            },
+            {
+                  "date": "7/28/2026 PM Baseline",
+                  "course": "IDSN 599 Product Management (CBL)",
+                  "section": "34153",
+                  "previous": 15,
+                  "current": 16
+            },
+            {
+                  "date": "7/28/2026 PM Baseline",
+                  "course": "IDSN 523 Product Design for UX",
+                  "section": "34058",
+                  "previous": 35,
+                  "current": 34
+            }
+      ],
+      "facultyNotes": [
+            {
+                  "faculty": "Stephen Child",
+                  "note": "ACAD Innovators Forum is above 80%; graduate Brand Identity remains full while graduate Rapid Visualization remains very low."
+            },
+            {
+                  "faculty": "Thomas Dadourian",
+                  "note": "ACAD Innovators Forum is a high-enrollment undergraduate offering at 74 of 90 seats."
+            },
+            {
+                  "faculty": "Kia McCormick",
+                  "note": "All visible ACAD sections are full: Rapid Visualization, Solidworks, and Making with Materials."
+            },
+            {
+                  "faculty": "John Bruneau",
+                  "note": "ACAD Python for Machine Intelligence is near capacity; graduate iOS increased to 18 of 25."
+            },
+            {
+                  "faculty": "Tina Sharkey",
+                  "note": "Graduate Marketing Strategy remains one seat from capacity."
+            },
+            {
+                  "faculty": "Yihyun Lim",
+                  "note": "Graduate Product Design for User Experience returned to 35 of 40 and should remain on the high-demand watch list."
+            },
+            {
+                  "faculty": "Safir Bellali",
+                  "note": "Graduate Physical Product Design increased to 20 of 32; ACAD Fundamentals of Product Design is mid-range."
+            },
+            {
+                  "faculty": "Patrick Dent",
+                  "note": "ACAD Data Systems is healthy at 25 of 40; ACAD Dev II and graduate Internship remain lower."
+            },
+            {
+                  "faculty": "Grant Delgatty",
+                  "note": "PRIN 520 is confirmed from the screenshot at 12 of 30, with 18 seats available."
+            },
+            {
+                  "faculty": "Matthew Manos",
+                  "note": "IDSN 547 (PRIN 550) section 34782 and ACAD 475A are both at capacity or nearly full."
+            },
+            {
+                  "faculty": "Keanan Dufty",
+                  "note": "IDSN 581 is exactly at the 80% threshold; IDSN 597 remains healthy at 22 of 35."
+            },
+            {
+                  "faculty": "Eric Quick",
+                  "note": "Both IDSN 577 Finance sections have capacity remaining, with section 34167 still low."
+            },
+            {
+                  "faculty": "Michael Kanazawa",
+                  "note": "IDSN 599 Product Management sections remain split between healthy and low enrollment."
+            }
+      ],
+      "recommendations": [
+            "Afternoon ACAD, IDSN, and PRIN data were pulled from the live USC Schedule of Classes API.",
+            "ACAD cross-listed partner courses remain excluded; IDSN cross-listed rows are included on the IDSN view, and PRIN 550 is included on the Product Innovation view as the counterpart to IDSN 547.",
+            "Monitor PRIN 550 section 34782 / IDSN 547 section 34782 because it is full; PRIN 550 section 34785 / IDSN 547 section 34785 remains low.",
+            "Monitor IDSN 529, IDSN 579 section 34151, IDSN 581, ACAD 376, ACAD 406 section 10256, ACAD 450, and ACAD 475A because they are at or near capacity.",
+            "Focus advising or promotion on low-enrollment visible sections, especially PRIN 520, PRIN 550 section 34785, IDSN 500, IDSN 519, IDSN 521 section 34060, IDSN 532, IDSN 577 section 34167, IDSN 590 section 34173, ACAD 406 section 10257, and ACAD 419."
+      ],
+      "history": [
+            {
+                  "date": "July 28, 2026",
+                  "snapshot": "PM baseline - 4:58 PM",
+                  "added": 5,
+                  "dropped": 1,
+                  "fullSections": 4,
+                  "notes": "Initial graduate IDSN baseline from yesterday."
+            },
+            {
+                  "date": "July 29, 2026",
+                  "snapshot": "AM update - 8:35-8:37 AM",
+                  "added": 5,
+                  "dropped": 0,
+                  "fullSections": 11,
+                  "notes": "Morning update added undergraduate ACAD data, excluded ACAD cross-listed partner courses, and updated visible IDSN plus PRIN 520."
+            },
+            {
+                  "date": "July 29, 2026",
+                  "snapshot": "Afternoon ACAD update",
+                  "added": 3,
+                  "dropped": 0,
+                  "fullSections": 16,
+                  "notes": "Pulled live ACAD data from USC Schedule of Classes API and excluded 19 ACAD cross-listed partner courses."
+            },
+            {
+                  "date": "July 29, 2026",
+                  "snapshot": "Afternoon IDSN update",
+                  "added": 4,
+                  "dropped": 0,
+                  "fullSections": 16,
+                  "notes": "Pulled live IDSN data from USC Schedule of Classes API and kept IDSN cross-listed rows, including IDSN 547 (PRIN 550)."
+            },
+            {
+                  "date": "July 29, 2026",
+                  "snapshot": "Afternoon PRIN update",
+                  "added": 0,
+                  "dropped": 0,
+                  "fullSections": 17,
+                  "notes": "Pulled live PRIN data from USC Schedule of Classes API and included PRIN 550 as the cross-listed counterpart to IDSN 547."
+            }
+      ],
+      "netChangeLabel": "07/31/26 afternoon from 7/31 AM"
+};
+    let activeProgram = dashboardData.defaultProgram || "All Programs";
+    let sectionFilters = {
+      program: "All Programs",
+      status: "All Statuses",
+      search: ""
+    };
+
+    dashboardData.sections = dashboardData.sections.map(item => ({
+      ...item
+    }));
+
+    const isMetricSection = item => item.metrics !== false && Number.isFinite(item.enrolled) && Number.isFinite(item.capacity);
+    const metricSections = sections => sections.filter(isMetricSection);
+    const percentFull = item => isMetricSection(item) && item.capacity > 0 ? Math.round((item.enrolled / item.capacity) * 100) : null;
+    const availableSeats = item => isMetricSection(item) ? Math.max(item.capacity - item.enrolled, 0) : null;
+    const displayValue = value => value === null || value === undefined ? "TBD" : value;
+    const displayPercent = item => {
+      const pct = percentFull(item);
+      return pct === null ? "TBD" : `${pct}%`;
+    };
+
+    function filteredSections() {
+      if (activeProgram === "All Programs") return dashboardData.sections;
+      return dashboardData.sections.filter(item => item.program === activeProgram);
+    }
+
+    function filteredSectionRows() {
+      const search = sectionFilters.search.trim().toLowerCase();
+      return dashboardData.sections.filter(item => {
+        const status = statusFor(item).label;
+        const searchable = `${item.program} ${item.course} ${item.section} ${item.instructor}`.toLowerCase();
+        const programMatches = sectionFilters.program === "All Programs" || item.program === sectionFilters.program;
+        const statusMatches = sectionFilters.status === "All Statuses" || status === sectionFilters.status;
+        const searchMatches = !search || searchable.includes(search);
+        return programMatches && statusMatches && searchMatches;
+      });
+    }
+
+    function programNames() {
+      const order = ["Undergraduate ACAD", "Graduate IDSN", "Product Innovation"];
+      const programs = Array.from(new Set(dashboardData.sections.map(item => item.program)))
+        .sort((a, b) => {
+          const aIndex = order.indexOf(a);
+          const bIndex = order.indexOf(b);
+          if (aIndex === -1 && bIndex === -1) return a.localeCompare(b);
+          if (aIndex === -1) return 1;
+          if (bIndex === -1) return -1;
+          return aIndex - bIndex;
+        });
+      return ["All Programs", ...programs];
+    }
+
+    function statusFor(item) {
+      if (!isMetricSection(item) && item.note && item.note.includes("Cancelled")) {
+        return { label: "Cancelled", className: "cancelled" };
+      }
+      if (!isMetricSection(item) && item.note && item.note.includes("Cross-listed")) {
+        return { label: "Cross-listed", className: "crosslisted" };
+      }
+      if (!isMetricSection(item)) return { label: "TBD", className: "tbd" };
+      const pct = percentFull(item);
+      if (item.capacity > 0 && item.enrolled >= item.capacity) return { label: "Full", className: "full" };
+      if (pct >= dashboardData.nearThreshold) return { label: "Near Capacity", className: "near" };
+      if (pct < dashboardData.lowThreshold) return { label: "Low", className: "low" };
+      return { label: "Healthy", className: "healthy" };
+    }
+
+    function shortCourse(name) {
+      return name.replace("Professional Practices", "Prof. Practices")
+        .replace("Processes & Perspectives", "Processes")
+        .replace("Industry & Impact Projects", "Industry & Impact")
+        .replace("Product Design for UX", "Product Design UX")
+        .replace("Intro to Machine Intelligence", "Machine Intelligence")
+        .replace("Finance for Entrepreneurs", "Finance")
+        .replace("Product Management (CBL)", "Product Management");
+    }
+
+    function badge(status) {
+      return `<span class="badge ${status.className}">${status.label}</span>`;
+    }
+
+    function displayAvailable(item) {
+      if (!isMetricSection(item) && item.note && item.note.includes("Cancelled")) return "Cancelled";
+      if (!isMetricSection(item) && item.note && item.note.includes("Cross-listed")) return "Cross-listed";
+      return displayValue(availableSeats(item));
+    }
+
+    function displayCapacityPercent(item) {
+      if (!isMetricSection(item) && item.note && item.note.includes("Cancelled")) return "Cancelled";
+      if (!isMetricSection(item) && item.note && item.note.includes("Cross-listed")) return "Cross-listed";
+      return displayPercent(item);
+    }
+
+    function trendClass(change) {
+      if (change > 0) return "trend-up";
+      if (change < 0) return "trend-down";
+      return "trend-flat";
+    }
+
+    function trendLabel(change) {
+      if (change > 0) return `+${change}`;
+      return `${change}`;
+    }
+
+    function renderKpis() {
+      const sections = metricSections(filteredSections());
+      const full = sections.filter(item => statusFor(item).className === "full").length;
+      const near = sections.filter(item => statusFor(item).className === "near").length;
+      const healthy = sections.filter(item => statusFor(item).className === "healthy").length;
+      const low = sections.filter(item => statusFor(item).className === "low").length;
+      const totalEnrollment = sections.reduce((sum, item) => sum + item.enrolled, 0);
+      const totalCapacity = sections.reduce((sum, item) => sum + item.capacity, 0);
+      const visibleSectionIds = new Set(sections.map(item => item.section));
+      const netChange = latestRunChanges()
+        .filter(item => visibleSectionIds.has(item.section))
+        .reduce((sum, item) => sum + (item.current - item.previous), 0);
+
+      const cards = [
+        { name: "Sections", value: sections.length, detail: "tracked sections" },
+        { name: "Enrollment", value: totalEnrollment, detail: `${totalCapacity} total seats` },
+        { name: "Full", value: full, detail: "at capacity" },
+        { name: "Near Capacity", value: near, detail: `${dashboardData.nearThreshold}% or higher` },
+        { name: "Healthy", value: healthy, detail: `${dashboardData.lowThreshold}-${dashboardData.nearThreshold - 1}% full` },
+        { name: "Low", value: low, detail: `below ${dashboardData.lowThreshold}%` },
+        { name: "Net Change", value: netChange >= 0 ? `+${netChange}` : netChange, detail: dashboardData.netChangeLabel || "from latest update" }
+      ];
+
+      document.getElementById("kpiGrid").innerHTML = cards.map(card => `
+        <article class="kpi-card">
+          <div class="name">${card.name}</div>
+          <div class="value">${card.value}</div>
+          <div class="detail">${card.detail}</div>
+        </article>
+      `).join("");
+    }
+
+    function latestPeriodChanges(periodName) {
+      return dashboardData.trendLog.filter(item => trendPeriod(item.date) === periodName && item.current !== item.previous);
+    }
+
+    function latestRunChanges() {
+      const ranked = dashboardData.trendLog
+        .map(item => ({ item, config: periodConfig(item.date) }))
+        .sort((a, b) => b.config.rank - a.config.rank);
+      if (!ranked.length) return [];
+      const latestKey = ranked[0].config.key;
+      return ranked
+        .filter(entry => entry.config.key === latestKey)
+        .map(entry => entry.item)
+        .filter(item => item.current !== item.previous);
+    }
+
+    function programMetrics() {
+      return programNames().filter(program => program !== "All Programs").map(program => {
+        const sections = metricSections(dashboardData.sections.filter(item => item.program === program));
+        const enrolled = sections.reduce((sum, item) => sum + item.enrolled, 0);
+        const capacity = sections.reduce((sum, item) => sum + item.capacity, 0);
+        const openSeats = Math.max(capacity - enrolled, 0);
+        const utilization = capacity ? Math.round((enrolled / capacity) * 100) : 0;
+        const full = sections.filter(item => statusFor(item).className === "full").length;
+        const near = sections.filter(item => statusFor(item).className === "near").length;
+        const low = sections.filter(item => statusFor(item).className === "low").length;
+        return { program, sections, enrolled, capacity, openSeats, utilization, full, near, low };
+      });
+    }
+
+    function revenueMetricSections() {
+      return dashboardData.sections.filter(item => {
+        if (item.program === "Graduate IDSN" && ["34782", "34785"].includes(item.section)) return false;
+        if (item.program === "Product Innovation" && ["34782", "34785"].includes(item.section)) {
+          return Number.isFinite(item.enrolled) && Number.isFinite(item.capacity);
+        }
+        return isMetricSection(item);
+      });
+    }
+
+    function revenueProgramMetrics() {
+      return programNames().filter(program => program !== "All Programs").map(program => {
+        const sections = revenueMetricSections().filter(item => item.program === program);
+        const enrolled = sections.reduce((sum, item) => sum + item.enrolled, 0);
+        const capacity = sections.reduce((sum, item) => sum + item.capacity, 0);
+        const openSeats = Math.max(capacity - enrolled, 0);
+        const utilization = capacity ? Math.round((enrolled / capacity) * 100) : 0;
+        const full = sections.filter(item => statusFor(item).className === "full").length;
+        const low = sections.filter(item => statusFor(item).className === "low").length;
+        return { program, sections, enrolled, capacity, openSeats, utilization, full, low };
+      });
+    }
+
+    function highDemandSummary(sections) {
+      const highDemandSections = sections
+        .filter(item => ["full", "near"].includes(statusFor(item).className))
+        .sort((a, b) => {
+          const pctDiff = percentFull(b) - percentFull(a);
+          if (pctDiff !== 0) return pctDiff;
+          return b.enrolled - a.enrolled;
+        });
+
+      if (activeProgram !== "All Programs") {
+        return highDemandSections
+          .slice(0, 5)
+          .map(item => `${shortCourse(item.course)} ${item.section}`)
+          .join("; ");
+      }
+
+      return programNames()
+        .filter(program => program !== "All Programs")
+        .map(program => {
+          const items = highDemandSections
+            .filter(item => item.program === program)
+            .slice(0, 3)
+            .map(item => `${shortCourse(item.course)} ${item.section}`)
+            .join(", ");
+          return items ? `${programFilterLabel(program)}: ${items}` : "";
+        })
+        .filter(Boolean)
+        .join("; ");
+    }
+
+    function todaysAddedSectionsSummary() {
+      const addedToday = [
+        {
+          program: "Graduate IDSN",
+          label: "IDSN 581 Introduction to the Global Fashion System section 34169"
+        },
+        {
+          program: "Graduate IDSN",
+          label: "IDSN 597 Industry Practicum in Fashion Innovation section 34192"
+        }
+      ].filter(item => activeProgram === "All Programs" || item.program === activeProgram);
+
+      if (!addedToday.length) return "";
+
+      const hybridNote = " IDSN 581 and IDSN 597 additions are hybrid sections and are also reflected in the Course Assistant list.";
+
+      return `New sections added on 7/30/26: ${addedToday.map(item => item.label).join("; ")}.${hybridNote}`;
+    }
+
+    function renderLeadershipSummary() {
+      const sections = metricSections(filteredSections());
+      const programLabel = activeProgram === "All Programs"
+        ? "USC Iovine and Young Academy programs"
+        : activeProgram;
+      const totalEnrollment = sections.reduce((sum, item) => sum + item.enrolled, 0);
+      const totalCapacity = sections.reduce((sum, item) => sum + item.capacity, 0);
+      const utilization = totalCapacity ? Math.round((totalEnrollment / totalCapacity) * 100) : 0;
+      const full = sections.filter(item => statusFor(item).className === "full").length;
+      const near = sections.filter(item => statusFor(item).className === "near").length;
+      const low = sections.filter(item => statusFor(item).className === "low").length;
+      const latestChanges = latestRunChanges();
+      const latestNet = latestChanges.reduce((sum, item) => sum + item.current - item.previous, 0);
+      const latestGains = latestChanges
+        .filter(item => item.current > item.previous)
+        .reduce((sum, item) => sum + item.current - item.previous, 0);
+      const latestDrops = latestChanges
+        .filter(item => item.current < item.previous)
+        .reduce((sum, item) => sum + item.previous - item.current, 0);
+      const cancelledIdsn500 = dashboardData.sections.find(item => item.section === "34160" && item.note);
+
+      document.getElementById("leadershipSummary").innerHTML = [
+        `${programLabel} currently have ${totalEnrollment} enrolled seats across ${sections.length} tracked sections, with ${utilization}% overall capacity utilization.`,
+        `${full} sections are full and ${near} additional sections are near capacity, creating the clearest student-access pressure points.`,
+        `${low} sections are below 50% enrollment and may need advising visibility, promotion, or cancellation-risk review.`,
+        `The latest trend log shows ${latestGains} added seats and ${latestDrops} dropped seats, for a net change of ${latestNet >= 0 ? "+" : ""}${latestNet}.`,
+        todaysAddedSectionsSummary(),
+        cancelledIdsn500 ? `IDSN 500 section 34160 was cancelled on 7/29/26; it is shown for context as 0/25 but excluded from enrollment, capacity, and available-seat counts.` : ""
+      ].filter(Boolean).map(item => `<li>${item}</li>`).join("");
+
+    }
+
+    function renderRevenueView() {
+      const metrics = revenueProgramMetrics();
+      document.getElementById("revenueBody").innerHTML = metrics.map(item => `
+        <tr>
+          <td>${programDisplayName(item.program)}</td>
+          <td class="num">${item.sections.length}</td>
+          <td class="num">${item.enrolled}</td>
+          <td class="num">${item.capacity}</td>
+          <td class="num">${item.openSeats}</td>
+          <td class="num">${item.utilization}%</td>
+          <td class="num">${item.full}</td>
+          <td class="num">${item.low}</td>
+        </tr>
+      `).join("");
+
+      const revenueRows = revenueMetricSections();
+      const totalEnrollment = revenueRows.reduce((sum, item) => sum + item.enrolled, 0);
+      const totalCapacity = revenueRows.reduce((sum, item) => sum + item.capacity, 0);
+      const totalOpen = totalCapacity - totalEnrollment;
+      document.getElementById("revenueCallout").innerHTML =
+        `<strong>SBO note:</strong> this view counts PRIN 550 under Product Innovation and excludes the duplicate IDSN 547 rows from revenue and capacity totals. Current unduplicated totals show ${totalEnrollment} enrolled seats and ${totalOpen} open seats across ${revenueRows.length} counted sections.`;
+    }
+
+    function renderCapacityCards() {
+      const sections = metricSections(filteredSections());
+      const groups = [
+        { title: "Full", className: "full", items: sections.filter(item => statusFor(item).className === "full") },
+        { title: "Near Capacity", className: "near", items: sections.filter(item => statusFor(item).className === "near") },
+        { title: "Healthy", className: "healthy", items: sections.filter(item => statusFor(item).className === "healthy") },
+        { title: "Low Enrollment", className: "low", items: sections.filter(item => statusFor(item).className === "low") }
+      ];
+
+      document.getElementById("capacityCards").innerHTML = groups.map(group => `
+        <article class="status-card">
+          <h3>${badge({ label: group.title, className: group.className })}</h3>
+          <ul class="course-list">
+            ${group.items.map(item => `
+              <li>
+                <span>${shortCourse(item.course)} <small>${item.section}${item.note ? ` | ${item.note}` : ""}</small></span>
+                <strong>${item.enrolled}/${item.capacity}</strong>
+              </li>
+            `).join("") || "<li><span>No sections</span><strong>-</strong></li>"}
+          </ul>
+        </article>
+      `).join("");
+    }
+
+    function renderTrendLog() {
+      const visibleTrends = activeProgram === "All Programs"
+        ? dashboardData.trendLog
+        : dashboardData.trendLog.filter(item => {
+            const section = dashboardData.sections.find(sectionItem => sectionItem.section === item.section);
+            return section && section.program === activeProgram;
+          });
+
+      const groups = new Map();
+      visibleTrends.forEach(item => {
+        const config = periodConfig(item.date);
+        if (!groups.has(config.key)) {
+          groups.set(config.key, { ...config, items: [] });
+        }
+        groups.get(config.key).items.push(item);
+      });
+
+      const sortedGroups = [...groups.values()].sort((a, b) => b.rank - a.rank);
+
+      const trendList = document.getElementById("trendList");
+      if (!trendList) return;
+      trendList.innerHTML = sortedGroups.map((group, index) => {
+        const changedItems = group.items.filter(item => item.current !== item.previous);
+        const net = changedItems.reduce((sum, item) => sum + item.current - item.previous, 0);
+        const gains = changedItems.filter(item => item.current > item.previous).length;
+        const drops = changedItems.filter(item => item.current < item.previous).length;
+        const itemsToShow = changedItems.length ? changedItems : group.items;
+        return `
+          <details class="trend-period" ${index === 0 ? "open" : ""}>
+            <summary>
+              <span class="trend-period-title">${group.title}</span>
+              <span class="trend-period-meta">${changedItems.length} changed section${changedItems.length === 1 ? "" : "s"} | ${gains} gain${gains === 1 ? "" : "s"} | ${drops} drop${drops === 1 ? "" : "s"}</span>
+              <span class="trend-period-net ${trendClass(net)}">${trendLabel(net)}</span>
+            </summary>
+            <div class="trend-period-body">
+              <ul class="trend-change-list">
+                ${itemsToShow.map(item => {
+                  const change = item.current - item.previous;
+                  const status = change > 0 ? { label: "Growing", className: "healthy" } : change < 0 ? { label: "Declining", className: "full" } : { label: "Stable", className: "watch" };
+                  return `
+                    <li>
+                      <span><strong>${item.course}</strong><br><small>Section ${item.section}</small></span>
+                      <span>Previous: <strong>${item.previous}</strong></span>
+                      <span>Current: <strong>${item.current}</strong></span>
+                      <span class="${trendClass(change)}">${trendLabel(change)}</span>
+                      <span>${badge(status)}</span>
+                    </li>
+                  `;
+                }).join("")}
+              </ul>
+            </div>
+          </details>
+        `;
+      }).join("") || `<div class="trend-period"><div class="trend-period-body">No trend entries match the selected program.</div></div>`;
+    }
+
+    function periodConfig(date) {
+      const rankMap = {
+        "7/31/2026 Afternoon": 7,
+        "7/31/2026 AM": 6,
+        "7/30/2026 AM": 5,
+        "7/29/2026 Late Evening": 4,
+        "7/29/2026 Afternoon": 3,
+        "7/29/2026 PM": 3,
+        "7/29/2026 AM": 2,
+        "7/28/2026 PM Baseline": 1
+      };
+      const matchedKey = Object.keys(rankMap).find(key => date.includes(key));
+      const key = (matchedKey || date).toLowerCase().replace(/[^a-z0-9]+/g, "-");
+      const title = matchedKey
+        ? `${matchedKey}${matchedKey.includes("Baseline") ? "" : " Update"}`
+        : `${date} Update`;
+      const labelMap = {
+        "7/28/2026 PM Baseline": "7/28 PM",
+        "7/29/2026 AM": "7/29 AM",
+        "7/29/2026 Afternoon": "7/29 PM",
+        "7/29/2026 PM": "7/29 PM",
+        "7/29/2026 Late Evening": "7/29 Late",
+        "7/30/2026 AM": "7/30 AM",
+        "7/31/2026 AM": "7/31 AM",
+        "7/31/2026 Afternoon": "7/31 PM"
+      };
+      return { key, title, label: labelMap[matchedKey] || date, rank: rankMap[matchedKey] || 1 };
+    }
+
+    function trendPeriod(date) {
+      if (date.includes("7/31/2026 Afternoon")) return "Latest";
+      if (date.includes("7/31/2026 AM")) return "Previous";
+      if (date.includes("7/30/2026")) return "Previous";
+      if (date.includes("Baseline") || date.includes("7/28/2026")) return "Yesterday";
+      if (date.includes("Afternoon")) return "Afternoon";
+      if (date.includes("7/29/2026")) return "Morning";
+      return "Yesterday";
+    }
+
+    function sectionKey(item) {
+      return `${item.program}|${item.section}`;
+    }
+
+    function buildTrendSnapshots() {
+      const currentRows = revenueMetricSections().map(item => ({ ...item }));
+      const bySection = new Map(currentRows.map(item => [item.section, item]));
+      const periods = [...new Map(
+        dashboardData.trendLog
+          .map(item => periodConfig(item.date))
+          .sort((a, b) => a.rank - b.rank)
+          .map(config => [config.key, config])
+      ).values()];
+
+      const rows = currentRows.map(row => {
+        const values = { row };
+        periods.forEach(period => {
+          const laterChange = dashboardData.trendLog
+            .filter(trend => trend.section === row.section)
+            .filter(trend => bySection.has(trend.section))
+            .filter(trend => periodConfig(trend.date).rank > period.rank)
+            .reduce((sum, trend) => sum + (trend.current - trend.previous), 0);
+          values[period.key] = row.enrolled - laterChange;
+        });
+        return values;
+      });
+
+      return { periods, rows };
+    }
+
+    function programColor(program) {
+      const colors = {
+        "Undergraduate ACAD": "#9d1b1e",
+        "Graduate IDSN": "#49664d",
+        "Product Innovation": "#8a6030"
+      };
+      return colors[program] || "#647b86";
+    }
+
+    function programShortName(program) {
+      const names = {
+        "Undergraduate ACAD": "ACAD",
+        "Graduate IDSN": "IDSN",
+        "Product Innovation": "PRIN"
+      };
+      return names[program] || program;
+    }
+
+    function programClass(program) {
+      const classes = {
+        "Undergraduate ACAD": "acad",
+        "Graduate IDSN": "idsn",
+        "Product Innovation": "prin"
+      };
+      return classes[program] || "";
+    }
+
+    function programFilterLabel(program) {
+      const labels = {
+        "All Programs": "All IYA Programs",
+        "Undergraduate ACAD": "ACAD - Undergraduate",
+        "Graduate IDSN": "IDSN - Graduate",
+        "Product Innovation": "PRIN - Product Innovation"
+      };
+      return labels[program] || program;
+    }
+
+    function programDisplayName(program) {
+      const labels = {
+        "Undergraduate ACAD": "Undergraduate ACAD",
+        "Graduate IDSN": "Graduate IDSN",
+        "Product Innovation": "PRIN - Product Innovation"
+      };
+      return labels[program] || program;
+    }
+
+    function renderTrendChart() {
+      const svg = document.getElementById("trendChart");
+      const legend = document.getElementById("chartLegend");
+      const { periods, rows } = buildTrendSnapshots();
+      const visibleRows = activeProgram === "All Programs"
+        ? rows
+        : rows.filter(item => item.row.program === activeProgram);
+      const programs = activeProgram === "All Programs"
+        ? programNames().filter(program => program !== "All Programs" && visibleRows.some(item => item.row.program === program))
+        : [activeProgram];
+
+      const totals = programs.map(program => ({
+        program,
+        values: periods.map(period => visibleRows
+          .filter(item => item.row.program === program)
+          .reduce((sum, item) => sum + item[period.key], 0))
+      }));
+
+      const width = 900;
+      const height = 340;
+      const pad = { top: 28, right: 34, bottom: 54, left: 64 };
+      const maxValue = Math.max(10, ...totals.flatMap(item => item.values));
+      const x = index => pad.left + index * ((width - pad.left - pad.right) / (periods.length - 1));
+      const y = value => height - pad.bottom - (value / maxValue) * (height - pad.top - pad.bottom);
+      const gridValues = [0, 0.25, 0.5, 0.75, 1].map(step => Math.round(maxValue * step));
+
+      svg.setAttribute("viewBox", `0 0 ${width} ${height}`);
+      svg.innerHTML = `
+        ${gridValues.map(value => `
+          <line class="chart-grid" x1="${pad.left}" y1="${y(value)}" x2="${width - pad.right}" y2="${y(value)}"></line>
+          <text class="chart-label" x="${pad.left - 10}" y="${y(value) + 4}" text-anchor="end">${value}</text>
+        `).join("")}
+        <line class="chart-axis" x1="${pad.left}" y1="${height - pad.bottom}" x2="${width - pad.right}" y2="${height - pad.bottom}"></line>
+        <line class="chart-axis" x1="${pad.left}" y1="${pad.top}" x2="${pad.left}" y2="${height - pad.bottom}"></line>
+        ${periods.map((period, index) => `
+          <text class="chart-label" x="${x(index)}" y="${height - 20}" text-anchor="middle">${period.label}</text>
+        `).join("")}
+        ${totals.map(series => {
+          const points = series.values.map((value, index) => `${x(index)},${y(value)}`).join(" ");
+          return `
+            <polyline points="${points}" fill="none" stroke="${programColor(series.program)}" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"></polyline>
+            ${series.values.map((value, index) => `
+              <circle cx="${x(index)}" cy="${y(value)}" r="6" fill="${programColor(series.program)}"></circle>
+              <text class="chart-value" x="${x(index)}" y="${y(value) - 10}" text-anchor="middle">${value}</text>
+            `).join("")}
+          `;
+        }).join("")}
+      `;
+
+      legend.innerHTML = totals.map(series => `
+        <span class="legend-item"><span class="legend-swatch" style="background:${programColor(series.program)}"></span>${series.program}</span>
+      `).join("");
+
+    }
+
+    function renderSections() {
+      document.getElementById("sectionsBody").innerHTML = filteredSectionRows().map(item => {
+        const status = statusFor(item);
+        return `
+          <tr>
+            <td data-program="${programShortName(item.program)}"><span class="course-name">${item.course}</span>${item.note ? `<small class="row-note">${item.note}</small>` : ""}</td>
+            <td>${item.section}</td>
+            <td>${item.instructor}</td>
+            <td class="num">${displayValue(item.enrolled)}</td>
+            <td class="num">${displayValue(item.capacity)}</td>
+            <td class="num">${displayAvailable(item)}</td>
+            <td class="num">${displayCapacityPercent(item)}</td>
+            <td>${badge(status)}</td>
+          </tr>
+        `;
+      }).join("") || `
+        <tr>
+          <td colspan="8">No sections match the selected filters.</td>
+        </tr>
+      `;
+    }
+
+    function renderPrograms() {
+      const programs = programNames().filter(program => program !== "All Programs");
+      document.getElementById("programGrid").innerHTML = programs.map(program => {
+        const sections = revenueMetricSections().filter(item => item.program === program);
+        const enrollment = sections.reduce((sum, item) => sum + item.enrolled, 0);
+        const capacity = sections.reduce((sum, item) => sum + item.capacity, 0);
+        const full = sections.filter(item => statusFor(item).className === "full").length;
+        const low = sections.filter(item => statusFor(item).className === "low").length;
+        const pct = capacity > 0 ? Math.round((enrollment / capacity) * 100) : 0;
+        return `
+          <article class="program-card">
+            <h3>${programDisplayName(program)}</h3>
+            <dl>
+              <dt>Sections</dt><dd>${sections.length}</dd>
+              <dt>Enrollment</dt><dd>${enrollment}/${capacity}</dd>
+              <dt>Overall Capacity</dt><dd>${pct}%</dd>
+              <dt>Full Sections</dt><dd>${full}</dd>
+              <dt>Low Sections</dt><dd>${low}</dd>
+            </dl>
+          </article>
+        `;
+      }).join("");
+      document.getElementById("programSummaryNote").innerHTML =
+        "<strong>Cross-listing note:</strong> IDSN 547 / PRIN 550 is allocated to Product Innovation in this summary. The matching IDSN 547 rows remain visible elsewhere for program context, but are excluded here to avoid double-counting.";
+    }
+
+    function renderCourseAssistants() {
+      const rows = dashboardData.courseAssistants || [];
+      document.getElementById("assistantsBody").innerHTML = rows.map(item => `
+        <tr>
+          <td><strong>${item.priority}</strong></td>
+          <td>${item.course}</td>
+          <td>${item.section}</td>
+          <td>${item.instructor}</td>
+          <td class="num">${item.enrollment}</td>
+          <td>${item.need}</td>
+          <td>${item.status}</td>
+          <td>${item.notes}</td>
+        </tr>
+      `).join("") || `
+        <tr>
+          <td colspan="8">No course assistant hiring needs have been added yet.</td>
+        </tr>
+      `;
+    }
+
+    function renderFaculty() {
+      document.getElementById("facultyGrid").innerHTML = dashboardData.facultyNotes.map(item => `
+        <article class="faculty-card">
+          <h3>${item.faculty}</h3>
+          <p>${item.note}</p>
+        </article>
+      `).join("");
+    }
+
+    function renderTermTiming() {
+      const target = document.getElementById("daysUntilClasses");
+      if (!target) return;
+      const today = new Date();
+      const start = new Date(2026, 7, 24);
+      today.setHours(0, 0, 0, 0);
+      start.setHours(0, 0, 0, 0);
+      const days = Math.max(0, Math.ceil((start - today) / 86400000));
+      target.textContent = days;
+    }
+
+    function renderProgramFilter() {
+      const filter = document.getElementById("programFilter");
+      filter.innerHTML = programNames().map(program => `<option value="${program}">${program}</option>`).join("");
+      filter.value = activeProgram;
+      filter.addEventListener("change", event => {
+        activeProgram = event.target.value;
+        renderKpis();
+        renderLeadershipSummary();
+        renderCapacityCards();
+        renderTrendLog();
+        renderTrendChart();
+        renderSections();
+      });
+    }
+
+    function renderSectionFilters() {
+      const programFilter = document.getElementById("sectionProgramFilter");
+      const statusFilter = document.getElementById("sectionStatusFilter");
+      const searchFilter = document.getElementById("sectionSearchFilter");
+      const resetButton = document.getElementById("sectionFilterReset");
+
+      programFilter.innerHTML = programNames().map(program => `<option value="${program}">${programFilterLabel(program)}</option>`).join("");
+      programFilter.value = sectionFilters.program;
+      statusFilter.value = sectionFilters.status;
+      searchFilter.value = sectionFilters.search;
+
+      programFilter.addEventListener("change", event => {
+        sectionFilters.program = event.target.value;
+        renderSections();
+      });
+
+      statusFilter.addEventListener("change", event => {
+        sectionFilters.status = event.target.value;
+        renderSections();
+      });
+
+      searchFilter.addEventListener("input", event => {
+        sectionFilters.search = event.target.value;
+        renderSections();
+      });
+
+      resetButton.addEventListener("click", () => {
+        sectionFilters = {
+          program: "All Programs",
+          status: "All Statuses",
+          search: ""
+        };
+        programFilter.value = sectionFilters.program;
+        statusFilter.value = sectionFilters.status;
+        searchFilter.value = sectionFilters.search;
+        renderSections();
+      });
+    }
+
+    function sortTable(table, columnIndex) {
+      const tbody = table.querySelector("tbody");
+      const rows = Array.from(tbody.querySelectorAll("tr"));
+      const current = table.dataset.sortColumn === String(columnIndex) ? table.dataset.sortDirection : "desc";
+      const direction = current === "asc" ? "desc" : "asc";
+
+      rows.sort((a, b) => {
+        const aText = a.children[columnIndex].innerText.replace("%", "").replace("+", "").trim();
+        const bText = b.children[columnIndex].innerText.replace("%", "").replace("+", "").trim();
+        const aNum = Number(aText);
+        const bNum = Number(bText);
+        const result = Number.isFinite(aNum) && Number.isFinite(bNum)
+          ? aNum - bNum
+          : aText.localeCompare(bText);
+        return direction === "asc" ? result : -result;
+      });
+
+      table.dataset.sortColumn = String(columnIndex);
+      table.dataset.sortDirection = direction;
+      tbody.innerHTML = "";
+      rows.forEach(row => tbody.appendChild(row));
+    }
+
+    function enableSorting() {
+      document.querySelectorAll("table").forEach(table => {
+        table.querySelectorAll("th").forEach((header, index) => {
+          const label = header.textContent.trim();
+          header.textContent = "";
+          const button = document.createElement("button");
+          button.type = "button";
+          button.className = "sort-button";
+          button.textContent = label;
+          button.setAttribute("aria-label", `Sort by ${label}`);
+          button.addEventListener("click", () => sortTable(table, index));
+          header.appendChild(button);
+        });
+      });
+    }
+
+    function setupBackToTop() {
+      const button = document.getElementById("backToTop");
+      const updateVisibility = () => {
+        button.classList.toggle("visible", window.scrollY > 500);
+      };
+      button.addEventListener("click", () => {
+        window.scrollTo({ top: 0, behavior: "smooth" });
+      });
+      window.addEventListener("scroll", updateVisibility, { passive: true });
+      updateVisibility();
+    }
+
+    function init() {
+      document.title = dashboardData.title;
+      renderKpis();
+      renderLeadershipSummary();
+      renderRevenueView();
+      renderCapacityCards();
+      renderPrograms();
+      renderTrendLog();
+      renderTrendChart();
+      renderSections();
+      renderCourseAssistants();
+      renderTermTiming();
+      renderProgramFilter();
+      renderSectionFilters();
+      enableSorting();
+      setupBackToTop();
+    }
+
+    init();
+  </script>
+</body>
+</html>
