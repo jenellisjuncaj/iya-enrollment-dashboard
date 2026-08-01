@@ -791,10 +791,6 @@
       font-size: 0.9rem;
     }
 
-    .waitlist-trend-table {
-      margin-top: 18px;
-    }
-
     .legend-item {
       display: inline-flex;
       align-items: center;
@@ -888,10 +884,6 @@
       border-top: 1px solid #eee6dd;
       padding: 10px 0;
       color: var(--olive-dark);
-    }
-
-    .trend-change-list li.has-waitlist {
-      grid-template-columns: minmax(250px, 1fr) 90px 90px 150px 70px 125px;
     }
 
     .trend-change-list li:first-child {
@@ -1229,40 +1221,6 @@
       </div>
     </details>
 
-    <details class="collapsible-section" open aria-labelledby="waitlistChartTitle">
-      <summary>
-        <div class="section-head">
-          <div>
-            <h2 id="waitlistChartTitle">Waitlist Trends by Class</h2>
-          </div>
-          <span class="collapse-control" aria-hidden="true"></span>
-        </div>
-      </summary>
-      <div class="collapsible-content">
-        <div class="chart-panel">
-          <div class="chart-wrap">
-            <svg class="trend-chart" id="waitlistTrendChart" role="img" aria-labelledby="waitlistChartTitle"></svg>
-          </div>
-          <div class="chart-legend" id="waitlistChartLegend"></div>
-          <div class="table-wrap waitlist-trend-table">
-            <table class="metric-table" data-table="waitlist-trends">
-              <thead>
-                <tr>
-                  <th>Class</th>
-                  <th>Program</th>
-                  <th>Section</th>
-                  <th class="num">Previous</th>
-                  <th class="num">Current</th>
-                  <th class="num">Change</th>
-                </tr>
-              </thead>
-              <tbody id="waitlistTrendBody"></tbody>
-            </table>
-          </div>
-        </div>
-      </div>
-    </details>
-
     <details class="collapsible-section" open aria-labelledby="sectionsTitle">
       <summary>
         <div class="section-head">
@@ -1308,7 +1266,6 @@
                   <th>Instructor</th>
                   <th class="num">Enrolled</th>
                   <th class="num">Capacity</th>
-                  <th class="num">Waitlist</th>
                   <th class="num">Available</th>
                   <th class="num">% Full</th>
                   <th>Status</th>
@@ -1369,7 +1326,7 @@
     */
     const dashboardData = {
       "title": "USC Iovine and Young Academy Enrollment and Capacity Tracker",
-      "currentSnapshot": "7/31/26 evening PT - ACAD + IDSN + PRIN update",
+      "currentSnapshot": "August 1, 2026 - afternoon ACAD + IDSN + PRIN update",
       "baselineSnapshot": "July 28, 2026",
       "lowThreshold": 50,
       "nearThreshold": 80,
@@ -1430,7 +1387,7 @@
                   "course": "IDSN 524 Physical Product Design",
                   "section": "34079",
                   "instructor": "Safir Bellali",
-                  "enrollment": "21/32",
+                  "enrollment": "20/32",
                   "need": "Review CA coverage",
                   "status": "To review",
                   "notes": "Confirmed section; removed unconfirmed TBD hybrid placeholder."
@@ -1440,7 +1397,7 @@
                   "course": "IDSN 542 Introduction to Machine Intelligence",
                   "section": "34198 / 34197",
                   "instructor": "Thanassis Rikakis",
-                  "enrollment": "14/32 + 17/30",
+                  "enrollment": "14/32 + 16/30",
                   "need": "Review CA coverage",
                   "status": "Hybrid pair",
                   "notes": "Same course with a hybrid online section."
@@ -1484,16 +1441,6 @@
                   "need": "Review CA coverage",
                   "status": "Hybrid pair",
                   "notes": "Hybrid in-person and online sections taught at the same day/time."
-            },
-            {
-                  "priority": "High",
-                  "course": "PRIN 550 / IDSN 547 Industry and Impact Projects",
-                  "section": "34782",
-                  "instructor": "Matthew Manos",
-                  "enrollment": "40/40",
-                  "need": "Confirm CA coverage",
-                  "status": "To review",
-                  "notes": "Full cross-listed section with one student waitlisted; counted once under Product Innovation."
             }
       ],
       "sections": [
@@ -1503,7 +1450,8 @@
                   "section": "10200",
                   "instructor": "Stephen Child, Thomas Dadourian",
                   "enrolled": 76,
-                  "capacity": 90
+                  "capacity": 90,
+                  "waitlisted": 0
             },
             {
                   "program": "Undergraduate ACAD",
@@ -1511,7 +1459,8 @@
                   "section": "10203",
                   "instructor": "Aaron Siegel",
                   "enrolled": 22,
-                  "capacity": 32
+                  "capacity": 32,
+                  "waitlisted": 0
             },
             {
                   "program": "Undergraduate ACAD",
@@ -1519,7 +1468,8 @@
                   "section": "10201",
                   "instructor": "Stephen Child",
                   "enrolled": 32,
-                  "capacity": 32
+                  "capacity": 32,
+                  "waitlisted": 0
             },
             {
                   "program": "Undergraduate ACAD",
@@ -1527,7 +1477,8 @@
                   "section": "10202",
                   "instructor": "Kia McCormick",
                   "enrolled": 32,
-                  "capacity": 32
+                  "capacity": 32,
+                  "waitlisted": 0
             },
             {
                   "program": "Undergraduate ACAD",
@@ -1535,7 +1486,8 @@
                   "section": "10204",
                   "instructor": "Olamiposi Somoye",
                   "enrolled": 21,
-                  "capacity": 32
+                  "capacity": 32,
+                  "waitlisted": 0
             },
             {
                   "program": "Undergraduate ACAD",
@@ -1543,7 +1495,8 @@
                   "section": "10211",
                   "instructor": "Chris Swain",
                   "enrolled": 14,
-                  "capacity": 32
+                  "capacity": 32,
+                  "waitlisted": 0
             },
             {
                   "program": "Undergraduate ACAD",
@@ -1551,7 +1504,8 @@
                   "section": "10210",
                   "instructor": "Michael Kanazawa",
                   "enrolled": 74,
-                  "capacity": 90
+                  "capacity": 90,
+                  "waitlisted": 0
             },
             {
                   "program": "Undergraduate ACAD",
@@ -1559,7 +1513,8 @@
                   "section": "10212",
                   "instructor": "Chris Swain",
                   "enrolled": 40,
-                  "capacity": 80
+                  "capacity": 80,
+                  "waitlisted": 0
             },
             {
                   "program": "Undergraduate ACAD",
@@ -1567,7 +1522,8 @@
                   "section": "10215",
                   "instructor": "Kia McCormick",
                   "enrolled": 32,
-                  "capacity": 32
+                  "capacity": 32,
+                  "waitlisted": 0
             },
             {
                   "program": "Undergraduate ACAD",
@@ -1575,7 +1531,8 @@
                   "section": "10217",
                   "instructor": "Aaron Siegel",
                   "enrolled": 24,
-                  "capacity": 32
+                  "capacity": 32,
+                  "waitlisted": 0
             },
             {
                   "program": "Undergraduate ACAD",
@@ -1583,7 +1540,8 @@
                   "section": "10218",
                   "instructor": "Kia McCormick",
                   "enrolled": 32,
-                  "capacity": 32
+                  "capacity": 32,
+                  "waitlisted": 0
             },
             {
                   "program": "Undergraduate ACAD",
@@ -1591,7 +1549,8 @@
                   "section": "10219",
                   "instructor": "John Bruneau",
                   "enrolled": 39,
-                  "capacity": 40
+                  "capacity": 40,
+                  "waitlisted": 0
             },
             {
                   "program": "Undergraduate ACAD",
@@ -1599,7 +1558,8 @@
                   "section": "10225",
                   "instructor": "Carsten Becker",
                   "enrolled": 18,
-                  "capacity": 30
+                  "capacity": 30,
+                  "waitlisted": 0
             },
             {
                   "program": "Undergraduate ACAD",
@@ -1607,7 +1567,8 @@
                   "section": "10227",
                   "instructor": "John Bruneau",
                   "enrolled": 32,
-                  "capacity": 32
+                  "capacity": 32,
+                  "waitlisted": 0
             },
             {
                   "program": "Undergraduate ACAD",
@@ -1615,7 +1576,8 @@
                   "section": "10231",
                   "instructor": "Safir Bellali",
                   "enrolled": 19,
-                  "capacity": 35
+                  "capacity": 35,
+                  "waitlisted": 0
             },
             {
                   "program": "Undergraduate ACAD",
@@ -1623,7 +1585,8 @@
                   "section": "10232",
                   "instructor": "Grant Delgatty",
                   "enrolled": 19,
-                  "capacity": 35
+                  "capacity": 35,
+                  "waitlisted": 0
             },
             {
                   "program": "Undergraduate ACAD",
@@ -1631,7 +1594,8 @@
                   "section": "10237",
                   "instructor": "Armine Lulejian",
                   "enrolled": 6,
-                  "capacity": 32
+                  "capacity": 32,
+                  "waitlisted": 0
             },
             {
                   "program": "Undergraduate ACAD",
@@ -1639,7 +1603,8 @@
                   "section": "10238",
                   "instructor": "Patrick Dent",
                   "enrolled": 27,
-                  "capacity": 40
+                  "capacity": 40,
+                  "waitlisted": 0
             },
             {
                   "program": "Undergraduate ACAD",
@@ -1647,7 +1612,8 @@
                   "section": "10242",
                   "instructor": "Patrick Dent",
                   "enrolled": 15,
-                  "capacity": 40
+                  "capacity": 40,
+                  "waitlisted": 0
             },
             {
                   "program": "Undergraduate ACAD",
@@ -1655,7 +1621,8 @@
                   "section": "10253",
                   "instructor": "Doug Thomas",
                   "enrolled": 140,
-                  "capacity": 140
+                  "capacity": 140,
+                  "waitlisted": 0
             },
             {
                   "program": "Undergraduate ACAD",
@@ -1663,7 +1630,8 @@
                   "section": "10248",
                   "instructor": "Davina Wolter, Olamiposi Somoye",
                   "enrolled": 41,
-                  "capacity": 41
+                  "capacity": 41,
+                  "waitlisted": 0
             },
             {
                   "program": "Undergraduate ACAD",
@@ -1671,7 +1639,8 @@
                   "section": "10249",
                   "instructor": "Davina Wolter, Olamiposi Somoye",
                   "enrolled": 41,
-                  "capacity": 41
+                  "capacity": 41,
+                  "waitlisted": 0
             },
             {
                   "program": "Undergraduate ACAD",
@@ -1679,7 +1648,8 @@
                   "section": "10250",
                   "instructor": "SeoYoon Sung",
                   "enrolled": 19,
-                  "capacity": 40
+                  "capacity": 40,
+                  "waitlisted": 0
             },
             {
                   "program": "Undergraduate ACAD",
@@ -1687,7 +1657,8 @@
                   "section": "10269",
                   "instructor": "Yihyun Lim, Thomas Dadourian",
                   "enrolled": 74,
-                  "capacity": 75
+                  "capacity": 75,
+                  "waitlisted": 0
             },
             {
                   "program": "Undergraduate ACAD",
@@ -1695,7 +1666,8 @@
                   "section": "10256",
                   "instructor": "Chris Swain",
                   "enrolled": 48,
-                  "capacity": 50
+                  "capacity": 50,
+                  "waitlisted": 0
             },
             {
                   "program": "Undergraduate ACAD",
@@ -1703,7 +1675,8 @@
                   "section": "10257",
                   "instructor": "Chris Swain",
                   "enrolled": 6,
-                  "capacity": 25
+                  "capacity": 25,
+                  "waitlisted": 0
             },
             {
                   "program": "Undergraduate ACAD",
@@ -1711,7 +1684,8 @@
                   "section": "10259",
                   "instructor": "Patrick Dent",
                   "enrolled": 1,
-                  "capacity": 20
+                  "capacity": 20,
+                  "waitlisted": 0
             },
             {
                   "program": "Undergraduate ACAD",
@@ -1719,7 +1693,8 @@
                   "section": "10280",
                   "instructor": "Grant Delgatty",
                   "enrolled": 30,
-                  "capacity": 40
+                  "capacity": 40,
+                  "waitlisted": 0
             },
             {
                   "program": "Undergraduate ACAD",
@@ -1727,7 +1702,8 @@
                   "section": "10283",
                   "instructor": "Kia McCormick",
                   "enrolled": 15,
-                  "capacity": 15
+                  "capacity": 15,
+                  "waitlisted": 0
             },
             {
                   "program": "Undergraduate ACAD",
@@ -1735,7 +1711,8 @@
                   "section": "10286",
                   "instructor": "Matthew Manos",
                   "enrolled": 53,
-                  "capacity": 54
+                  "capacity": 54,
+                  "waitlisted": 0
             },
             {
                   "program": "Undergraduate ACAD",
@@ -1743,7 +1720,8 @@
                   "section": "10288",
                   "instructor": "Chris Swain",
                   "enrolled": 1,
-                  "capacity": 1
+                  "capacity": 1,
+                  "waitlisted": 0
             },
             {
                   "program": "Undergraduate ACAD",
@@ -1751,7 +1729,8 @@
                   "section": "10289",
                   "instructor": "Grant Delgatty",
                   "enrolled": 1,
-                  "capacity": 1
+                  "capacity": 1,
+                  "waitlisted": 0
             },
             {
                   "program": "Undergraduate ACAD",
@@ -1759,7 +1738,8 @@
                   "section": "10290",
                   "instructor": "Matthew Manos",
                   "enrolled": 1,
-                  "capacity": 2
+                  "capacity": 2,
+                  "waitlisted": 0
             },
             {
                   "program": "Undergraduate ACAD",
@@ -1767,7 +1747,8 @@
                   "section": "10294",
                   "instructor": "Chris Swain",
                   "enrolled": 1,
-                  "capacity": 1
+                  "capacity": 1,
+                  "waitlisted": 0
             },
             {
                   "program": "Undergraduate ACAD",
@@ -1775,7 +1756,8 @@
                   "section": "10295",
                   "instructor": "Matthew Manos",
                   "enrolled": 1,
-                  "capacity": 1
+                  "capacity": 1,
+                  "waitlisted": 0
             },
             {
                   "program": "Undergraduate ACAD",
@@ -1784,7 +1766,8 @@
                   "instructor": "Doug Thomas",
                   "enrolled": 35,
                   "capacity": 49,
-                  "note": "Understanding AI."
+                  "waitlisted": 0,
+                  "note": "Understanding AI"
             },
             {
                   "program": "Graduate IDSN",
@@ -1793,9 +1776,10 @@
                   "instructor": "Stephen Child",
                   "enrolled": 0,
                   "capacity": 25,
+                  "waitlisted": 0,
                   "note": "Cancelled 7/29/26",
-                  "cancelled": true,
-                  "metrics": false
+                  "metrics": false,
+                  "status": "Cancelled"
             },
             {
                   "program": "Graduate IDSN",
@@ -1803,7 +1787,8 @@
                   "section": "34062",
                   "instructor": "Stephen Child",
                   "enrolled": 16,
-                  "capacity": 30
+                  "capacity": 30,
+                  "waitlisted": 0
             },
             {
                   "program": "Graduate IDSN",
@@ -1811,7 +1796,8 @@
                   "section": "34063",
                   "instructor": "Safir Bellali",
                   "enrolled": 19,
-                  "capacity": 30
+                  "capacity": 30,
+                  "waitlisted": 0
             },
             {
                   "program": "Graduate IDSN",
@@ -1819,7 +1805,8 @@
                   "section": "34199",
                   "instructor": "Patrick Dent",
                   "enrolled": 1,
-                  "capacity": 3
+                  "capacity": 3,
+                  "waitlisted": 0
             },
             {
                   "program": "Graduate IDSN",
@@ -1827,7 +1814,8 @@
                   "section": "34060",
                   "instructor": "Sue-Tze Tan",
                   "enrolled": 2,
-                  "capacity": 25
+                  "capacity": 25,
+                  "waitlisted": 0
             },
             {
                   "program": "Graduate IDSN",
@@ -1835,7 +1823,8 @@
                   "section": "34076",
                   "instructor": "Stephen Child",
                   "enrolled": 35,
-                  "capacity": 35
+                  "capacity": 35,
+                  "waitlisted": 0
             },
             {
                   "program": "Graduate IDSN",
@@ -1843,7 +1832,8 @@
                   "section": "34058",
                   "instructor": "Yihyun Lim",
                   "enrolled": 33,
-                  "capacity": 40
+                  "capacity": 40,
+                  "waitlisted": 0
             },
             {
                   "program": "Graduate IDSN",
@@ -1851,7 +1841,8 @@
                   "section": "34079",
                   "instructor": "Safir Bellali",
                   "enrolled": 21,
-                  "capacity": 32
+                  "capacity": 32,
+                  "waitlisted": 0
             },
             {
                   "program": "Graduate IDSN",
@@ -1859,15 +1850,17 @@
                   "section": "34091",
                   "instructor": "Tina Sharkey",
                   "enrolled": 38,
-                  "capacity": 40
+                  "capacity": 40,
+                  "waitlisted": 0
             },
             {
                   "program": "Graduate IDSN",
                   "course": "IDSN 532 Data and Back-End Development",
                   "section": "34066",
                   "instructor": "Jake Spurlock",
-                  "enrolled": 2,
-                  "capacity": 25
+                  "enrolled": 3,
+                  "capacity": 25,
+                  "waitlisted": 0
             },
             {
                   "program": "Graduate IDSN",
@@ -1875,7 +1868,8 @@
                   "section": "34155",
                   "instructor": "John Bruneau",
                   "enrolled": 19,
-                  "capacity": 25
+                  "capacity": 25,
+                  "waitlisted": 0
             },
             {
                   "program": "Graduate IDSN",
@@ -1883,15 +1877,17 @@
                   "section": "34070",
                   "instructor": "Carsten Becker",
                   "enrolled": 18,
-                  "capacity": 32
+                  "capacity": 32,
+                  "waitlisted": 0
             },
             {
                   "program": "Graduate IDSN",
                   "course": "IDSN 538 Extended Reality Technologies",
                   "section": "34094",
                   "instructor": "Carsten Becker",
-                  "enrolled": 18,
-                  "capacity": 30
+                  "enrolled": 17,
+                  "capacity": 30,
+                  "waitlisted": 0
             },
             {
                   "program": "Graduate IDSN",
@@ -1899,7 +1895,8 @@
                   "section": "34101",
                   "instructor": "Aaron Siegel",
                   "enrolled": 22,
-                  "capacity": 40
+                  "capacity": 40,
+                  "waitlisted": 0
             },
             {
                   "program": "Graduate IDSN",
@@ -1907,7 +1904,8 @@
                   "section": "34080",
                   "instructor": "Yihyun Lim",
                   "enrolled": 24,
-                  "capacity": 40
+                  "capacity": 40,
+                  "waitlisted": 0
             },
             {
                   "program": "Graduate IDSN",
@@ -1915,7 +1913,8 @@
                   "section": "34198",
                   "instructor": "Thanassis Rikakis",
                   "enrolled": 14,
-                  "capacity": 32
+                  "capacity": 32,
+                  "waitlisted": 0
             },
             {
                   "program": "Graduate IDSN",
@@ -1923,7 +1922,30 @@
                   "section": "34197",
                   "instructor": "Thanassis Rikakis",
                   "enrolled": 17,
-                  "capacity": 30
+                  "capacity": 30,
+                  "waitlisted": 0
+            },
+            {
+                  "program": "Graduate IDSN",
+                  "course": "PRIN 550 / IDSN 547 Industry and Impact Projects",
+                  "section": "34782",
+                  "instructor": "Matthew Manos",
+                  "enrolled": 40,
+                  "capacity": 40,
+                  "waitlisted": 1,
+                  "note": "Cross-listed; counted as PRIN 550 in summaries",
+                  "metrics": false
+            },
+            {
+                  "program": "Graduate IDSN",
+                  "course": "PRIN 550 / IDSN 547 Industry and Impact Projects",
+                  "section": "34785",
+                  "instructor": "Yihyun Lim",
+                  "enrolled": 7,
+                  "capacity": 30,
+                  "waitlisted": 0,
+                  "note": "Cross-listed; counted as PRIN 550 in summaries",
+                  "metrics": false
             },
             {
                   "program": "Graduate IDSN",
@@ -1932,7 +1954,8 @@
                   "instructor": "Eric Quick",
                   "enrolled": 9,
                   "capacity": 25,
-                  "note": "hybrid - online; paired with section 34147 in-person"
+                  "waitlisted": 0,
+                  "note": "Hybrid - online; paired with section 34147 in-person"
             },
             {
                   "program": "Graduate IDSN",
@@ -1941,7 +1964,8 @@
                   "instructor": "Eric Quick",
                   "enrolled": 15,
                   "capacity": 25,
-                  "note": "hybrid - in-person; paired with section 34167 online"
+                  "waitlisted": 0,
+                  "note": "Hybrid - in-person; paired with section 34167 online"
             },
             {
                   "program": "Graduate IDSN",
@@ -1949,7 +1973,8 @@
                   "section": "34151",
                   "instructor": "Thomas Dadourian",
                   "enrolled": 43,
-                  "capacity": 43
+                  "capacity": 43,
+                  "waitlisted": 0
             },
             {
                   "program": "Graduate IDSN",
@@ -1957,7 +1982,8 @@
                   "section": "34150",
                   "instructor": "Thomas Dadourian",
                   "enrolled": 14,
-                  "capacity": 25
+                  "capacity": 25,
+                  "waitlisted": 0
             },
             {
                   "program": "Graduate IDSN",
@@ -1966,7 +1992,8 @@
                   "instructor": "Keanan Duffty",
                   "enrolled": 23,
                   "capacity": 30,
-                  "note": "hybrid - in-person; paired with section 34169 online"
+                  "waitlisted": 0,
+                  "note": "Hybrid - in-person; paired with section 34169 online"
             },
             {
                   "program": "Graduate IDSN",
@@ -1975,7 +2002,8 @@
                   "instructor": "Keanan Duffty",
                   "enrolled": 1,
                   "capacity": 20,
-                  "note": "hybrid - online; paired with section 34170 in-person"
+                  "waitlisted": 0,
+                  "note": "Hybrid - online; paired with section 34170 in-person"
             },
             {
                   "program": "Graduate IDSN",
@@ -1983,7 +2011,8 @@
                   "section": "34172",
                   "instructor": "John Bruneau",
                   "enrolled": 1,
-                  "capacity": 1
+                  "capacity": 1,
+                  "waitlisted": 0
             },
             {
                   "program": "Graduate IDSN",
@@ -1991,7 +2020,8 @@
                   "section": "34173",
                   "instructor": "Chris Swain",
                   "enrolled": 0,
-                  "capacity": 1
+                  "capacity": 1,
+                  "waitlisted": 0
             },
             {
                   "program": "Graduate IDSN",
@@ -2000,7 +2030,8 @@
                   "instructor": "Keanan Duffty",
                   "enrolled": 23,
                   "capacity": 35,
-                  "note": "hybrid - in-person; paired with section 34192 online"
+                  "waitlisted": 0,
+                  "note": "Hybrid - in-person; paired with section 34192 online"
             },
             {
                   "program": "Graduate IDSN",
@@ -2009,7 +2040,8 @@
                   "instructor": "Keanan Duffty",
                   "enrolled": 1,
                   "capacity": 20,
-                  "note": "hybrid - online; paired with section 34191 in-person"
+                  "waitlisted": 0,
+                  "note": "Hybrid - online; paired with section 34191 in-person"
             },
             {
                   "program": "Graduate IDSN",
@@ -2018,7 +2050,8 @@
                   "instructor": "Michael Kanazawa",
                   "enrolled": 18,
                   "capacity": 25,
-                  "note": "hybrid - in-person; paired with section 34154 online"
+                  "waitlisted": 0,
+                  "note": "Hybrid - in-person; paired with section 34154 online"
             },
             {
                   "program": "Graduate IDSN",
@@ -2027,129 +2060,118 @@
                   "instructor": "Michael Kanazawa",
                   "enrolled": 10,
                   "capacity": 25,
-                  "note": "hybrid - online; paired with section 34153 in-person"
+                  "waitlisted": 0,
+                  "note": "Hybrid - online; paired with section 34153 in-person"
             },
             {
-                  "program": "Product Innovation",
+                  "program": "Product Innovation (PRIN)",
                   "course": "PRIN 520 Creators Studio",
                   "section": "34730",
                   "instructor": "Grant Delgatty",
                   "enrolled": 12,
-                  "capacity": 30
+                  "capacity": 30,
+                  "waitlisted": 0
             },
             {
-                  "program": "Product Innovation",
+                  "program": "Product Innovation (PRIN)",
                   "course": "PRIN 550 / IDSN 547 Industry and Impact Projects",
                   "section": "34782",
                   "instructor": "Matthew Manos",
                   "enrolled": 40,
                   "capacity": 40,
-                  "waitlist": 1,
-                  "note": "Cross-listed with IDSN 547; allocated to Product Innovation"
+                  "waitlisted": 1,
+                  "note": "Cross-listed with IDSN 547",
+                  "metrics": true
             },
             {
-                  "program": "Product Innovation",
+                  "program": "Product Innovation (PRIN)",
                   "course": "PRIN 550 / IDSN 547 Industry and Impact Projects",
                   "section": "34785",
                   "instructor": "Yihyun Lim",
                   "enrolled": 7,
                   "capacity": 30,
-                  "note": "Cross-listed with IDSN 547; allocated to Product Innovation"
+                  "waitlisted": 0,
+                  "note": "Cross-listed with IDSN 547",
+                  "metrics": true
             }
       ],
       "trendLog": [
             {
-                  "date": "7/31/2026 Evening PT - Latest",
-                  "course": "ACAD 499 Special Topics",
-                  "section": "10292",
-                  "previous": 34,
-                  "current": 35
-            },
-            {
-                  "date": "7/31/2026 Evening PT - Latest",
-                  "course": "IDSN 538 Extended Reality Technologies",
-                  "section": "34070",
-                  "previous": 17,
-                  "current": 18
-            },
-            {
-                  "date": "7/31/2026 Evening PT - Latest",
-                  "course": "IDSN 538 Extended Reality Technologies",
-                  "section": "34094",
-                  "previous": 19,
-                  "current": 18
-            },
-            {
-                  "date": "7/31/2026 Evening PT - Latest",
-                  "course": "IDSN 577 Finance for Entrepreneurs",
-                  "section": "34147",
-                  "previous": 14,
-                  "current": 15
-            },
-            {
-                  "date": "7/31/2026 Evening PT - Latest",
-                  "course": "IDSN 581 Introduction to the Global Fashion System",
-                  "section": "34170",
-                  "previous": 24,
-                  "current": 23
-            },
-            {
-                  "date": "7/31/2026 Evening PT - Latest",
-                  "course": "IDSN 581 Introduction to the Global Fashion System",
-                  "section": "34169",
-                  "previous": 0,
-                  "current": 1
-            },
-            {
-                  "date": "7/31/2026 Evening PT - Latest",
-                  "course": "PRIN 550 / IDSN 547 Industry and Impact Projects",
-                  "section": "34782",
-                  "previous": 40,
-                  "current": 40,
-                  "previousWaitlist": 0,
-                  "currentWaitlist": 1
-            },
-            {
-                  "date": "7/31/2026 Evening PT",
+                  "date": "8/1/2026 Afternoon",
                   "course": "ACAD 182 Disruptive Validation",
                   "section": "10211",
                   "previous": 13,
                   "current": 14
             },
             {
-                  "date": "7/31/2026 Evening PT",
+                  "date": "8/1/2026 Afternoon",
+                  "course": "ACAD 499 Special Topics",
+                  "section": "10292",
+                  "previous": 34,
+                  "current": 35
+            },
+            {
+                  "date": "8/1/2026 Afternoon",
                   "course": "IDSN 523 Product Design for User Experience",
                   "section": "34058",
-                  "previous": 34,
+                  "previous": 35,
                   "current": 33
             },
             {
-                  "date": "7/31/2026 Evening PT",
+                  "date": "8/1/2026 Afternoon",
+                  "course": "IDSN 532 Data and Back-End Development",
+                  "section": "34066",
+                  "previous": 1,
+                  "current": 3
+            },
+            {
+                  "date": "8/1/2026 Afternoon",
+                  "course": "IDSN 538 Extended Reality Technologies",
+                  "section": "34070",
+                  "previous": 17,
+                  "current": 18
+            },
+            {
+                  "date": "8/1/2026 Afternoon",
+                  "course": "IDSN 538 Extended Reality Technologies",
+                  "section": "34094",
+                  "previous": 19,
+                  "current": 17
+            },
+            {
+                  "date": "8/1/2026 Afternoon",
+                  "course": "IDSN 577 Finance for Entrepreneurs",
+                  "section": "34147",
+                  "previous": 14,
+                  "current": 15
+            },
+            {
+                  "date": "8/1/2026 Afternoon",
+                  "course": "IDSN 581 Introduction to the Global Fashion System",
+                  "section": "34170",
+                  "previous": 24,
+                  "current": 23
+            },
+            {
+                  "date": "8/1/2026 Afternoon",
+                  "course": "IDSN 581 Introduction to the Global Fashion System",
+                  "section": "34169",
+                  "previous": 0,
+                  "current": 1
+            },
+            {
+                  "date": "8/1/2026 Afternoon",
                   "course": "IDSN 597 Industry Practicum in Fashion Innovation",
                   "section": "34192",
                   "previous": 0,
                   "current": 1
             },
             {
-                  "date": "7/31/2026 Evening PT",
+                  "date": "8/1/2026 Afternoon",
                   "course": "PRIN 550 / IDSN 547 Industry and Impact Projects",
                   "section": "34782",
                   "previous": 39,
                   "current": 40
-            },
-            {
-                  "date": "7/31/2026 Afternoon PT",
-                  "course": "IDSN 523 Product Design for User Experience",
-                  "section": "34058",
-                  "previous": 35,
-                  "current": 34
-            },
-            {
-                  "date": "7/31/2026 Afternoon PT",
-                  "course": "IDSN 532 Data and Back-End Development",
-                  "section": "34066",
-                  "previous": 1,
-                  "current": 2
             },
             {
                   "date": "7/31/2026 Afternoon",
@@ -2439,7 +2461,7 @@
             },
             {
                   "faculty": "Thomas Dadourian",
-                  "note": "ACAD Innovators Forum is a high-enrollment undergraduate offering at 76 of 90 seats."
+                  "note": "ACAD Innovators Forum is a high-enrollment undergraduate offering at 74 of 90 seats."
             },
             {
                   "faculty": "Kia McCormick",
@@ -2455,15 +2477,15 @@
             },
             {
                   "faculty": "Yihyun Lim",
-                  "note": "Graduate Product Design for User Experience is at 34 of 40 and remains on the high-demand watch list."
+                  "note": "Graduate Product Design for User Experience returned to 35 of 40 and should remain on the high-demand watch list."
             },
             {
                   "faculty": "Safir Bellali",
-                  "note": "Graduate Physical Product Design is at 21 of 32; ACAD Fundamentals of Product Design is mid-range."
+                  "note": "Graduate Physical Product Design increased to 20 of 32; ACAD Fundamentals of Product Design is mid-range."
             },
             {
                   "faculty": "Patrick Dent",
-                  "note": "ACAD Data Systems is healthy at 27 of 40; ACAD Dev II and graduate Internship remain lower."
+                  "note": "ACAD Data Systems is healthy at 25 of 40; ACAD Dev II and graduate Internship remain lower."
             },
             {
                   "faculty": "Grant Delgatty",
@@ -2474,8 +2496,8 @@
                   "note": "IDSN 547 (PRIN 550) section 34782 and ACAD 475A are both at capacity or nearly full."
             },
             {
-                  "faculty": "Keanan Duffty",
-                  "note": "IDSN 581 section 34170 is just below the 80% threshold at 23 of 30; IDSN 597 remains healthy at 23 of 35."
+                  "faculty": "Keanan Dufty",
+                  "note": "IDSN 581 is exactly at the 80% threshold; IDSN 597 remains healthy at 22 of 35."
             },
             {
                   "faculty": "Eric Quick",
@@ -2487,11 +2509,11 @@
             }
       ],
       "recommendations": [
-            "The 7/31/26 evening PT ACAD, IDSN, and PRIN update uses the latest data pulled from the live USC Schedule of Classes API.",
-            "ACAD cross-listed partner courses remain excluded; PRIN 550 / IDSN 547 is allocated once under Product Innovation.",
-            "Monitor PRIN 550 section 34782 / IDSN 547 section 34782 because it is full with one student waitlisted; PRIN 550 section 34785 / IDSN 547 section 34785 remains low.",
+            "Afternoon ACAD, IDSN, and PRIN data were pulled from the live USC Schedule of Classes API.",
+            "ACAD cross-listed partner courses remain excluded; IDSN cross-listed rows are included on the IDSN view, and PRIN 550 is included on the Product Innovation view as the counterpart to IDSN 547.",
+            "Monitor PRIN 550 section 34782 / IDSN 547 section 34782 because it is full; PRIN 550 section 34785 / IDSN 547 section 34785 remains low.",
             "Monitor IDSN 529, IDSN 579 section 34151, IDSN 581, ACAD 376, ACAD 406 section 10256, ACAD 450, and ACAD 475A because they are at or near capacity.",
-            "Focus advising or promotion on low-enrollment visible sections, especially PRIN 520, PRIN 550 section 34785, IDSN 519, IDSN 521 section 34060, IDSN 532, IDSN 577 section 34167, IDSN 590 section 34173, ACAD 406 section 10257, and ACAD 419."
+            "Focus advising or promotion on low-enrollment visible sections, especially PRIN 520, PRIN 550 section 34785, IDSN 500, IDSN 519, IDSN 521 section 34060, IDSN 532, IDSN 577 section 34167, IDSN 590 section 34173, ACAD 406 section 10257, and ACAD 419."
       ],
       "history": [
             {
@@ -2533,33 +2555,9 @@
                   "dropped": 0,
                   "fullSections": 17,
                   "notes": "Pulled live PRIN data from USC Schedule of Classes API and included PRIN 550 as the cross-listed counterpart to IDSN 547."
-            },
-            {
-                  "date": "July 31, 2026",
-                  "snapshot": "Afternoon ACAD + IDSN + PRIN update",
-                  "added": 1,
-                  "dropped": 1,
-                  "fullSections": 17,
-                  "notes": "Refreshed all tracked sections from the live USC Schedule of Classes API and allocated PRIN 550 / IDSN 547 once under Product Innovation."
-            },
-            {
-                  "date": "July 31, 2026",
-                  "snapshot": "Evening PT ACAD + IDSN + PRIN update",
-                  "added": 3,
-                  "dropped": 1,
-                  "fullSections": 17,
-                  "notes": "Refreshed all tracked sections from the live USC Schedule of Classes API, kept the cancelled IDSN 500 row out of metrics, and allocated PRIN 550 / IDSN 547 once under Product Innovation."
-            },
-            {
-                  "date": "July 31, 2026",
-                  "snapshot": "Evening PT ACAD + IDSN + PRIN waitlist update",
-                  "added": 4,
-                  "dropped": 2,
-                  "fullSections": 17,
-                  "notes": "Refreshed all tracked sections from the live USC Schedule of Classes API and added unduplicated waitlist tracking for PRIN 550 / IDSN 547."
             }
       ],
-      "netChangeLabel": "7/31/26 evening PT from prior snapshot"
+      "netChangeLabel": "08/01/26 afternoon PT from yesterday"
 };
     let activeProgram = dashboardData.defaultProgram || "All Programs";
     let sectionFilters = {
@@ -2569,8 +2567,7 @@
     };
 
     dashboardData.sections = dashboardData.sections.map(item => ({
-      ...item,
-      waitlist: waitlistCount(item)
+      ...item
     }));
 
     const isMetricSection = item => item.metrics !== false && Number.isFinite(item.enrolled) && Number.isFinite(item.capacity);
@@ -2578,15 +2575,6 @@
     const percentFull = item => isMetricSection(item) && item.capacity > 0 ? Math.round((item.enrolled / item.capacity) * 100) : null;
     const availableSeats = item => isMetricSection(item) ? Math.max(item.capacity - item.enrolled, 0) : null;
     const displayValue = value => value === null || value === undefined ? "TBD" : value;
-    function waitlistCount(item) {
-      const directValue = [item.waitlist, item.waitlistedSeats]
-        .map(value => Number(value))
-        .find(value => Number.isFinite(value));
-      if (directValue !== undefined) return Math.max(directValue, 0);
-      const registeredText = `${item.registered ?? ""} ${item.enrolled ?? ""}`;
-      const match = registeredText.match(/waitlist(?:ed)?\s*:?\s*(\d+)/i);
-      return match ? Number(match[1]) : 0;
-    }
     const displayPercent = item => {
       const pct = percentFull(item);
       return pct === null ? "TBD" : `${pct}%`;
@@ -2595,13 +2583,6 @@
     function filteredSections() {
       if (activeProgram === "All Programs") return dashboardData.sections;
       return dashboardData.sections.filter(item => item.program === activeProgram);
-    }
-
-    function waitlistMetricSections(sections = filteredSections()) {
-      return sections.filter(item => {
-        if (item.program === "Graduate IDSN" && ["34782", "34785"].includes(item.section)) return false;
-        return isMetricSection(item);
-      });
     }
 
     function filteredSectionRows() {
@@ -2682,10 +2663,6 @@
       return `${change}`;
     }
 
-    const hasWaitlistTrend = item => Number.isFinite(item.previousWaitlist) && Number.isFinite(item.currentWaitlist);
-    const waitlistTrendChange = item => hasWaitlistTrend(item) ? item.currentWaitlist - item.previousWaitlist : 0;
-    const isTrendChange = item => item.current !== item.previous || waitlistTrendChange(item) !== 0;
-
     function renderKpis() {
       const sections = metricSections(filteredSections());
       const full = sections.filter(item => statusFor(item).className === "full").length;
@@ -2694,8 +2671,8 @@
       const low = sections.filter(item => statusFor(item).className === "low").length;
       const totalEnrollment = sections.reduce((sum, item) => sum + item.enrolled, 0);
       const totalCapacity = sections.reduce((sum, item) => sum + item.capacity, 0);
-      const waitlistSections = waitlistMetricSections(filteredSections()).filter(item => item.waitlist > 0);
-      const totalWaitlisted = waitlistSections.reduce((sum, item) => sum + item.waitlist, 0);
+      const sectionsWithWaitlists = sections.filter(item => Number(item.waitlisted || 0) > 0).length;
+      const waitlistedStudents = sections.reduce((sum, item) => sum + Number(item.waitlisted || 0), 0);
       const visibleSectionIds = new Set(sections.map(item => item.section));
       const netChange = latestRunChanges()
         .filter(item => visibleSectionIds.has(item.section))
@@ -2708,8 +2685,8 @@
         { name: "Near Capacity", value: near, detail: `${dashboardData.nearThreshold}% or higher` },
         { name: "Healthy", value: healthy, detail: `${dashboardData.lowThreshold}-${dashboardData.nearThreshold - 1}% full` },
         { name: "Low", value: low, detail: `below ${dashboardData.lowThreshold}%` },
-        { name: "Sections with Waitlists", value: waitlistSections.length, detail: "active waitlists" },
-        { name: "Waitlisted Students", value: totalWaitlisted, detail: "unduplicated demand" },
+        { name: "Sections With Waitlists", value: sectionsWithWaitlists, detail: "active waitlists" },
+        { name: "Waitlisted Students", value: waitlistedStudents, detail: "unduplicated demand" },
         { name: "Net Change", value: netChange >= 0 ? `+${netChange}` : netChange, detail: dashboardData.netChangeLabel || "from latest update" }
       ];
 
@@ -2735,7 +2712,7 @@
       return ranked
         .filter(entry => entry.config.key === latestKey)
         .map(entry => entry.item)
-        .filter(isTrendChange);
+        .filter(item => item.current !== item.previous);
     }
 
     function programMetrics() {
@@ -2835,8 +2812,6 @@
       const full = sections.filter(item => statusFor(item).className === "full").length;
       const near = sections.filter(item => statusFor(item).className === "near").length;
       const low = sections.filter(item => statusFor(item).className === "low").length;
-      const waitlistSections = waitlistMetricSections(filteredSections()).filter(item => item.waitlist > 0);
-      const totalWaitlisted = waitlistSections.reduce((sum, item) => sum + item.waitlist, 0);
       const latestChanges = latestRunChanges();
       const latestNet = latestChanges.reduce((sum, item) => sum + item.current - item.previous, 0);
       const latestGains = latestChanges
@@ -2845,20 +2820,13 @@
       const latestDrops = latestChanges
         .filter(item => item.current < item.previous)
         .reduce((sum, item) => sum + item.previous - item.current, 0);
-      const latestWaitlistGains = latestChanges
-        .filter(item => waitlistTrendChange(item) > 0)
-        .reduce((sum, item) => sum + waitlistTrendChange(item), 0);
-      const latestWaitlistDrops = latestChanges
-        .filter(item => waitlistTrendChange(item) < 0)
-        .reduce((sum, item) => sum - waitlistTrendChange(item), 0);
       const cancelledIdsn500 = dashboardData.sections.find(item => item.section === "34160" && item.note);
 
       document.getElementById("leadershipSummary").innerHTML = [
         `${programLabel} currently have ${totalEnrollment} enrolled seats across ${sections.length} tracked sections, with ${utilization}% overall capacity utilization.`,
         `${full} sections are full and ${near} additional sections are near capacity, creating the clearest student-access pressure points.`,
         `${low} sections are below 50% enrollment and may need advising visibility, promotion, or cancellation-risk review.`,
-        totalWaitlisted > 0 ? `${totalWaitlisted} ${totalWaitlisted === 1 ? "student is" : "students are"} on waitlists across ${waitlistSections.length} ${waitlistSections.length === 1 ? "section" : "sections"}. PRIN 550 / IDSN 547 waitlist demand is allocated once under Product Innovation to avoid double-counting.` : "",
-        `The latest trend log shows ${latestGains} added seats and ${latestDrops} dropped seats, for a net change of ${latestNet >= 0 ? "+" : ""}${latestNet}. Waitlists increased by ${latestWaitlistGains} and decreased by ${latestWaitlistDrops}.`,
+        `The latest trend log shows ${latestGains} added seats and ${latestDrops} dropped seats, for a net change of ${latestNet >= 0 ? "+" : ""}${latestNet}.`,
         todaysAddedSectionsSummary(),
         cancelledIdsn500 ? `IDSN 500 section 34160 was cancelled on 7/29/26; it is shown for context as 0/25 but excluded from enrollment, capacity, and available-seat counts.` : ""
       ].filter(Boolean).map(item => `<li>${item}</li>`).join("");
@@ -2885,7 +2853,7 @@
       const totalCapacity = revenueRows.reduce((sum, item) => sum + item.capacity, 0);
       const totalOpen = totalCapacity - totalEnrollment;
       document.getElementById("revenueCallout").innerHTML =
-        `<strong>SBO note:</strong> this view allocates PRIN 550 / IDSN 547 once under Product Innovation. Current unduplicated totals show ${totalEnrollment} enrolled seats and ${totalOpen} open seats across ${revenueRows.length} counted sections.`;
+        `<strong>SBO note:</strong> this view counts PRIN 550 under Product Innovation and excludes the duplicate IDSN 547 rows from revenue and capacity totals. Current unduplicated totals show ${totalEnrollment} enrolled seats and ${totalOpen} open seats across ${revenueRows.length} counted sections.`;
     }
 
     function renderCapacityCards() {
@@ -2934,43 +2902,28 @@
       const trendList = document.getElementById("trendList");
       if (!trendList) return;
       trendList.innerHTML = sortedGroups.map((group, index) => {
-        const changedItems = group.items.filter(isTrendChange);
+        const changedItems = group.items.filter(item => item.current !== item.previous);
         const net = changedItems.reduce((sum, item) => sum + item.current - item.previous, 0);
         const gains = changedItems.filter(item => item.current > item.previous).length;
         const drops = changedItems.filter(item => item.current < item.previous).length;
-        const waitlistGains = changedItems.filter(item => waitlistTrendChange(item) > 0).length;
-        const waitlistDrops = changedItems.filter(item => waitlistTrendChange(item) < 0).length;
-        const waitlistSummary = group.items.some(hasWaitlistTrend)
-          ? ` | ${waitlistGains} waitlist increase${waitlistGains === 1 ? "" : "s"} | ${waitlistDrops} waitlist decrease${waitlistDrops === 1 ? "" : "s"}`
-          : "";
         const itemsToShow = changedItems.length ? changedItems : group.items;
         return `
           <details class="trend-period" ${index === 0 ? "open" : ""}>
             <summary>
               <span class="trend-period-title">${group.title}</span>
-              <span class="trend-period-meta">${changedItems.length} changed section${changedItems.length === 1 ? "" : "s"} | ${gains} enrollment increase${gains === 1 ? "" : "s"} | ${drops} enrollment decrease${drops === 1 ? "" : "s"}${waitlistSummary}</span>
+              <span class="trend-period-meta">${changedItems.length} changed section${changedItems.length === 1 ? "" : "s"} | ${gains} gain${gains === 1 ? "" : "s"} | ${drops} drop${drops === 1 ? "" : "s"}</span>
               <span class="trend-period-net ${trendClass(net)}">${trendLabel(net)}</span>
             </summary>
             <div class="trend-period-body">
               <ul class="trend-change-list">
                 ${itemsToShow.map(item => {
                   const change = item.current - item.previous;
-                  const waitlistChange = waitlistTrendChange(item);
-                  const status = change > 0
-                    ? { label: "Growing", className: "healthy" }
-                    : change < 0
-                      ? { label: "Declining", className: "full" }
-                      : waitlistChange > 0
-                        ? { label: "Waitlist Growing", className: "near" }
-                        : waitlistChange < 0
-                          ? { label: "Waitlist Easing", className: "healthy" }
-                          : { label: "Stable", className: "watch" };
+                  const status = change > 0 ? { label: "Growing", className: "healthy" } : change < 0 ? { label: "Declining", className: "full" } : { label: "Stable", className: "watch" };
                   return `
-                    <li class="${hasWaitlistTrend(item) ? "has-waitlist" : ""}">
+                    <li>
                       <span><strong>${item.course}</strong><br><small>Section ${item.section}</small></span>
                       <span>Previous: <strong>${item.previous}</strong></span>
                       <span>Current: <strong>${item.current}</strong></span>
-                      ${hasWaitlistTrend(item) ? `<span>Waitlist: <strong>${item.previousWaitlist} → ${item.currentWaitlist} (${trendLabel(waitlistChange)})</strong></span>` : ""}
                       <span class="${trendClass(change)}">${trendLabel(change)}</span>
                       <span>${badge(status)}</span>
                     </li>
@@ -2985,9 +2938,6 @@
 
     function periodConfig(date) {
       const rankMap = {
-        "7/31/2026 Evening PT - Latest": 10,
-        "7/31/2026 Evening PT": 9,
-        "7/31/2026 Afternoon PT": 8,
         "7/31/2026 Afternoon": 7,
         "7/31/2026 AM": 6,
         "7/30/2026 AM": 5,
@@ -3003,7 +2953,6 @@
         ? `${matchedKey}${matchedKey.includes("Baseline") ? "" : " Update"}`
         : `${date} Update`;
       const labelMap = {
-        "7/31/2026 Evening PT - Latest": "7/31 Eve PT",
         "7/28/2026 PM Baseline": "7/28 PM",
         "7/29/2026 AM": "7/29 AM",
         "7/29/2026 Afternoon": "7/29 PM",
@@ -3011,17 +2960,12 @@
         "7/29/2026 Late Evening": "7/29 Late",
         "7/30/2026 AM": "7/30 AM",
         "7/31/2026 AM": "7/31 AM",
-        "7/31/2026 Afternoon": "7/31 PM",
-        "7/31/2026 Afternoon PT": "7/31 Aft PT",
-        "7/31/2026 Evening PT": "7/31 Eve PT"
+        "7/31/2026 Afternoon": "7/31 PM"
       };
       return { key, title, label: labelMap[matchedKey] || date, rank: rankMap[matchedKey] || 1 };
     }
 
     function trendPeriod(date) {
-      if (date.includes("7/31/2026 Evening PT - Latest")) return "Latest";
-      if (date.includes("7/31/2026 Evening PT")) return "Latest";
-      if (date.includes("7/31/2026 Afternoon PT")) return "Latest";
       if (date.includes("7/31/2026 Afternoon")) return "Latest";
       if (date.includes("7/31/2026 AM")) return "Previous";
       if (date.includes("7/30/2026")) return "Previous";
@@ -3054,54 +2998,6 @@
             .filter(trend => periodConfig(trend.date).rank > period.rank)
             .reduce((sum, trend) => sum + (trend.current - trend.previous), 0);
           values[period.key] = row.enrolled - laterChange;
-        });
-        return values;
-      });
-
-      return { periods, rows };
-    }
-
-    function buildWaitlistSnapshots() {
-      const waitlistChanges = dashboardData.trendLog.filter(hasWaitlistTrend);
-      if (!waitlistChanges.length) return { periods: [], rows: [] };
-
-      const allPeriods = [...new Map(
-        dashboardData.trendLog
-          .map(item => periodConfig(item.date))
-          .sort((a, b) => a.rank - b.rank)
-          .map(config => [config.key, config])
-      ).values()];
-      const changePeriods = [...new Map(
-        waitlistChanges
-          .map(item => periodConfig(item.date))
-          .sort((a, b) => a.rank - b.rank)
-          .map(config => [config.key, config])
-      ).values()];
-      const firstChangeRank = changePeriods[0].rank;
-      const previousPeriod = allPeriods
-        .filter(period => period.rank < firstChangeRank)
-        .sort((a, b) => b.rank - a.rank)[0];
-      const rawPeriods = [...(previousPeriod ? [previousPeriod] : []), ...changePeriods];
-      const periods = rawPeriods.map((period, index) => ({
-        ...period,
-        label: index === 0 && rawPeriods.length > 1
-          ? `${period.label} Prior`
-          : index === rawPeriods.length - 1 && rawPeriods.length > 1
-            ? `${period.label} Latest`
-            : period.label
-      }));
-      const currentRows = waitlistMetricSections(dashboardData.sections).map(item => ({ ...item }));
-      const bySection = new Map(currentRows.map(item => [item.section, item]));
-
-      const rows = currentRows.map(row => {
-        const values = { row };
-        periods.forEach(period => {
-          const laterChange = waitlistChanges
-            .filter(change => change.section === row.section)
-            .filter(change => bySection.has(change.section))
-            .filter(change => periodConfig(change.date).rank > period.rank)
-            .reduce((sum, change) => sum + waitlistTrendChange(change), 0);
-          values[period.key] = Math.max(row.waitlist - laterChange, 0);
         });
         return values;
       });
@@ -3210,103 +3106,6 @@
 
     }
 
-    function waitlistSeriesColor(index) {
-      const colors = ["#9d1b1e", "#49664d", "#8a6030", "#647b86", "#76546c", "#5f6c34"];
-      return colors[index % colors.length];
-    }
-
-    function waitlistClassLabel(row) {
-      const courseCode = row.course.match(/^[A-Z]+ \d+(?: \/ [A-Z]+ \d+)?/)?.[0];
-      return `${courseCode || shortCourse(row.course)} · ${row.section}`;
-    }
-
-    function renderWaitlistTrendChart() {
-      const svg = document.getElementById("waitlistTrendChart");
-      const legend = document.getElementById("waitlistChartLegend");
-      const tableBody = document.getElementById("waitlistTrendBody");
-      if (!svg || !legend || !tableBody) return;
-
-      const { periods, rows } = buildWaitlistSnapshots();
-      const visibleRows = activeProgram === "All Programs"
-        ? rows
-        : rows.filter(item => item.row.program === activeProgram);
-      const activitySections = new Set(dashboardData.trendLog
-        .filter(hasWaitlistTrend)
-        .map(item => item.section));
-      const series = visibleRows
-        .map(item => ({
-          row: item.row,
-          values: periods.map(period => item[period.key])
-        }))
-        .filter(item => item.values.some(value => value > 0) || activitySections.has(item.row.section))
-        .sort((a, b) => {
-          const aChange = a.values.at(-1) - a.values[0];
-          const bChange = b.values.at(-1) - b.values[0];
-          if (aChange !== bChange) return bChange - aChange;
-          return b.values.at(-1) - a.values.at(-1);
-        });
-
-      const width = 900;
-      const height = 340;
-      const pad = { top: 28, right: 34, bottom: 54, left: 64 };
-      svg.setAttribute("viewBox", `0 0 ${width} ${height}`);
-
-      if (periods.length < 2 || !series.length) {
-        svg.innerHTML = `<text class="chart-label" x="${width / 2}" y="${height / 2}" text-anchor="middle">No classes with waitlist movement.</text>`;
-        legend.innerHTML = "";
-        tableBody.innerHTML = `<tr><td colspan="6">No classes with waitlist movement.</td></tr>`;
-        return;
-      }
-
-      const maxValue = Math.max(4, ...series.flatMap(item => item.values));
-      const x = index => pad.left + index * ((width - pad.left - pad.right) / (periods.length - 1));
-      const y = value => height - pad.bottom - (value / maxValue) * (height - pad.top - pad.bottom);
-      const gridValues = [...new Set([0, 0.25, 0.5, 0.75, 1].map(step => Math.round(maxValue * step)))];
-
-      svg.innerHTML = `
-        ${gridValues.map(value => `
-          <line class="chart-grid" x1="${pad.left}" y1="${y(value)}" x2="${width - pad.right}" y2="${y(value)}"></line>
-          <text class="chart-label" x="${pad.left - 10}" y="${y(value) + 4}" text-anchor="end">${value}</text>
-        `).join("")}
-        <line class="chart-axis" x1="${pad.left}" y1="${height - pad.bottom}" x2="${width - pad.right}" y2="${height - pad.bottom}"></line>
-        <line class="chart-axis" x1="${pad.left}" y1="${pad.top}" x2="${pad.left}" y2="${height - pad.bottom}"></line>
-        ${periods.map((period, index) => `
-          <text class="chart-label" x="${x(index)}" y="${height - 20}" text-anchor="middle">${period.label}</text>
-        `).join("")}
-        ${series.map((item, seriesIndex) => {
-          const color = waitlistSeriesColor(seriesIndex);
-          const points = item.values.map((value, index) => `${x(index)},${y(value)}`).join(" ");
-          return `
-            <polyline points="${points}" fill="none" stroke="${color}" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"></polyline>
-            ${item.values.map((value, index) => `
-              <circle cx="${x(index)}" cy="${y(value)}" r="6" fill="${color}"></circle>
-              <text class="chart-value" x="${x(index)}" y="${y(value) - 10}" text-anchor="middle">${value}</text>
-            `).join("")}
-          `;
-        }).join("")}
-      `;
-
-      legend.innerHTML = series.map((item, index) => `
-        <span class="legend-item"><span class="legend-swatch" style="background:${waitlistSeriesColor(index)}"></span>${waitlistClassLabel(item.row)}</span>
-      `).join("");
-
-      tableBody.innerHTML = series.map(item => {
-        const previous = item.values[0];
-        const current = item.values.at(-1);
-        const change = current - previous;
-        return `
-          <tr>
-            <td>${item.row.course}</td>
-            <td>${programFilterLabel(item.row.program)}</td>
-            <td>${item.row.section}</td>
-            <td class="num">${previous}</td>
-            <td class="num">${current}</td>
-            <td class="num ${trendClass(change)}">${trendLabel(change)}</td>
-          </tr>
-        `;
-      }).join("");
-    }
-
     function renderSections() {
       document.getElementById("sectionsBody").innerHTML = filteredSectionRows().map(item => {
         const status = statusFor(item);
@@ -3317,7 +3116,6 @@
             <td>${item.instructor}</td>
             <td class="num">${displayValue(item.enrolled)}</td>
             <td class="num">${displayValue(item.capacity)}</td>
-            <td class="num">${item.waitlist}</td>
             <td class="num">${displayAvailable(item)}</td>
             <td class="num">${displayCapacityPercent(item)}</td>
             <td>${badge(status)}</td>
@@ -3325,7 +3123,7 @@
         `;
       }).join("") || `
         <tr>
-          <td colspan="9">No sections match the selected filters.</td>
+          <td colspan="8">No sections match the selected filters.</td>
         </tr>
       `;
     }
@@ -3353,7 +3151,7 @@
         `;
       }).join("");
       document.getElementById("programSummaryNote").innerHTML =
-        "<strong>Cross-listing note:</strong> PRIN 550 / IDSN 547 is allocated once to Product Innovation to avoid double-counting.";
+        "<strong>Cross-listing note:</strong> IDSN 547 / PRIN 550 is allocated to Product Innovation in this summary. The matching IDSN 547 rows remain visible elsewhere for program context, but are excluded here to avoid double-counting.";
     }
 
     function renderCourseAssistants() {
@@ -3407,7 +3205,6 @@
         renderCapacityCards();
         renderTrendLog();
         renderTrendChart();
-        renderWaitlistTrendChart();
         renderSections();
       });
     }
@@ -3511,7 +3308,6 @@
       renderPrograms();
       renderTrendLog();
       renderTrendChart();
-      renderWaitlistTrendChart();
       renderSections();
       renderCourseAssistants();
       renderTermTiming();
