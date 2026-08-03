@@ -1377,7 +1377,7 @@
                   "course": "ACAD 406 Purpose-Driven Innovation Incubator",
                   "section": "10256 / 10257",
                   "instructor": "Chris Swain",
-                  "enrollment": "48/50 + 6/25",
+                  "enrollment": "48/50 + 7/25",
                   "need": "Review CA coverage",
                   "status": "Hybrid pair",
                   "notes": "Same course meeting pattern with a separate hybrid section."
@@ -2947,8 +2947,8 @@
           <details class="trend-period" ${index === 0 ? "open" : ""}>
             <summary>
               <span class="trend-period-title">${group.title}</span>
-              <span class="trend-period-meta">${changedItems.length} changed section${changedItems.length === 1 ? "" : "s"} | ${gains} gain${gains === 1 ? "" : "s"} | ${drops} drop${drops === 1 ? "" : "s"}</span>
-              <span class="trend-period-net ${trendClass(net)}">${trendLabel(net)}</span>
+              <span class="trend-period-meta">${changedItems.length} changed section${changedItems.length === 1 ? "" : "s"} | ${gains} section gain${gains === 1 ? "" : "s"} | ${drops} section drop${drops === 1 ? "" : "s"}</span>
+              <span class="trend-period-net ${trendClass(net)}">Net enrollment: ${trendLabel(net)}</span>
             </summary>
             <div class="trend-period-body">
               <ul class="trend-change-list">
