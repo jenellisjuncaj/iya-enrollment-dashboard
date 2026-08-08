@@ -4291,7 +4291,9 @@
         </article>
       `).join("");
 
-      const occupiedRows = metrics.roomRows.filter(item => item.utilizationSections.length);
+      const occupiedRows = metrics.roomRows
+        .filter(item => item.utilizationSections.length)
+        .filter(item => item.room !== "IYH 107");
       const emptiest = occupiedRows.reduce((lowest, item) => !lowest || item.utilization < lowest.utilization ? item : lowest, null);
       const fullest = occupiedRows.reduce((highest, item) => !highest || item.utilization > highest.utilization ? item : highest, null);
       const utilizationSummary = metrics.roomRows
