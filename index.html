@@ -743,15 +743,6 @@
       color: #fffefa;
     }
 
-    .heatmap-cell.occupied {
-      background: #526548;
-      color: #fffefa;
-    }
-
-    .heatmap-cell.occupied.multiple {
-      background: var(--cardinal-dark);
-    }
-
     .heatmap-legend {
       display: flex;
       flex-wrap: wrap;
@@ -1455,13 +1446,6 @@
                 <p>Hourly room demand from 8 a.m. through 9 p.m.; combined bookings appear in both physical rooms.</p>
               </div>
               <div class="heatmap-controls" aria-label="Heat map controls">
-                <div class="heatmap-control-group">
-                  <span class="heatmap-control-label">Metric</span>
-                  <div class="segmented-control" id="heatmapMetricToggle">
-                    <button type="button" data-heatmap-metric="fill" aria-pressed="true">Fill Rate</button>
-                    <button type="button" data-heatmap-metric="occupancy" aria-pressed="false">Occupancy</button>
-                  </div>
-                </div>
                 <div class="heatmap-control-group">
                   <span class="heatmap-control-label">View</span>
                   <div class="segmented-control" id="heatmapViewToggle">
@@ -3465,7 +3449,6 @@
       status: "All Statuses",
       search: ""
     };
-    let facilitiesHeatmapMetric = "fill";
     let facilitiesHeatmapView = "single";
     let facilitiesHeatmapDay = "Mon";
 
@@ -4175,12 +4158,6 @@
         .join("; ");
       const safeDetail = escapeHeatmapText(detail);
 
-      if (facilitiesHeatmapMetric === "occupancy") {
-        const count = cellBookings.length;
-        const className = count > 1 ? "heatmap-cell occupied multiple" : "heatmap-cell occupied";
-        return `<div class="${className}" role="gridcell" title="${safeDetail}" aria-label="${room}, ${facilityHeatmapTimeLabel(hour)}: ${count} booking${count === 1 ? "" : "s"}">${count}</div>`;
-      }
-
       const fillRate = cell.fillRate;
       const level = fillRate >= 100 ? 5 : fillRate >= 75 ? 4 : fillRate >= 50 ? 3 : fillRate >= 25 ? 2 : 1;
       return `<div class="heatmap-cell level-${level}" role="gridcell" title="${safeDetail}" aria-label="${room}, ${facilityHeatmapTimeLabel(hour)}: ${fillRate}% fill rate">${fillRate}%</div>`;
@@ -4214,28 +4191,18 @@
       const days = facilitiesHeatmapView === "week" ? facilityWeekdays : [facilitiesHeatmapDay];
       target.innerHTML = days.map(day => renderFacilityHeatmapDay(day, bookings)).join("");
 
-      legend.innerHTML = facilitiesHeatmapMetric === "fill"
-        ? `
-          <strong>Fill Rate</strong>
-          <span class="heatmap-legend-swatch" style="background:#fffefa"></span><span>Empty</span>
-          <span class="heatmap-legend-swatch" style="background:#f0e5cf"></span><span>&lt;25%</span>
-          <span class="heatmap-legend-swatch" style="background:#d7c596"></span><span>25–49%</span>
-          <span class="heatmap-legend-swatch" style="background:#9da275"></span><span>50–74%</span>
-          <span class="heatmap-legend-swatch" style="background:#526548"></span><span>75–99%</span>
-          <span class="heatmap-legend-swatch" style="background:var(--cardinal-dark)"></span><span>100%+</span>
-        `
-        : `
-          <strong>Occupancy</strong>
-          <span class="heatmap-legend-swatch" style="background:#fffefa"></span><span>Empty</span>
-          <span class="heatmap-legend-swatch" style="background:#526548"></span><span>Booked</span>
-          <span class="heatmap-legend-swatch" style="background:var(--cardinal-dark)"></span><span>Multiple bookings</span>
-        `;
+      legend.innerHTML = `
+        <strong>Fill Rate</strong>
+        <span class="heatmap-legend-swatch" style="background:#fffefa"></span><span>Empty</span>
+        <span class="heatmap-legend-swatch" style="background:#f0e5cf"></span><span>&lt;25%</span>
+        <span class="heatmap-legend-swatch" style="background:#d7c596"></span><span>25–49%</span>
+        <span class="heatmap-legend-swatch" style="background:#9da275"></span><span>50–74%</span>
+        <span class="heatmap-legend-swatch" style="background:#526548"></span><span>75–99%</span>
+        <span class="heatmap-legend-swatch" style="background:var(--cardinal-dark)"></span><span>100%+</span>
+      `;
     }
 
     function syncFacilitiesHeatmapControls() {
-      document.querySelectorAll("[data-heatmap-metric]").forEach(button => {
-        button.setAttribute("aria-pressed", button.dataset.heatmapMetric === facilitiesHeatmapMetric ? "true" : "false");
-      });
       document.querySelectorAll("[data-heatmap-view]").forEach(button => {
         button.setAttribute("aria-pressed", button.dataset.heatmapView === facilitiesHeatmapView ? "true" : "false");
       });
@@ -4246,13 +4213,6 @@
     }
 
     function setupFacilitiesHeatmapControls() {
-      document.querySelectorAll("[data-heatmap-metric]").forEach(button => {
-        button.addEventListener("click", () => {
-          facilitiesHeatmapMetric = button.dataset.heatmapMetric;
-          syncFacilitiesHeatmapControls();
-          renderFacilitiesHeatmap();
-        });
-      });
       document.querySelectorAll("[data-heatmap-view]").forEach(button => {
         button.addEventListener("click", () => {
           facilitiesHeatmapView = button.dataset.heatmapView;
