@@ -566,10 +566,6 @@
       font-size: 0.9rem;
     }
 
-    .facilities-table-wrap {
-      margin-top: 18px;
-    }
-
     .facilities-heatmap-panel {
       margin-top: 18px;
     }
@@ -1431,7 +1427,7 @@
         <div class="section-head">
           <div>
             <h2 id="facilitiesTitle">Facilities &amp; Space Utilization KPIs</h2>
-            <p>True room-capacity utilization and schedule compliance for Academy delivery in the six tracked IYH rooms.</p>
+            <p>All-week utilization and schedule compliance calculated from the same weekday, room, and hourly bookings shown in the heat map.</p>
           </div>
           <span class="collapse-control" aria-hidden="true"></span>
         </div>
@@ -1455,25 +1451,6 @@
             <span class="facility-count" id="facilitiesOnlineCount">0</span>
             <p class="facility-card-detail" id="facilitiesOnlineDetail"></p>
           </article>
-        </div>
-        <div class="panel facilities-table-wrap">
-          <div class="table-wrap">
-            <table class="metric-table" data-table="facilities">
-              <thead>
-                <tr>
-                  <th>Room</th>
-                  <th class="num">Capacity</th>
-                  <th class="num">Sections</th>
-                  <th class="num">Avg Utilization</th>
-                  <th class="num">8am Sections</th>
-                  <th class="num">8am Compliance %</th>
-                  <th class="num">Sections After 9pm</th>
-                  <th class="num">Late-End Compliance %</th>
-                </tr>
-              </thead>
-              <tbody id="facilitiesBody"></tbody>
-            </table>
-          </div>
         </div>
         <div class="panel facilities-heatmap-panel">
           <div class="panel-pad">
@@ -4058,37 +4035,65 @@
       });
       const unassigned = unassignedSections.filter(item => normalizeFacilityLocation(item.location) === "TBA");
       const physicalRooms = ["IYH 210", "IYH 211", "IYH 212", "IYH 213", "IYH 111", "IYH 107"];
+      const complianceRooms = ["IYH 210", "IYH 211", "IYH 212", "IYH 213"];
+      const heatmapBookings = facilityHeatmapBookings(bookings);
       const roomRows = physicalRooms.map(room => {
         const capacity = roomCapacity[room];
-        const roomBookings = bookings.filter(item => physicalRoomsFor(item.facilityRoom).includes(room));
+        const roomBookings = heatmapBookings.filter(item => item.room === room);
         const roomSectionIds = new Set(roomBookings.map(item => item.section));
         const roomSections = scoped.filter(item => roomSectionIds.has(item.section));
-        const utilizationEnrollment = roomBookings.reduce((sum, item) => sum + item.effectiveEnrollment, 0);
-        const utilizationCapacity = roomBookings.reduce((sum, item) => sum + item.capacity, 0);
+        const occupiedCells = facilityWeekdays.flatMap(day => facilityHeatmapHours
+          .map(hour => facilityHeatmapCellData(heatmapBookings, day, room, hour))
+          .filter(cell => cell.bookings.length));
+        const utilizationEnrollment = occupiedCells.reduce((sum, cell) => sum + cell.totalEnrollment, 0);
+        const utilizationCapacity = occupiedCells.reduce((sum, cell) => sum + cell.totalCapacity, 0);
         const utilization = utilizationCapacity
           ? Math.round((utilizationEnrollment / utilizationCapacity) * 100)
           : 0;
-        const eightAm = new Set(roomBookings.filter(item => item.startTime === "08:00").map(item => item.section)).size;
-        const late = new Set(roomBookings.filter(item => item.endTime > "21:00").map(item => item.section)).size;
+        const eightAm = new Set(roomBookings
+          .filter(item => item.start === 8 * 60)
+          .map(item => item.day)).size;
+        const isComplianceRoom = complianceRooms.includes(room);
+        const late = roomBookings.filter(item => item.end > 21 * 60).length;
         return {
           room,
           capacity,
           sections: roomSections,
+          meetings: roomBookings.length,
           utilizationSections: roomSections,
           utilization,
           eightAm,
-          eightAmCompliance: facilityPercent(eightAm, roomSections.length),
+          eightAmCompliance: isComplianceRoom ? facilityPercent(eightAm, facilityWeekdays.length) : null,
           late,
-          lateCompliance: facilityPercent(roomSections.length - late, roomSections.length)
+          lateCompliance: facilityPercent(roomBookings.length - late, roomBookings.length)
         };
       });
-      const occupiedPhysicalRooms = new Set(bookings.flatMap(item => physicalRoomsFor(item.facilityRoom)));
-      const eightAm = new Set(bookings.filter(item => item.startTime === "08:00").map(item => item.section)).size;
-      const late = [...new Map(bookings.filter(item => item.endTime > "21:00").map(item => [item.section, item])).values()];
-      const totalUtilizationCapacity = bookings.reduce((sum, item) => sum + item.capacity, 0);
+      const occupiedPhysicalRooms = new Set(heatmapBookings.map(item => item.room));
+      const occupiedCells = facilityWeekdays.flatMap(day => physicalRooms.flatMap(room => facilityHeatmapHours
+        .map(hour => facilityHeatmapCellData(heatmapBookings, day, room, hour))
+        .filter(cell => cell.bookings.length)));
+      const complianceBookings = heatmapBookings.filter(item => complianceRooms.includes(item.room));
+      const eightAm = new Set(complianceBookings
+        .filter(item => item.start === 8 * 60)
+        .map(item => `${item.day}|${item.room}`)).size;
+      const complianceSlots = complianceRooms.length * facilityWeekdays.length;
+      const late = heatmapBookings.filter(item => item.end > 21 * 60);
+      const totalUtilizationCapacity = occupiedCells.reduce((sum, cell) => sum + cell.totalCapacity, 0);
       const averageUtilization = totalUtilizationCapacity
-        ? Math.round((bookings.reduce((sum, item) => sum + item.effectiveEnrollment, 0) / totalUtilizationCapacity) * 100)
+        ? Math.round((occupiedCells.reduce((sum, cell) => sum + cell.totalEnrollment, 0) / totalUtilizationCapacity) * 100)
         : 0;
+      const overall = {
+        room: "All rooms · 8am compliance: 210–213",
+        capacity: physicalRooms.reduce((sum, room) => sum + roomCapacity[room], 0),
+        sections: scoped.length,
+        meetings: heatmapBookings.length,
+        utilization: averageUtilization,
+        eightAm,
+        complianceSlots,
+        eightAmCompliance: facilityPercent(eightAm, complianceSlots),
+        late: late.length,
+        lateCompliance: facilityPercent(heatmapBookings.length - late.length, heatmapBookings.length)
+      };
 
       return {
         scoped,
@@ -4097,9 +4102,11 @@
         unassigned,
         roomRows,
         physicalRooms,
+        complianceRooms,
         averageUtilization,
         eightAm,
         late,
+        overall,
         emptyRooms: physicalRooms.filter(room => !occupiedPhysicalRooms.has(room)),
         underFifty: roomRows.filter(item => item.utilizationSections.length && item.utilization < 50)
       };
@@ -4124,8 +4131,8 @@
         .replace(/"/g, "&quot;");
     }
 
-    function facilityHeatmapBookings() {
-      return facilityMeetingBookings().flatMap(item => {
+    function facilityHeatmapBookings(sourceBookings = facilityMeetingBookings()) {
+      return sourceBookings.flatMap(item => {
         const start = facilityTimeMinutes(item.startTime);
         const end = facilityTimeMinutes(item.endTime);
         if (start === null || end === null) return [];
@@ -4138,6 +4145,9 @@
               course: item.course,
               start,
               end,
+              startTime: item.startTime,
+              endTime: item.endTime,
+              facilityRoom: room,
               enrolled: item.enrolled,
               effectiveEnrollment: item.effectiveEnrollment,
               capacity: item.capacity,
@@ -4146,12 +4156,25 @@
       });
     }
 
-    function facilityHeatmapCell(bookings, day, room, hour) {
+    function facilityHeatmapCellData(bookings, day, room, hour) {
       const blockStart = hour * 60;
       const blockEnd = blockStart + 60;
       const cellBookings = bookings.filter(item =>
         item.day === day && item.room === room && item.start < blockEnd && item.end > blockStart
       );
+      const totalEnrollment = cellBookings.reduce((sum, item) => sum + item.effectiveEnrollment, 0);
+      const totalCapacity = cellBookings.reduce((sum, item) => sum + item.capacity, 0);
+      return {
+        bookings: cellBookings,
+        totalEnrollment,
+        totalCapacity,
+        fillRate: totalCapacity ? Math.round((totalEnrollment / totalCapacity) * 100) : 0
+      };
+    }
+
+    function facilityHeatmapCell(bookings, day, room, hour) {
+      const cell = facilityHeatmapCellData(bookings, day, room, hour);
+      const cellBookings = cell.bookings;
       if (!cellBookings.length) {
         return `<div class="heatmap-cell empty" role="gridcell" aria-label="${room}, ${facilityHeatmapTimeLabel(hour)}: empty"></div>`;
       }
@@ -4167,9 +4190,7 @@
         return `<div class="${className}" role="gridcell" title="${safeDetail}" aria-label="${room}, ${facilityHeatmapTimeLabel(hour)}: ${count} booking${count === 1 ? "" : "s"}">${count}</div>`;
       }
 
-      const totalEnrollment = cellBookings.reduce((sum, item) => sum + item.effectiveEnrollment, 0);
-      const totalCapacity = cellBookings.reduce((sum, item) => sum + item.capacity, 0);
-      const fillRate = totalCapacity ? Math.round((totalEnrollment / totalCapacity) * 100) : 0;
+      const fillRate = cell.fillRate;
       const level = fillRate >= 100 ? 5 : fillRate >= 75 ? 4 : fillRate >= 50 ? 3 : fillRate >= 25 ? 2 : 1;
       return `<div class="heatmap-cell level-${level}" role="gridcell" title="${safeDetail}" aria-label="${room}, ${facilityHeatmapTimeLabel(hour)}: ${fillRate}% fill rate">${fillRate}%</div>`;
     }
@@ -4260,14 +4281,14 @@
 
     function renderFacilities() {
       const metrics = facilityMetrics();
-      const eightAmCompliance = facilityPercent(metrics.eightAm, metrics.scoped.length);
-      const lateCompliance = facilityPercent(metrics.scoped.length - metrics.late.length, metrics.scoped.length);
+      const overall = metrics.overall;
       const cards = [
         { name: "Tracked Rooms", value: metrics.physicalRooms.length, detail: "Combined bookings are folded into each physical room" },
-        { name: "Sections in Scope", value: metrics.scoped.length, detail: "Excel-matched and preserved sections using tracked IYH rooms" },
-        { name: "Avg Utilization", value: `${metrics.averageUtilization}%`, detail: "Average enrollment against true room capacity" },
-        { name: "8am Sections", value: `${metrics.eightAm} · ${eightAmCompliance}%`, detail: "Share of in-scope sections starting at 8 a.m.", priority: true },
-        { name: "After 9pm", value: `${metrics.late.length} · ${lateCompliance}%`, detail: "Late-end compliance for Creator Studio staffing", priority: true },
+        { name: "Sections in Scope", value: overall.sections, detail: "Unique sections represented in the heat map" },
+        { name: "Weekly Room Meetings", value: overall.meetings, detail: "Weekday and physical-room bookings shown on the heat map" },
+        { name: "Avg Utilization", value: `${overall.utilization}%`, detail: "Weighted average of occupied heat-map cells" },
+        { name: "8am Room Compliance", value: `${overall.eightAmCompliance}%`, detail: `${overall.eightAm} of ${overall.complianceSlots} weekday room slots across IYH 210–213 are scheduled at 8 a.m.`, priority: true },
+        { name: "Late-End Compliance", value: `${overall.lateCompliance}%`, detail: `${overall.late} of ${overall.meetings} weekly room meetings end after 9 p.m.`, priority: true },
         { name: "Rooms Below 50%", value: metrics.underFifty.length, detail: "Occupied physical rooms averaging below 50%" },
         { name: "Empty Rooms", value: metrics.emptyRooms.length, detail: metrics.emptyRooms.length ? metrics.emptyRooms.join(", ") : "All physical rooms have an assigned section" }
       ];
@@ -4280,19 +4301,6 @@
         </article>
       `).join("");
 
-      document.getElementById("facilitiesBody").innerHTML = metrics.roomRows.map(item => `
-        <tr>
-          <td>${item.room}</td>
-          <td class="num">${item.capacity}</td>
-          <td class="num">${item.sections.length}</td>
-          <td class="num">${item.utilization}%</td>
-          <td class="num">${item.eightAm}</td>
-          <td class="num">${item.eightAmCompliance}%</td>
-          <td class="num">${item.late}</td>
-          <td class="num">${item.lateCompliance}%</td>
-        </tr>
-      `).join("");
-
       const occupiedRows = metrics.roomRows.filter(item => item.utilizationSections.length);
       const emptiest = occupiedRows.reduce((lowest, item) => !lowest || item.utilization < lowest.utilization ? item : lowest, null);
       const fullest = occupiedRows.reduce((highest, item) => !highest || item.utilization > highest.utilization ? item : highest, null);
@@ -4300,13 +4308,14 @@
         .map(item => `${item.room}: ${item.utilization}%`)
         .join("; ");
       const lateSummary = metrics.late.length
-        ? metrics.late.map(item => `${shortCourse(item.course)} ${item.section} / ${item.facilityRoom} / ${formatFacilityTime(item.startTime)}–${formatFacilityTime(item.endTime)}`).join("; ")
-        : "No in-scope sections end after 9 p.m.";
+        ? metrics.late.map(item => `${shortCourse(item.course)} ${item.section} / ${item.day} / ${item.facilityRoom} / ${formatFacilityTime(item.startTime)}–${formatFacilityTime(item.endTime)}`).join("; ")
+        : "No weekly room meetings end after 9 p.m.";
 
       document.getElementById("facilitiesSummary").innerHTML = [
         `Per-room average utilization: ${utilizationSummary}.`,
-        `8 a.m. compliance is ${eightAmCompliance}% (${metrics.eightAm} of ${metrics.scoped.length} in-scope sections).`,
-        `Sections ending after 9 p.m.: ${lateSummary}`,
+        `8 a.m. room compliance for IYH 210–213 is ${overall.eightAmCompliance}% (${overall.eightAm} of ${overall.complianceSlots} weekday room slots).`,
+        `Late-end compliance is ${overall.lateCompliance}% (${overall.late} of ${overall.meetings} weekly room meetings end after 9 p.m.).`,
+        `Room meetings ending after 9 p.m.: ${lateSummary}`,
         emptiest && fullest ? `The emptiest occupied room is ${emptiest.room} at ${emptiest.utilization}%; the fullest is ${fullest.room} at ${fullest.utilization}%.` : "No occupied rooms are available to compare."
       ].map(item => `<li>${item}</li>`).join("");
 
