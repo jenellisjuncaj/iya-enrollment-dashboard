@@ -1446,11 +1446,6 @@
             <span class="facility-count" id="facilitiesOverflowCount">0</span>
             <p class="facility-card-detail" id="facilitiesOverflowDetail"></p>
           </article>
-          <article class="status-card">
-            <h3>Online Delivery</h3>
-            <span class="facility-count" id="facilitiesOnlineCount">0</span>
-            <p class="facility-card-detail" id="facilitiesOnlineDetail"></p>
-          </article>
         </div>
         <div class="panel facilities-heatmap-panel">
           <div class="panel-pad">
@@ -4028,7 +4023,6 @@
       const unassignedSections = sections.filter(item => !explicitSectionIds.has(item.section));
       const bookings = facilityMeetingBookings();
       const scoped = [...new Map(bookings.map(item => [item.section, item])).values()];
-      const online = unassignedSections.filter(item => normalizeFacilityLocation(item.location).includes("ONLINE"));
       const overflow = unassignedSections.filter(item => {
         const location = normalizeFacilityLocation(item.location);
         return location && location !== "TBA" && !location.includes("ONLINE") && !matchedFacilityRoom(location);
@@ -4068,7 +4062,6 @@
           lateCompliance: facilityPercent(roomBookings.length - late, roomBookings.length)
         };
       });
-      const occupiedPhysicalRooms = new Set(heatmapBookings.map(item => item.room));
       const occupiedCells = facilityWeekdays.flatMap(day => physicalRooms.flatMap(room => facilityHeatmapHours
         .map(hour => facilityHeatmapCellData(heatmapBookings, day, room, hour))
         .filter(cell => cell.bookings.length)));
@@ -4097,7 +4090,6 @@
 
       return {
         scoped,
-        online,
         overflow,
         unassigned,
         roomRows,
@@ -4107,7 +4099,6 @@
         eightAm,
         late,
         overall,
-        emptyRooms: physicalRooms.filter(room => !occupiedPhysicalRooms.has(room)),
         underFifty: roomRows.filter(item => item.utilizationSections.length && item.utilization < 50)
       };
     }
@@ -4289,8 +4280,7 @@
         { name: "Avg Utilization", value: `${overall.utilization}%`, detail: "Weighted average of occupied heat-map cells" },
         { name: "8am Room Compliance", value: `${overall.eightAmCompliance}%`, detail: `${overall.eightAm} of ${overall.complianceSlots} weekday room slots across IYH 210–213 are scheduled at 8 a.m.`, priority: true },
         { name: "Late-End Compliance", value: `${overall.lateCompliance}%`, detail: `${overall.late} of ${overall.meetings} weekly room meetings end after 9 p.m.`, priority: true },
-        { name: "Rooms Below 50%", value: metrics.underFifty.length, detail: "Occupied physical rooms averaging below 50%" },
-        { name: "Empty Rooms", value: metrics.emptyRooms.length, detail: metrics.emptyRooms.length ? metrics.emptyRooms.join(", ") : "All physical rooms have an assigned section" }
+        { name: "Rooms Below 50%", value: metrics.underFifty.length, detail: "Occupied physical rooms averaging below 50%" }
       ];
 
       document.getElementById("facilitiesKpis").innerHTML = cards.map(card => `
@@ -4321,8 +4311,6 @@
 
       document.getElementById("facilitiesOverflowCount").textContent = metrics.overflow.length;
       document.getElementById("facilitiesOverflowDetail").textContent = `${metrics.overflow.length} ACAD/IDSN sections meet outside IYH and are excluded from facilities utilization.${metrics.unassigned.length ? ` ${metrics.unassigned.length} additional sections have TBA locations.` : ""}`;
-      document.getElementById("facilitiesOnlineCount").textContent = metrics.online.length;
-      document.getElementById("facilitiesOnlineDetail").textContent = `${metrics.online.length} online sections are tracked separately and excluded from room utilization.`;
       renderFacilitiesHeatmap();
     }
 
