@@ -1,6 +1,6 @@
 window.dashboardData = {
       "title": "USC Iovine and Young Academy Enrollment and Capacity Tracker",
-      "currentSnapshot": "August 8, 2026 - 6:33 AM PT (PDT) ACAD + IDSN + PRIN update",
+      "currentSnapshot": "August 9, 2026 - 9:20 AM PT (PDT) ACAD + IDSN + PRIN update",
       "baselineSnapshot": "July 28, 2026",
       "lowThreshold": 50,
       "nearThreshold": 80,
@@ -195,7 +195,7 @@ window.dashboardData = {
                   "course": "ACAD 188 Modeling Products with Solidworks",
                   "section": "10215",
                   "instructor": "Kia McCormick",
-                  "enrolled": 32,
+                  "enrolled": 31,
                   "capacity": 32,
                   "waitlisted": 0
             },
@@ -222,7 +222,7 @@ window.dashboardData = {
                   "course": "ACAD 191 Python for Machine Intelligence",
                   "section": "10219",
                   "instructor": "John Bruneau",
-                  "enrolled": 39,
+                  "enrolled": 40,
                   "capacity": 40,
                   "waitlisted": 0
             },
@@ -285,7 +285,7 @@ window.dashboardData = {
                   "course": "ACAD 276 Dev II",
                   "section": "10242",
                   "instructor": "Patrick Dent",
-                  "enrolled": 16,
+                  "enrolled": 17,
                   "capacity": 40,
                   "waitlisted": 0
             },
@@ -444,18 +444,6 @@ window.dashboardData = {
                   "capacity": 49,
                   "waitlisted": 0,
                   "note": "Understanding AI"
-            },
-            {
-                  "program": "Graduate IDSN",
-                  "course": "IDSN 500 Rapid Visualization for Complex Challenges",
-                  "section": "34160",
-                  "instructor": "Stephen Child",
-                  "enrolled": 0,
-                  "capacity": 25,
-                  "waitlisted": 0,
-                  "note": "Cancelled 7/29/26",
-                  "metrics": false,
-                  "status": "Cancelled"
             },
             {
                   "program": "Graduate IDSN",
@@ -670,7 +658,7 @@ window.dashboardData = {
                   "course": "IDSN 581 Introduction to the Global Fashion System",
                   "section": "34170",
                   "instructor": "Keanan Duffty",
-                  "enrolled": 26,
+                  "enrolled": 27,
                   "capacity": 30,
                   "waitlisted": 0,
                   "note": "Hybrid - in-person; paired with section 34169 online"
@@ -794,6 +782,34 @@ window.dashboardData = {
             }
       ],
       "trendLog": [
+            {
+                  "date": "8/9/2026 AM",
+                  "course": "ACAD 188 Modeling Products with Solidworks",
+                  "section": "10215",
+                  "previous": 32,
+                  "current": 31
+            },
+            {
+                  "date": "8/9/2026 AM",
+                  "course": "ACAD 191 Python for Machine Intelligence",
+                  "section": "10219",
+                  "previous": 39,
+                  "current": 40
+            },
+            {
+                  "date": "8/9/2026 AM",
+                  "course": "ACAD 276 Dev II",
+                  "section": "10242",
+                  "previous": 16,
+                  "current": 17
+            },
+            {
+                  "date": "8/9/2026 AM",
+                  "course": "IDSN 581 Introduction to the Global Fashion System",
+                  "section": "34170",
+                  "previous": 26,
+                  "current": 27
+            },
             {
                   "date": "8/8/2026 AM",
                   "course": "ACAD 217 Extended Reality Design",
@@ -1794,6 +1810,14 @@ window.dashboardData = {
                   "dropped": 4,
                   "fullSections": 17,
                   "notes": "Refreshed ACAD, IDSN, and PRIN from the live USC Schedule of Classes API. Fourteen tracked sections changed enrollment for a net increase of 12 seats with no existing section changing status category, and newly published IDSN 590 section 34175 was added to tracking."
+            },
+            {
+                  "date": "August 9, 2026",
+                  "snapshot": "Morning update - 9:20 AM PT (PDT)",
+                  "added": 3,
+                  "dropped": 1,
+                  "fullSections": 17,
+                  "notes": "Automated USC SOC refresh; 4 sections changed enrollment (+3/-1 seats)."
             }
       ],
       "netChangeLabel": "08/08/26 morning PT from 08/07 morning"
