@@ -1820,7 +1820,7 @@ window.dashboardData = {
                   "notes": "Automated USC SOC refresh; 4 sections changed enrollment (+3/-1 seats)."
             }
       ],
-      "netChangeLabel": "08/08/26 morning PT from 08/07 morning"
+      "netChangeLabel": "08/09/26 morning PT from 08/08 morning"
 };
 
 window.roomCapacity = {

@@ -43,8 +43,24 @@ function runLabels(date) {
     dateLabel,
     trendDate: `${shortDateParts.month}/${shortDateParts.day}/${shortDateParts.year} ${dayPeriod}`,
     currentSnapshot: `${dateLabel} - ${timeLabel} PT (${timeParts.timeZoneName}) ACAD + IDSN + PRIN update`,
-    historySnapshot: `${hour < 12 ? "Morning" : "Afternoon"} update - ${timeLabel} PT (${timeParts.timeZoneName})`
+    historySnapshot: `${hour < 12 ? "Morning" : "Afternoon"} update - ${timeLabel} PT (${timeParts.timeZoneName})`,
+    netChangeDate: `${shortDateParts.month.padStart(2, "0")}/${shortDateParts.day.padStart(2, "0")}/${shortDateParts.year.slice(-2)}`,
+    netChangePeriod: hour < 12 ? "morning" : "afternoon"
   };
+}
+
+function previousRunLabel(history) {
+  const previous = history.at(-1);
+  if (!previous) return "previous update";
+
+  const previousDate = new Date(`${previous.date} 12:00:00 UTC`);
+  const dateParts = formatParts(previousDate, { month: "2-digit", day: "2-digit" });
+  const period = /^Morning\b/i.test(previous.snapshot)
+    ? "morning"
+    : /^(Afternoon|PM)\b/i.test(previous.snapshot)
+      ? "afternoon"
+      : "update";
+  return `${dateParts.month}/${dateParts.day} ${period}`;
 }
 
 async function fetchProgram(program) {
@@ -256,12 +272,18 @@ async function main() {
       notes: `Automated USC SOC refresh; ${changes.length} sections changed enrollment (+${added}/-${dropped} seats).`
     }
   ];
+  const updates = {
+    currentSnapshot: labels.currentSnapshot,
+    sections,
+    trendLog: [...changes, ...dashboardData.trendLog],
+    history,
+    netChangeLabel: `${labels.netChangeDate} ${labels.netChangePeriod} PT from ${previousRunLabel(dashboardData.history)}`
+  };
 
   let output = source;
-  output = replaceProperty(output, "currentSnapshot", labels.currentSnapshot);
-  output = replaceProperty(output, "sections", sections);
-  output = replaceProperty(output, "trendLog", [...changes, ...dashboardData.trendLog]);
-  output = replaceProperty(output, "history", history);
+  for (const [property, value] of Object.entries(updates)) {
+    output = replaceProperty(output, property, value);
+  }
   fs.writeFileSync(DATA_FILE, output);
   console.log(`Refreshed ${sections.length} dashboard rows from ${records.size} USC SOC sections.`);
 }
