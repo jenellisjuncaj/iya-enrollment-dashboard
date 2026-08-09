@@ -2410,66 +2410,25 @@
     }
 
     function periodConfig(date) {
-      const rankMap = {
-        "8/8/2026 AM": 15,
-        "8/7/2026 AM": 14,
-        "8/6/2026 AM": 13,
-        "8/5/2026 AM": 12,
-        "8/4/2026 AM": 11,
-        "8/3/2026 AM": 10,
-        "8/2/2026 AM": 9,
-        "8/1/2026 Afternoon": 8,
-        "7/31/2026 Afternoon": 7,
-        "7/31/2026 AM": 6,
-        "7/30/2026 AM": 5,
-        "7/29/2026 Late Evening": 4,
-        "7/29/2026 Afternoon": 3,
-        "7/29/2026 PM": 3,
-        "7/29/2026 AM": 2,
-        "7/28/2026 PM Baseline": 1
+      const match = date.match(/^(\d{1,2})\/(\d{1,2})\/(\d{4})\s+(AM|PM|Afternoon|Late Evening)(?:\s+Baseline)?$/i);
+      const key = date.toLowerCase().replace(/[^a-z0-9]+/g, "-");
+      if (!match) return { key, title: `${date} Update`, label: date, rank: 0 };
+
+      const [, month, day, year, period] = match;
+      const normalizedPeriod = period.toLowerCase();
+      const hour = normalizedPeriod === "am" ? 9 : normalizedPeriod === "late evening" ? 21 : 15;
+      const labelPeriod = normalizedPeriod === "am" ? "AM" : normalizedPeriod === "late evening" ? "Late" : "PM";
+      return {
+        key,
+        title: date.includes("Baseline") ? date : `${date} Update`,
+        label: `${Number(month)}/${Number(day)} ${labelPeriod}`,
+        rank: Date.UTC(Number(year), Number(month) - 1, Number(day), hour)
       };
-      const matchedKey = Object.keys(rankMap).find(key => date.includes(key));
-      const key = (matchedKey || date).toLowerCase().replace(/[^a-z0-9]+/g, "-");
-      const title = matchedKey
-        ? `${matchedKey}${matchedKey.includes("Baseline") ? "" : " Update"}`
-        : `${date} Update`;
-      const labelMap = {
-        "7/28/2026 PM Baseline": "7/28 PM",
-        "7/29/2026 AM": "7/29 AM",
-        "7/29/2026 Afternoon": "7/29 PM",
-        "7/29/2026 PM": "7/29 PM",
-        "7/29/2026 Late Evening": "7/29 Late",
-        "7/30/2026 AM": "7/30 AM",
-        "7/31/2026 AM": "7/31 AM",
-        "7/31/2026 Afternoon": "7/31 PM",
-        "8/1/2026 Afternoon": "8/1 PM",
-        "8/2/2026 AM": "8/2 AM",
-        "8/3/2026 AM": "8/3 AM",
-        "8/4/2026 AM": "8/4 AM",
-        "8/5/2026 AM": "8/5 AM",
-        "8/6/2026 AM": "8/6 AM",
-        "8/7/2026 AM": "8/7 AM",
-        "8/8/2026 AM": "8/8 AM"
-      };
-      return { key, title, label: labelMap[matchedKey] || date, rank: rankMap[matchedKey] || 1 };
     }
 
     function trendPeriod(date) {
-      if (date.includes("8/8/2026 AM")) return "Latest";
-      if (date.includes("8/7/2026 AM")) return "Previous";
-      if (date.includes("8/6/2026 AM")) return "Previous";
-      if (date.includes("8/5/2026 AM")) return "Previous";
-      if (date.includes("8/4/2026 AM")) return "Previous";
-      if (date.includes("8/3/2026 AM")) return "Previous";
-      if (date.includes("8/2/2026 AM")) return "Previous";
-      if (date.includes("8/1/2026 Afternoon")) return "Previous";
-      if (date.includes("7/31/2026 Afternoon")) return "Previous";
-      if (date.includes("7/31/2026 AM")) return "Previous";
-      if (date.includes("7/30/2026")) return "Previous";
-      if (date.includes("Baseline") || date.includes("7/28/2026")) return "Yesterday";
-      if (date.includes("Afternoon")) return "Afternoon";
-      if (date.includes("7/29/2026")) return "Morning";
-      return "Yesterday";
+      const latestRank = Math.max(...dashboardData.trendLog.map(item => periodConfig(item.date).rank));
+      return periodConfig(date).rank === latestRank ? "Latest" : "Previous";
     }
 
     function sectionKey(item) {
