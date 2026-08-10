@@ -1,6 +1,6 @@
 window.dashboardData = {
       "title": "USC Iovine and Young Academy Enrollment and Capacity Tracker",
-      "currentSnapshot": "August 9, 2026 - 9:20 AM PT (PDT) ACAD + IDSN + PRIN update",
+      "currentSnapshot": "August 10, 2026 - 6:49 AM PT (PDT) ACAD + IDSN + PRIN update",
       "baselineSnapshot": "July 28, 2026",
       "lowThreshold": 50,
       "nearThreshold": 80,
@@ -258,7 +258,7 @@ window.dashboardData = {
                   "course": "ACAD 245 Fundamentals of Product Design",
                   "section": "10232",
                   "instructor": "Grant Delgatty",
-                  "enrolled": 19,
+                  "enrolled": 18,
                   "capacity": 35,
                   "waitlisted": 0
             },
@@ -294,7 +294,7 @@ window.dashboardData = {
                   "course": "ACAD 309g Dreams and Madness: The Art of Japan's Golden Age of Animation",
                   "section": "10253",
                   "instructor": "Doug Thomas",
-                  "enrolled": 140,
+                  "enrolled": 139,
                   "capacity": 140,
                   "waitlisted": 0
             },
@@ -339,7 +339,7 @@ window.dashboardData = {
                   "course": "ACAD 406 Purpose-Driven Innovation Incubator",
                   "section": "10256",
                   "instructor": "Chris Swain",
-                  "enrolled": 49,
+                  "enrolled": 50,
                   "capacity": 50,
                   "waitlisted": 0,
                   "note": "Hybrid - in-person; paired with section 10257 online"
@@ -349,7 +349,7 @@ window.dashboardData = {
                   "course": "ACAD 406 Purpose-Driven Innovation Incubator",
                   "section": "10257",
                   "instructor": "Chris Swain",
-                  "enrolled": 9,
+                  "enrolled": 10,
                   "capacity": 25,
                   "waitlisted": 0,
                   "note": "Hybrid - online; paired with section 10256 in-person"
@@ -440,7 +440,7 @@ window.dashboardData = {
                   "course": "ACAD 499 Special Topics",
                   "section": "10292",
                   "instructor": "Doug Thomas",
-                  "enrolled": 35,
+                  "enrolled": 37,
                   "capacity": 49,
                   "waitlisted": 0,
                   "note": "Understanding AI"
@@ -486,7 +486,7 @@ window.dashboardData = {
                   "course": "IDSN 521 Designing Brand Identity for Startups",
                   "section": "34076",
                   "instructor": "Stephen Child",
-                  "enrolled": 33,
+                  "enrolled": 32,
                   "capacity": 35,
                   "waitlisted": 0
             },
@@ -513,7 +513,7 @@ window.dashboardData = {
                   "course": "IDSN 529 Marketing Strategy for Startups",
                   "section": "34091",
                   "instructor": "Tina Sharkey",
-                  "enrolled": 37,
+                  "enrolled": 36,
                   "capacity": 40,
                   "waitlisted": 0
             },
@@ -560,7 +560,7 @@ window.dashboardData = {
                   "course": "IDSN 540 Processes and Perspectives",
                   "section": "34101",
                   "instructor": "Aaron Siegel",
-                  "enrolled": 23,
+                  "enrolled": 24,
                   "capacity": 40,
                   "waitlisted": 0
             },
@@ -578,7 +578,7 @@ window.dashboardData = {
                   "course": "IDSN 542 Introduction to Machine Intelligence",
                   "section": "34198",
                   "instructor": "Thanassis Rikakis",
-                  "enrolled": 19,
+                  "enrolled": 18,
                   "capacity": 32,
                   "waitlisted": 0,
                   "note": "Hybrid; paired with section 34197"
@@ -782,6 +782,69 @@ window.dashboardData = {
             }
       ],
       "trendLog": [
+            {
+                  "date": "8/10/2026 AM",
+                  "course": "ACAD 245 Fundamentals of Product Design",
+                  "section": "10232",
+                  "previous": 19,
+                  "current": 18
+            },
+            {
+                  "date": "8/10/2026 AM",
+                  "course": "ACAD 309g Dreams and Madness: The Art of Japan's Golden Age of Animation",
+                  "section": "10253",
+                  "previous": 140,
+                  "current": 139
+            },
+            {
+                  "date": "8/10/2026 AM",
+                  "course": "ACAD 406 Purpose-Driven Innovation Incubator",
+                  "section": "10256",
+                  "previous": 49,
+                  "current": 50
+            },
+            {
+                  "date": "8/10/2026 AM",
+                  "course": "ACAD 406 Purpose-Driven Innovation Incubator",
+                  "section": "10257",
+                  "previous": 9,
+                  "current": 10
+            },
+            {
+                  "date": "8/10/2026 AM",
+                  "course": "ACAD 499 Special Topics",
+                  "section": "10292",
+                  "previous": 35,
+                  "current": 37
+            },
+            {
+                  "date": "8/10/2026 AM",
+                  "course": "IDSN 521 Designing Brand Identity for Startups",
+                  "section": "34076",
+                  "previous": 33,
+                  "current": 32
+            },
+            {
+                  "date": "8/10/2026 AM",
+                  "course": "IDSN 529 Marketing Strategy for Startups",
+                  "section": "34091",
+                  "previous": 37,
+                  "current": 36
+            },
+            {
+                  "date": "8/10/2026 AM",
+                  "course": "IDSN 540 Processes and Perspectives",
+                  "section": "34101",
+                  "previous": 23,
+                  "current": 24
+            },
+            {
+                  "date": "8/10/2026 AM",
+                  "course": "IDSN 542 Introduction to Machine Intelligence",
+                  "section": "34198",
+                  "previous": 19,
+                  "current": 18
+            },
             {
                   "date": "8/9/2026 AM",
                   "course": "ACAD 188 Modeling Products with Solidworks",
@@ -1818,9 +1881,17 @@ window.dashboardData = {
                   "dropped": 1,
                   "fullSections": 17,
                   "notes": "Automated USC SOC refresh; 4 sections changed enrollment (+3/-1 seats)."
+            },
+            {
+                  "date": "August 10, 2026",
+                  "snapshot": "Morning update - 6:49 AM PT (PDT)",
+                  "added": 5,
+                  "dropped": 5,
+                  "fullSections": 17,
+                  "notes": "Automated USC SOC refresh; 9 sections changed enrollment (+5/-5 seats)."
             }
       ],
-      "netChangeLabel": "08/09/26 morning PT from 08/08 morning"
+      "netChangeLabel": "08/10/26 morning PT from 08/09 morning"
 };
 
 window.roomCapacity = {
