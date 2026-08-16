@@ -1,6 +1,6 @@
 window.dashboardData = {
       "title": "USC Iovine and Young Academy Enrollment and Capacity Tracker",
-      "currentSnapshot": "August 15, 2026 - 6:23 AM PT (PDT) ACAD + IDSN + PRIN update",
+      "currentSnapshot": "August 16, 2026 - 6:25 AM PT (PDT) ACAD + IDSN + PRIN update",
       "baselineSnapshot": "July 28, 2026",
       "lowThreshold": 50,
       "nearThreshold": 80,
@@ -132,7 +132,7 @@ window.dashboardData = {
                   "course": "ACAD 176 Rapid Visualization",
                   "section": "10203",
                   "instructor": "Aaron Siegel",
-                  "enrolled": 23,
+                  "enrolled": 22,
                   "capacity": 32,
                   "waitlisted": 0
             },
@@ -222,7 +222,7 @@ window.dashboardData = {
                   "course": "ACAD 191 Python for Machine Intelligence",
                   "section": "10219",
                   "instructor": "John Bruneau",
-                  "enrolled": 39,
+                  "enrolled": 38,
                   "capacity": 40,
                   "waitlisted": 0
             },
@@ -240,7 +240,7 @@ window.dashboardData = {
                   "course": "ACAD 230 Introduction to Interactive Physical Computing",
                   "section": "10227",
                   "instructor": "John Bruneau",
-                  "enrolled": 31,
+                  "enrolled": 32,
                   "capacity": 32,
                   "waitlisted": 0
             },
@@ -495,7 +495,7 @@ window.dashboardData = {
                   "course": "IDSN 524 Physical Product Design",
                   "section": "34079",
                   "instructor": "Safir Bellali",
-                  "enrolled": 29,
+                  "enrolled": 30,
                   "capacity": 32,
                   "waitlisted": 0
             },
@@ -551,7 +551,7 @@ window.dashboardData = {
                   "course": "IDSN 540 Processes and Perspectives",
                   "section": "34101",
                   "instructor": "Aaron Siegel",
-                  "enrolled": 32,
+                  "enrolled": 31,
                   "capacity": 40,
                   "waitlisted": 0
             },
@@ -659,7 +659,7 @@ window.dashboardData = {
                   "course": "IDSN 581 Introduction to the Global Fashion System",
                   "section": "34169",
                   "instructor": "Keanan Duffty",
-                  "enrolled": 2,
+                  "enrolled": 3,
                   "capacity": 20,
                   "waitlisted": 0,
                   "note": "Hybrid - online; paired with section 34170 in-person"
@@ -715,7 +715,7 @@ window.dashboardData = {
                   "course": "IDSN 597 Industry Practicum in Fashion Innovation",
                   "section": "34192",
                   "instructor": "Keanan Duffty",
-                  "enrolled": 1,
+                  "enrolled": 2,
                   "capacity": 20,
                   "waitlisted": 0,
                   "note": "Hybrid - online; paired with section 34191 in-person"
@@ -782,6 +782,55 @@ window.dashboardData = {
             }
       ],
       "trendLog": [
+            {
+                  "date": "8/16/2026 AM",
+                  "course": "ACAD 176 Rapid Visualization",
+                  "section": "10203",
+                  "previous": 23,
+                  "current": 22
+            },
+            {
+                  "date": "8/16/2026 AM",
+                  "course": "ACAD 191 Python for Machine Intelligence",
+                  "section": "10219",
+                  "previous": 39,
+                  "current": 38
+            },
+            {
+                  "date": "8/16/2026 AM",
+                  "course": "ACAD 230 Introduction to Interactive Physical Computing",
+                  "section": "10227",
+                  "previous": 31,
+                  "current": 32
+            },
+            {
+                  "date": "8/16/2026 AM",
+                  "course": "IDSN 524 Physical Product Design",
+                  "section": "34079",
+                  "previous": 29,
+                  "current": 30
+            },
+            {
+                  "date": "8/16/2026 AM",
+                  "course": "IDSN 540 Processes and Perspectives",
+                  "section": "34101",
+                  "previous": 32,
+                  "current": 31
+            },
+            {
+                  "date": "8/16/2026 AM",
+                  "course": "IDSN 581 Introduction to the Global Fashion System",
+                  "section": "34169",
+                  "previous": 2,
+                  "current": 3
+            },
+            {
+                  "date": "8/16/2026 AM",
+                  "course": "IDSN 597 Industry Practicum in Fashion Innovation",
+                  "section": "34192",
+                  "previous": 1,
+                  "current": 2
+            },
             {
                   "date": "8/15/2026 AM",
                   "course": "ACAD 177 Digital Toolbox: Design",
@@ -2601,9 +2650,17 @@ window.dashboardData = {
                   "dropped": 11,
                   "fullSections": 18,
                   "notes": "Automated USC SOC refresh; 28 sections changed enrollment (+30/-11 seats)."
+            },
+            {
+                  "date": "August 16, 2026",
+                  "snapshot": "Morning update - 6:25 AM PT (PDT)",
+                  "added": 4,
+                  "dropped": 3,
+                  "fullSections": 19,
+                  "notes": "Automated USC SOC refresh; 7 sections changed enrollment (+4/-3 seats)."
             }
       ],
-      "netChangeLabel": "08/15/26 morning PT from 08/14 morning"
+      "netChangeLabel": "08/16/26 morning PT from 08/15 morning"
 };
 
 window.roomCapacity = {
