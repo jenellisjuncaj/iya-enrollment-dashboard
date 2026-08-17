@@ -1,6 +1,6 @@
 window.dashboardData = {
       "title": "USC Iovine and Young Academy Enrollment and Capacity Tracker",
-      "currentSnapshot": "August 16, 2026 - 6:25 AM PT (PDT) ACAD + IDSN + PRIN update",
+      "currentSnapshot": "August 17, 2026 - 6:33 AM PT (PDT) ACAD + IDSN + PRIN update",
       "baselineSnapshot": "July 28, 2026",
       "lowThreshold": 50,
       "nearThreshold": 80,
@@ -222,7 +222,7 @@ window.dashboardData = {
                   "course": "ACAD 191 Python for Machine Intelligence",
                   "section": "10219",
                   "instructor": "John Bruneau",
-                  "enrolled": 38,
+                  "enrolled": 36,
                   "capacity": 40,
                   "waitlisted": 0
             },
@@ -249,7 +249,7 @@ window.dashboardData = {
                   "course": "ACAD 245 Fundamentals of Product Design",
                   "section": "10231",
                   "instructor": "Safir Bellali",
-                  "enrolled": 22,
+                  "enrolled": 21,
                   "capacity": 35,
                   "waitlisted": 0
             },
@@ -330,7 +330,7 @@ window.dashboardData = {
                   "course": "ACAD 406 Purpose-Driven Innovation Incubator",
                   "section": "10256",
                   "instructor": "Chris Swain",
-                  "enrolled": 47,
+                  "enrolled": 48,
                   "capacity": 50,
                   "waitlisted": 0,
                   "note": "Hybrid - in-person; paired with section 10257 online"
@@ -340,7 +340,7 @@ window.dashboardData = {
                   "course": "ACAD 406 Purpose-Driven Innovation Incubator",
                   "section": "10257",
                   "instructor": "Chris Swain",
-                  "enrolled": 10,
+                  "enrolled": 9,
                   "capacity": 25,
                   "waitlisted": 0,
                   "note": "Hybrid - online; paired with section 10256 in-person"
@@ -486,7 +486,7 @@ window.dashboardData = {
                   "course": "IDSN 523 Product Design for User Experience",
                   "section": "34058",
                   "instructor": "Yihyun Lim",
-                  "enrolled": 39,
+                  "enrolled": 38,
                   "capacity": 40,
                   "waitlisted": 0
             },
@@ -495,7 +495,7 @@ window.dashboardData = {
                   "course": "IDSN 524 Physical Product Design",
                   "section": "34079",
                   "instructor": "Safir Bellali",
-                  "enrolled": 30,
+                  "enrolled": 32,
                   "capacity": 32,
                   "waitlisted": 0
             },
@@ -504,7 +504,7 @@ window.dashboardData = {
                   "course": "IDSN 529 Marketing Strategy for Startups",
                   "section": "34091",
                   "instructor": "Tina Sharkey",
-                  "enrolled": 34,
+                  "enrolled": 33,
                   "capacity": 40,
                   "waitlisted": 0
             },
@@ -531,7 +531,7 @@ window.dashboardData = {
                   "course": "IDSN 538 Extended Reality Technologies",
                   "section": "34070",
                   "instructor": "Carsten Becker",
-                  "enrolled": 24,
+                  "enrolled": 25,
                   "capacity": 32,
                   "waitlisted": 0,
                   "note": "In person Thursdays, 6–7:50 p.m.; not hybrid."
@@ -551,7 +551,7 @@ window.dashboardData = {
                   "course": "IDSN 540 Processes and Perspectives",
                   "section": "34101",
                   "instructor": "Aaron Siegel",
-                  "enrolled": 31,
+                  "enrolled": 32,
                   "capacity": 40,
                   "waitlisted": 0
             },
@@ -745,7 +745,7 @@ window.dashboardData = {
                   "course": "PRIN 520 Creators Studio",
                   "section": "34730",
                   "instructor": "Grant Delgatty",
-                  "enrolled": 11,
+                  "enrolled": 10,
                   "capacity": 30,
                   "waitlisted": 0
             },
@@ -776,12 +776,89 @@ window.dashboardData = {
                   "course": "IDSN 590 Directed Research",
                   "section": "34176",
                   "instructor": "Aaron Siegel",
-                  "enrolled": 0,
+                  "enrolled": 1,
                   "capacity": 1,
                   "waitlisted": 0
             }
       ],
       "trendLog": [
+            {
+                  "date": "8/17/2026 AM",
+                  "course": "ACAD 191 Python for Machine Intelligence",
+                  "section": "10219",
+                  "previous": 38,
+                  "current": 36
+            },
+            {
+                  "date": "8/17/2026 AM",
+                  "course": "ACAD 245 Fundamentals of Product Design",
+                  "section": "10231",
+                  "previous": 22,
+                  "current": 21
+            },
+            {
+                  "date": "8/17/2026 AM",
+                  "course": "ACAD 406 Purpose-Driven Innovation Incubator",
+                  "section": "10256",
+                  "previous": 47,
+                  "current": 48
+            },
+            {
+                  "date": "8/17/2026 AM",
+                  "course": "ACAD 406 Purpose-Driven Innovation Incubator",
+                  "section": "10257",
+                  "previous": 10,
+                  "current": 9
+            },
+            {
+                  "date": "8/17/2026 AM",
+                  "course": "IDSN 523 Product Design for User Experience",
+                  "section": "34058",
+                  "previous": 39,
+                  "current": 38
+            },
+            {
+                  "date": "8/17/2026 AM",
+                  "course": "IDSN 524 Physical Product Design",
+                  "section": "34079",
+                  "previous": 30,
+                  "current": 32
+            },
+            {
+                  "date": "8/17/2026 AM",
+                  "course": "IDSN 529 Marketing Strategy for Startups",
+                  "section": "34091",
+                  "previous": 34,
+                  "current": 33
+            },
+            {
+                  "date": "8/17/2026 AM",
+                  "course": "IDSN 538 Extended Reality Technologies",
+                  "section": "34070",
+                  "previous": 24,
+                  "current": 25
+            },
+            {
+                  "date": "8/17/2026 AM",
+                  "course": "IDSN 540 Processes and Perspectives",
+                  "section": "34101",
+                  "previous": 31,
+                  "current": 32
+            },
+            {
+                  "date": "8/17/2026 AM",
+                  "course": "PRIN 520 Creators Studio",
+                  "section": "34730",
+                  "previous": 11,
+                  "current": 10
+            },
+            {
+                  "date": "8/17/2026 AM",
+                  "course": "IDSN 590 Directed Research",
+                  "section": "34176",
+                  "previous": 0,
+                  "current": 1
+            },
             {
                   "date": "8/16/2026 AM",
                   "course": "ACAD 176 Rapid Visualization",
@@ -2658,9 +2735,17 @@ window.dashboardData = {
                   "dropped": 3,
                   "fullSections": 19,
                   "notes": "Automated USC SOC refresh; 7 sections changed enrollment (+4/-3 seats)."
+            },
+            {
+                  "date": "August 17, 2026",
+                  "snapshot": "Morning update - 6:33 AM PT (PDT)",
+                  "added": 6,
+                  "dropped": 7,
+                  "fullSections": 21,
+                  "notes": "Automated USC SOC refresh; 11 sections changed enrollment (+6/-7 seats)."
             }
       ],
-      "netChangeLabel": "08/16/26 morning PT from 08/15 morning"
+      "netChangeLabel": "08/17/26 morning PT from 08/16 morning"
 };
 
 window.roomCapacity = {
