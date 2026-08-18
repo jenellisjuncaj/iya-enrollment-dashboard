@@ -1,6 +1,6 @@
 window.dashboardData = {
       "title": "USC Iovine and Young Academy Enrollment and Capacity Tracker",
-      "currentSnapshot": "August 17, 2026 - 6:33 AM PT (PDT) ACAD + IDSN + PRIN update",
+      "currentSnapshot": "August 18, 2026 - 6:36 AM PT (PDT) ACAD + IDSN + PRIN update",
       "baselineSnapshot": "July 28, 2026",
       "lowThreshold": 50,
       "nearThreshold": 80,
@@ -132,7 +132,7 @@ window.dashboardData = {
                   "course": "ACAD 176 Rapid Visualization",
                   "section": "10203",
                   "instructor": "Aaron Siegel",
-                  "enrolled": 22,
+                  "enrolled": 21,
                   "capacity": 32,
                   "waitlisted": 0
             },
@@ -177,7 +177,7 @@ window.dashboardData = {
                   "course": "ACAD 183 Product Management for Challenge-Based Innovation",
                   "section": "10210",
                   "instructor": "Michael Kanazawa",
-                  "enrolled": 74,
+                  "enrolled": 75,
                   "capacity": 90,
                   "waitlisted": 0
             },
@@ -186,7 +186,7 @@ window.dashboardData = {
                   "course": "ACAD 185 Analytics and Marketing for Challenge-Based Innovation",
                   "section": "10212",
                   "instructor": "Chris Swain",
-                  "enrolled": 40,
+                  "enrolled": 39,
                   "capacity": 80,
                   "waitlisted": 0
             },
@@ -294,8 +294,8 @@ window.dashboardData = {
                   "course": "ACAD 324g The Practice of Design: Ideation to Innovation",
                   "section": "10248",
                   "instructor": "Davina Wolter, Olamiposi Somoye",
-                  "enrolled": 41,
-                  "capacity": 41,
+                  "enrolled": 43,
+                  "capacity": 44,
                   "waitlisted": 0
             },
             {
@@ -303,8 +303,8 @@ window.dashboardData = {
                   "course": "ACAD 324g The Practice of Design: Ideation to Innovation",
                   "section": "10249",
                   "instructor": "Davina Wolter, Olamiposi Somoye",
-                  "enrolled": 39,
-                  "capacity": 41,
+                  "enrolled": 40,
+                  "capacity": 44,
                   "waitlisted": 0
             },
             {
@@ -330,7 +330,7 @@ window.dashboardData = {
                   "course": "ACAD 406 Purpose-Driven Innovation Incubator",
                   "section": "10256",
                   "instructor": "Chris Swain",
-                  "enrolled": 48,
+                  "enrolled": 50,
                   "capacity": 50,
                   "waitlisted": 0,
                   "note": "Hybrid - in-person; paired with section 10257 online"
@@ -441,7 +441,7 @@ window.dashboardData = {
                   "course": "IDSN 515 Professional Practices Residential",
                   "section": "34062",
                   "instructor": "Stephen Child",
-                  "enrolled": 23,
+                  "enrolled": 21,
                   "capacity": 30,
                   "waitlisted": 0
             },
@@ -450,7 +450,7 @@ window.dashboardData = {
                   "course": "IDSN 515 Professional Practices Residential",
                   "section": "34063",
                   "instructor": "Safir Bellali",
-                  "enrolled": 22,
+                  "enrolled": 23,
                   "capacity": 36,
                   "waitlisted": 0
             },
@@ -468,7 +468,7 @@ window.dashboardData = {
                   "course": "IDSN 521 Designing Brand Identity for Startups",
                   "section": "34060",
                   "instructor": "Sue-Tze Tan",
-                  "enrolled": 14,
+                  "enrolled": 15,
                   "capacity": 25,
                   "waitlisted": 0
             },
@@ -477,7 +477,7 @@ window.dashboardData = {
                   "course": "IDSN 521 Designing Brand Identity for Startups",
                   "section": "34076",
                   "instructor": "Stephen Child",
-                  "enrolled": 32,
+                  "enrolled": 34,
                   "capacity": 35,
                   "waitlisted": 0
             },
@@ -486,7 +486,7 @@ window.dashboardData = {
                   "course": "IDSN 523 Product Design for User Experience",
                   "section": "34058",
                   "instructor": "Yihyun Lim",
-                  "enrolled": 38,
+                  "enrolled": 39,
                   "capacity": 40,
                   "waitlisted": 0
             },
@@ -504,7 +504,7 @@ window.dashboardData = {
                   "course": "IDSN 529 Marketing Strategy for Startups",
                   "section": "34091",
                   "instructor": "Tina Sharkey",
-                  "enrolled": 33,
+                  "enrolled": 34,
                   "capacity": 40,
                   "waitlisted": 0
             },
@@ -513,7 +513,7 @@ window.dashboardData = {
                   "course": "IDSN 532 Data and Back-End Development",
                   "section": "34066",
                   "instructor": "Jake Spurlock",
-                  "enrolled": 8,
+                  "enrolled": 9,
                   "capacity": 25,
                   "waitlisted": 0
             },
@@ -531,7 +531,7 @@ window.dashboardData = {
                   "course": "IDSN 538 Extended Reality Technologies",
                   "section": "34070",
                   "instructor": "Carsten Becker",
-                  "enrolled": 25,
+                  "enrolled": 26,
                   "capacity": 32,
                   "waitlisted": 0,
                   "note": "In person Thursdays, 6–7:50 p.m.; not hybrid."
@@ -551,7 +551,7 @@ window.dashboardData = {
                   "course": "IDSN 540 Processes and Perspectives",
                   "section": "34101",
                   "instructor": "Aaron Siegel",
-                  "enrolled": 32,
+                  "enrolled": 33,
                   "capacity": 40,
                   "waitlisted": 0
             },
@@ -560,7 +560,7 @@ window.dashboardData = {
                   "course": "IDSN 540 Processes and Perspectives",
                   "section": "34080",
                   "instructor": "Yihyun Lim",
-                  "enrolled": 28,
+                  "enrolled": 29,
                   "capacity": 40,
                   "waitlisted": 0
             },
@@ -569,7 +569,7 @@ window.dashboardData = {
                   "course": "IDSN 542 Introduction to Machine Intelligence",
                   "section": "34198",
                   "instructor": "Thanassis Rikakis",
-                  "enrolled": 20,
+                  "enrolled": 19,
                   "capacity": 32,
                   "waitlisted": 0,
                   "note": "Hybrid; paired with section 34197"
@@ -579,7 +579,7 @@ window.dashboardData = {
                   "course": "IDSN 542 Introduction to Machine Intelligence",
                   "section": "34197",
                   "instructor": "Thanassis Rikakis",
-                  "enrolled": 18,
+                  "enrolled": 17,
                   "capacity": 30,
                   "waitlisted": 0,
                   "note": "Hybrid; paired with section 34198"
@@ -589,7 +589,7 @@ window.dashboardData = {
                   "course": "PRIN 550 / IDSN 547 Industry and Impact Projects",
                   "section": "34782",
                   "instructor": "Matthew Manos",
-                  "enrolled": 39,
+                  "enrolled": 40,
                   "capacity": 40,
                   "waitlisted": 0,
                   "note": "Cross-listed; counted as PRIN 550 in summaries",
@@ -600,7 +600,7 @@ window.dashboardData = {
                   "course": "PRIN 550 / IDSN 547 Industry and Impact Projects",
                   "section": "34785",
                   "instructor": "Yihyun Lim",
-                  "enrolled": 13,
+                  "enrolled": 14,
                   "capacity": 30,
                   "waitlisted": 0,
                   "note": "Cross-listed; counted as PRIN 550 in summaries",
@@ -640,7 +640,7 @@ window.dashboardData = {
                   "course": "IDSN 579 Social Media Incubator: Data-Driven Growth for Founders",
                   "section": "34150",
                   "instructor": "Thomas Dadourian",
-                  "enrolled": 28,
+                  "enrolled": 29,
                   "capacity": 30,
                   "waitlisted": 0
             },
@@ -649,8 +649,8 @@ window.dashboardData = {
                   "course": "IDSN 581 Introduction to the Global Fashion System",
                   "section": "34170",
                   "instructor": "Keanan Duffty",
-                  "enrolled": 30,
-                  "capacity": 30,
+                  "enrolled": 29,
+                  "capacity": 32,
                   "waitlisted": 0,
                   "note": "Hybrid - in-person; paired with section 34169 online"
             },
@@ -735,7 +735,7 @@ window.dashboardData = {
                   "course": "IDSN 599 Special Topics",
                   "section": "34154",
                   "instructor": "Michael Kanazawa",
-                  "enrolled": 10,
+                  "enrolled": 11,
                   "capacity": 25,
                   "waitlisted": 0,
                   "note": "Hybrid - online; paired with section 34153 in-person"
@@ -745,7 +745,7 @@ window.dashboardData = {
                   "course": "PRIN 520 Creators Studio",
                   "section": "34730",
                   "instructor": "Grant Delgatty",
-                  "enrolled": 10,
+                  "enrolled": 11,
                   "capacity": 30,
                   "waitlisted": 0
             },
@@ -754,7 +754,7 @@ window.dashboardData = {
                   "course": "PRIN 550 / IDSN 547 Industry and Impact Projects",
                   "section": "34782",
                   "instructor": "Matthew Manos",
-                  "enrolled": 39,
+                  "enrolled": 40,
                   "capacity": 40,
                   "waitlisted": 0,
                   "note": "Cross-listed with IDSN 547",
@@ -765,7 +765,7 @@ window.dashboardData = {
                   "course": "PRIN 550 / IDSN 547 Industry and Impact Projects",
                   "section": "34785",
                   "instructor": "Yihyun Lim",
-                  "enrolled": 13,
+                  "enrolled": 14,
                   "capacity": 30,
                   "waitlisted": 0,
                   "note": "Cross-listed with IDSN 547",
@@ -782,6 +782,174 @@ window.dashboardData = {
             }
       ],
       "trendLog": [
+            {
+                  "date": "8/18/2026 AM",
+                  "course": "ACAD 176 Rapid Visualization",
+                  "section": "10203",
+                  "previous": 22,
+                  "current": 21
+            },
+            {
+                  "date": "8/18/2026 AM",
+                  "course": "ACAD 183 Product Management for Challenge-Based Innovation",
+                  "section": "10210",
+                  "previous": 74,
+                  "current": 75
+            },
+            {
+                  "date": "8/18/2026 AM",
+                  "course": "ACAD 185 Analytics and Marketing for Challenge-Based Innovation",
+                  "section": "10212",
+                  "previous": 40,
+                  "current": 39
+            },
+            {
+                  "date": "8/18/2026 AM",
+                  "course": "ACAD 324g The Practice of Design: Ideation to Innovation",
+                  "section": "10248",
+                  "previous": 41,
+                  "current": 43
+            },
+            {
+                  "date": "8/18/2026 AM",
+                  "course": "ACAD 324g The Practice of Design: Ideation to Innovation",
+                  "section": "10249",
+                  "previous": 39,
+                  "current": 40
+            },
+            {
+                  "date": "8/18/2026 AM",
+                  "course": "ACAD 406 Purpose-Driven Innovation Incubator",
+                  "section": "10256",
+                  "previous": 48,
+                  "current": 50
+            },
+            {
+                  "date": "8/18/2026 AM",
+                  "course": "IDSN 515 Professional Practices Residential",
+                  "section": "34062",
+                  "previous": 23,
+                  "current": 21
+            },
+            {
+                  "date": "8/18/2026 AM",
+                  "course": "IDSN 515 Professional Practices Residential",
+                  "section": "34063",
+                  "previous": 22,
+                  "current": 23
+            },
+            {
+                  "date": "8/18/2026 AM",
+                  "course": "IDSN 521 Designing Brand Identity for Startups",
+                  "section": "34060",
+                  "previous": 14,
+                  "current": 15
+            },
+            {
+                  "date": "8/18/2026 AM",
+                  "course": "IDSN 521 Designing Brand Identity for Startups",
+                  "section": "34076",
+                  "previous": 32,
+                  "current": 34
+            },
+            {
+                  "date": "8/18/2026 AM",
+                  "course": "IDSN 523 Product Design for User Experience",
+                  "section": "34058",
+                  "previous": 38,
+                  "current": 39
+            },
+            {
+                  "date": "8/18/2026 AM",
+                  "course": "IDSN 529 Marketing Strategy for Startups",
+                  "section": "34091",
+                  "previous": 33,
+                  "current": 34
+            },
+            {
+                  "date": "8/18/2026 AM",
+                  "course": "IDSN 532 Data and Back-End Development",
+                  "section": "34066",
+                  "previous": 8,
+                  "current": 9
+            },
+            {
+                  "date": "8/18/2026 AM",
+                  "course": "IDSN 538 Extended Reality Technologies",
+                  "section": "34070",
+                  "previous": 25,
+                  "current": 26
+            },
+            {
+                  "date": "8/18/2026 AM",
+                  "course": "IDSN 540 Processes and Perspectives",
+                  "section": "34101",
+                  "previous": 32,
+                  "current": 33
+            },
+            {
+                  "date": "8/18/2026 AM",
+                  "course": "IDSN 540 Processes and Perspectives",
+                  "section": "34080",
+                  "previous": 28,
+                  "current": 29
+            },
+            {
+                  "date": "8/18/2026 AM",
+                  "course": "IDSN 542 Introduction to Machine Intelligence",
+                  "section": "34198",
+                  "previous": 20,
+                  "current": 19
+            },
+            {
+                  "date": "8/18/2026 AM",
+                  "course": "IDSN 542 Introduction to Machine Intelligence",
+                  "section": "34197",
+                  "previous": 18,
+                  "current": 17
+            },
+            {
+                  "date": "8/18/2026 AM",
+                  "course": "PRIN 550 / IDSN 547 Industry and Impact Projects",
+                  "section": "34782",
+                  "previous": 39,
+                  "current": 40
+            },
+            {
+                  "date": "8/18/2026 AM",
+                  "course": "PRIN 550 / IDSN 547 Industry and Impact Projects",
+                  "section": "34785",
+                  "previous": 13,
+                  "current": 14
+            },
+            {
+                  "date": "8/18/2026 AM",
+                  "course": "IDSN 579 Social Media Incubator: Data-Driven Growth for Founders",
+                  "section": "34150",
+                  "previous": 28,
+                  "current": 29
+            },
+            {
+                  "date": "8/18/2026 AM",
+                  "course": "IDSN 581 Introduction to the Global Fashion System",
+                  "section": "34170",
+                  "previous": 30,
+                  "current": 29
+            },
+            {
+                  "date": "8/18/2026 AM",
+                  "course": "IDSN 599 Special Topics",
+                  "section": "34154",
+                  "previous": 10,
+                  "current": 11
+            },
+            {
+                  "date": "8/18/2026 AM",
+                  "course": "PRIN 520 Creators Studio",
+                  "section": "34730",
+                  "previous": 10,
+                  "current": 11
+            },
             {
                   "date": "8/17/2026 AM",
                   "course": "ACAD 191 Python for Machine Intelligence",
@@ -2743,9 +2911,17 @@ window.dashboardData = {
                   "dropped": 7,
                   "fullSections": 21,
                   "notes": "Automated USC SOC refresh; 11 sections changed enrollment (+6/-7 seats)."
+            },
+            {
+                  "date": "August 18, 2026",
+                  "snapshot": "Morning update - 6:36 AM PT (PDT)",
+                  "added": 21,
+                  "dropped": 7,
+                  "fullSections": 21,
+                  "notes": "Automated USC SOC refresh; 24 sections changed enrollment (+21/-7 seats)."
             }
       ],
-      "netChangeLabel": "08/17/26 morning PT from 08/16 morning"
+      "netChangeLabel": "08/18/26 morning PT from 08/17 morning"
 };
 
 window.roomCapacity = {
