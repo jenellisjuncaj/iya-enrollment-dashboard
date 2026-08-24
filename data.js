@@ -1,6 +1,6 @@
 window.dashboardData = {
       "title": "USC Iovine and Young Academy Enrollment and Capacity Tracker",
-      "currentSnapshot": "August 23, 2026 - 6:26 AM PT (PDT) ACAD + IDSN + PRIN update",
+      "currentSnapshot": "August 24, 2026 - 6:43 AM PT (PDT) ACAD + IDSN + PRIN update",
       "baselineSnapshot": "July 28, 2026",
       "lowThreshold": 50,
       "nearThreshold": 80,
@@ -132,7 +132,7 @@ window.dashboardData = {
                   "course": "ACAD 176 Rapid Visualization",
                   "section": "10203",
                   "instructor": "Aaron Siegel",
-                  "enrolled": 23,
+                  "enrolled": 22,
                   "capacity": 32,
                   "waitlisted": 0
             },
@@ -222,7 +222,7 @@ window.dashboardData = {
                   "course": "ACAD 191 Python for Machine Intelligence",
                   "section": "10219",
                   "instructor": "John Bruneau",
-                  "enrolled": 38,
+                  "enrolled": 37,
                   "capacity": 40,
                   "waitlisted": 0
             },
@@ -231,7 +231,7 @@ window.dashboardData = {
                   "course": "ACAD 217 Extended Reality Design",
                   "section": "10225",
                   "instructor": "Carsten Becker",
-                  "enrolled": 18,
+                  "enrolled": 17,
                   "capacity": 30,
                   "waitlisted": 0
             },
@@ -249,7 +249,7 @@ window.dashboardData = {
                   "course": "ACAD 245 Fundamentals of Product Design",
                   "section": "10231",
                   "instructor": "Safir Bellali",
-                  "enrolled": 22,
+                  "enrolled": 21,
                   "capacity": 35,
                   "waitlisted": 0
             },
@@ -267,7 +267,7 @@ window.dashboardData = {
                   "course": "ACAD 274 Designing Interactive Data Systems",
                   "section": "10238",
                   "instructor": "Patrick Dent",
-                  "enrolled": 28,
+                  "enrolled": 27,
                   "capacity": 40,
                   "waitlisted": 0
             },
@@ -303,7 +303,7 @@ window.dashboardData = {
                   "course": "ACAD 324g The Practice of Design: Ideation to Innovation",
                   "section": "10249",
                   "instructor": "Davina Wolter, Olamiposi Somoye",
-                  "enrolled": 41,
+                  "enrolled": 40,
                   "capacity": 44,
                   "waitlisted": 0
             },
@@ -340,7 +340,7 @@ window.dashboardData = {
                   "course": "ACAD 406 Purpose-Driven Innovation Incubator",
                   "section": "10257",
                   "instructor": "Chris Swain",
-                  "enrolled": 13,
+                  "enrolled": 14,
                   "capacity": 25,
                   "waitlisted": 0,
                   "note": "Hybrid - online; paired with section 10256 in-person"
@@ -359,7 +359,7 @@ window.dashboardData = {
                   "course": "ACAD 444 Designing Products for Industry",
                   "section": "10280",
                   "instructor": "Grant Delgatty",
-                  "enrolled": 33,
+                  "enrolled": 34,
                   "capacity": 40,
                   "waitlisted": 0
             },
@@ -450,7 +450,7 @@ window.dashboardData = {
                   "course": "IDSN 515 Professional Practices Residential",
                   "section": "34063",
                   "instructor": "Safir Bellali",
-                  "enrolled": 30,
+                  "enrolled": 29,
                   "capacity": 36,
                   "waitlisted": 0
             },
@@ -791,6 +791,69 @@ window.dashboardData = {
             }
       ],
       "trendLog": [
+            {
+                  "date": "8/24/2026 AM",
+                  "course": "ACAD 176 Rapid Visualization",
+                  "section": "10203",
+                  "previous": 23,
+                  "current": 22
+            },
+            {
+                  "date": "8/24/2026 AM",
+                  "course": "ACAD 191 Python for Machine Intelligence",
+                  "section": "10219",
+                  "previous": 38,
+                  "current": 37
+            },
+            {
+                  "date": "8/24/2026 AM",
+                  "course": "ACAD 217 Extended Reality Design",
+                  "section": "10225",
+                  "previous": 18,
+                  "current": 17
+            },
+            {
+                  "date": "8/24/2026 AM",
+                  "course": "ACAD 245 Fundamentals of Product Design",
+                  "section": "10231",
+                  "previous": 22,
+                  "current": 21
+            },
+            {
+                  "date": "8/24/2026 AM",
+                  "course": "ACAD 274 Designing Interactive Data Systems",
+                  "section": "10238",
+                  "previous": 28,
+                  "current": 27
+            },
+            {
+                  "date": "8/24/2026 AM",
+                  "course": "ACAD 324g The Practice of Design: Ideation to Innovation",
+                  "section": "10249",
+                  "previous": 41,
+                  "current": 40
+            },
+            {
+                  "date": "8/24/2026 AM",
+                  "course": "ACAD 406 Purpose-Driven Innovation Incubator",
+                  "section": "10257",
+                  "previous": 13,
+                  "current": 14
+            },
+            {
+                  "date": "8/24/2026 AM",
+                  "course": "ACAD 444 Designing Products for Industry",
+                  "section": "10280",
+                  "previous": 33,
+                  "current": 34
+            },
+            {
+                  "date": "8/24/2026 AM",
+                  "course": "IDSN 515 Professional Practices Residential",
+                  "section": "34063",
+                  "previous": 30,
+                  "current": 29
+            },
             {
                   "date": "8/23/2026 AM",
                   "course": "ACAD 188 Modeling Products with Solidworks",
@@ -3836,9 +3899,17 @@ window.dashboardData = {
                   "dropped": 4,
                   "fullSections": 22,
                   "notes": "Automated USC SOC refresh; 14 sections changed enrollment (+11/-4 seats)."
+            },
+            {
+                  "date": "August 24, 2026",
+                  "snapshot": "Morning update - 6:43 AM PT (PDT)",
+                  "added": 2,
+                  "dropped": 7,
+                  "fullSections": 22,
+                  "notes": "Automated USC SOC refresh; 9 sections changed enrollment (+2/-7 seats)."
             }
       ],
-      "netChangeLabel": "08/23/26 morning PT from 08/22 morning"
+      "netChangeLabel": "08/24/26 morning PT from 08/23 morning"
 };
 
 window.roomCapacity = {
