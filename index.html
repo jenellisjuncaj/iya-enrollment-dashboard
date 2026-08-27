@@ -122,6 +122,39 @@
     .term-timing b {
       color: var(--cardinal-dark);
     }
+    .term-dates {
+  margin-top: 12px;
+  display: grid;
+  gap: 8px;
+}
+
+.term-date-line {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  padding: 8px 12px;
+  border: 1px solid var(--line);
+  border-left: 4px solid var(--olive);
+  border-radius: 8px;
+  background: rgba(255, 254, 250, 0.72);
+  color: var(--olive-dark);
+  font-size: 0.9rem;
+  box-shadow: 0 10px 26px rgba(46, 55, 39, 0.06);
+}
+
+.term-date-line strong {
+  font-size: 0.74rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.term-date-line span {
+  color: var(--muted);
+}
+
+.term-date-line b {
+  color: var(--cardinal-dark);
+}
 
     .quick-nav {
       display: flex;
@@ -1333,6 +1366,23 @@
           <span>8/24/26</span>
           <span><b id="daysUntilClasses">--</b> days remaining</span>
           <span id="classWeekLine"></span>
+                  <div class="term-dates" aria-label="Fall 2026 term dates">
+          <div class="term-date-line">
+            <strong>Classes End</strong>
+            <span>Friday, December 4</span>
+            <span><b id="daysUntilClassesEnd">--</b> days remaining</span>
+          </div>
+          <div class="term-date-line">
+            <strong>Study Days</strong>
+            <span>Sat–Tue, December 5–8</span>
+            <span><b id="daysUntilStudyDays">--</b> days remaining</span>
+          </div>
+          <div class="term-date-line">
+            <strong>Exams</strong>
+            <span>Wed–Wed, December 9–16</span>
+            <span><b id="daysUntilExams">--</b> days remaining</span>
+          </div>
+        </div>
         </div>
         <nav class="quick-nav" aria-label="Dashboard sections">
           <a href="#kpiTitle">KPIs</a>
@@ -2674,6 +2724,23 @@
     }
   }
 }
+    function renderTermDates() {
+  const today = new Date();
+  today.setHours(0, 0, 0, 0);
+
+  const dates = [
+    { id: "daysUntilClassesEnd", date: new Date(2026, 11, 4) },
+    { id: "daysUntilStudyDays", date: new Date(2026, 11, 5) },
+    { id: "daysUntilExams", date: new Date(2026, 11, 9) }
+  ];
+
+  dates.forEach(item => {
+    const target = document.getElementById(item.id);
+    if (!target) return;
+    const days = Math.max(0, Math.ceil((item.date - today) / 86400000));
+    target.textContent = days;
+  });
+}
 
     function renderProgramFilter() {
       const filter = document.getElementById("programFilter");
@@ -2793,6 +2860,7 @@
       renderSections();
       renderCourseAssistants();
       renderTermTiming();
+      renderTermDates();
       renderProgramFilter();
       renderSectionFilters();
       setupFacilitiesHeatmapControls();
