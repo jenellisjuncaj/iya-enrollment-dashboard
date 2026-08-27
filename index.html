@@ -107,6 +107,17 @@
     .term-timing span {
       color: var(--muted);
     }
+    .term-timing #classWeekLine {
+  padding-left: 12px;
+  border-left: 1px solid var(--line);
+  color: var(--olive-dark);
+  font-weight: 800;
+}
+
+.term-timing #classWeekLine:empty {
+  padding-left: 0;
+  border-left: 0;
+}
 
     .term-timing b {
       color: var(--cardinal-dark);
@@ -1321,6 +1332,7 @@
           <strong>Classes Begin</strong>
           <span>8/24/26</span>
           <span><b id="daysUntilClasses">--</b> days remaining</span>
+          <span id="classWeekLine"></span>
         </div>
         <nav class="quick-nav" aria-label="Dashboard sections">
           <a href="#kpiTitle">KPIs</a>
@@ -2639,16 +2651,26 @@
       `).join("");
     }
 
-    function renderTermTiming() {
-      const target = document.getElementById("daysUntilClasses");
-      if (!target) return;
-      const today = new Date();
-      const start = new Date(2026, 7, 24);
-      today.setHours(0, 0, 0, 0);
-      start.setHours(0, 0, 0, 0);
-      const days = Math.max(0, Math.ceil((start - today) / 86400000));
-      target.textContent = days;
+   function renderTermTiming() {
+  const target = document.getElementById("daysUntilClasses");
+  const weekLine = document.getElementById("classWeekLine");
+  if (!target) return;
+  const today = new Date();
+  const start = new Date(2026, 7, 24);
+  today.setHours(0, 0, 0, 0);
+  start.setHours(0, 0, 0, 0);
+  const days = Math.max(0, Math.ceil((start - today) / 86400000));
+  target.textContent = days;
+
+  if (weekLine) {
+    if (today < start) {
+      weekLine.textContent = "";
+    } else {
+      const weekNumber = Math.floor((today - start) / (7 * 86400000)) + 1;
+      weekLine.textContent = `Classes in session: Week ${weekNumber}`;
     }
+  }
+}
 
     function renderProgramFilter() {
       const filter = document.getElementById("programFilter");
