@@ -1840,6 +1840,7 @@
         .reduce((sum, item) => sum + (item.current - item.previous), 0);
 
       const cards = [
+        { name: "Overall Utilization", value: `${totalCapacity ? Math.round((totalEnrollment / totalCapacity) * 100) : 0}%`, detail: "enrolled seats vs. total capacity" },
         { name: "Sections", value: sections.length, detail: "tracked sections" },
         { name: "Enrollment", value: totalEnrollment, detail: `${totalCapacity} total seats` },
         { name: "Full", value: full, detail: "at capacity" },
