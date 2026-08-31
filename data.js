@@ -1,6 +1,6 @@
 window.dashboardData = {
       "title": "USC Iovine and Young Academy Enrollment and Capacity Tracker",
-      "currentSnapshot": "August 30, 2026 - 7:12 AM PT (PDT) ACAD + IDSN + PRIN update",
+      "currentSnapshot": "August 31, 2026 - 5:33 AM PT (PDT) ACAD + IDSN + PRIN update",
       "baselineSnapshot": "July 28, 2026",
       "lowThreshold": 50,
       "nearThreshold": 80,
@@ -249,7 +249,7 @@ window.dashboardData = {
                   "course": "ACAD 245 Fundamentals of Product Design",
                   "section": "10231",
                   "instructor": "Safir Bellali",
-                  "enrolled": 20,
+                  "enrolled": 19,
                   "capacity": 35,
                   "waitlisted": 0
             },
@@ -303,7 +303,7 @@ window.dashboardData = {
                   "course": "ACAD 324g The Practice of Design: Ideation to Innovation",
                   "section": "10249",
                   "instructor": "Davina Wolter, Olamiposi Somoye",
-                  "enrolled": 42,
+                  "enrolled": 41,
                   "capacity": 44,
                   "waitlisted": 0
             },
@@ -330,7 +330,7 @@ window.dashboardData = {
                   "course": "ACAD 406 Purpose-Driven Innovation Incubator",
                   "section": "10256",
                   "instructor": "Chris Swain",
-                  "enrolled": 50,
+                  "enrolled": 48,
                   "capacity": 50,
                   "waitlisted": 0,
                   "note": "Hybrid - in-person; paired with section 10257 online"
@@ -532,7 +532,7 @@ window.dashboardData = {
                   "course": "IDSN 538 Extended Reality Technologies",
                   "section": "34094",
                   "instructor": "Carsten Becker",
-                  "enrolled": 15,
+                  "enrolled": 14,
                   "capacity": 30,
                   "waitlisted": 0,
                   "note": "Online Tuesdays, 4–5:50 p.m.; not hybrid."
@@ -612,7 +612,7 @@ window.dashboardData = {
                   "course": "IDSN 577 Finance for Entrepreneurs",
                   "section": "34147",
                   "instructor": "Eric Quick",
-                  "enrolled": 13,
+                  "enrolled": 12,
                   "capacity": 25,
                   "waitlisted": 0,
                   "note": "Hybrid - in-person; paired with section 34167 online"
@@ -631,7 +631,7 @@ window.dashboardData = {
                   "course": "IDSN 579 Social Media Incubator: Data-Driven Growth for Founders",
                   "section": "34150",
                   "instructor": "Thomas Dadourian",
-                  "enrolled": 34,
+                  "enrolled": 33,
                   "capacity": 35,
                   "waitlisted": 0
             },
@@ -696,7 +696,7 @@ window.dashboardData = {
                   "course": "IDSN 597 Industry Practicum in Fashion Innovation",
                   "section": "34191",
                   "instructor": "Keanan Duffty",
-                  "enrolled": 38,
+                  "enrolled": 37,
                   "capacity": 40,
                   "waitlisted": 0,
                   "note": "Hybrid - in-person; paired with section 34192 online"
@@ -791,6 +791,55 @@ window.dashboardData = {
             }
       ],
       "trendLog": [
+            {
+                  "date": "8/31/2026 AM",
+                  "course": "ACAD 245 Fundamentals of Product Design",
+                  "section": "10231",
+                  "previous": 20,
+                  "current": 19
+            },
+            {
+                  "date": "8/31/2026 AM",
+                  "course": "ACAD 324g The Practice of Design: Ideation to Innovation",
+                  "section": "10249",
+                  "previous": 42,
+                  "current": 41
+            },
+            {
+                  "date": "8/31/2026 AM",
+                  "course": "ACAD 406 Purpose-Driven Innovation Incubator",
+                  "section": "10256",
+                  "previous": 50,
+                  "current": 48
+            },
+            {
+                  "date": "8/31/2026 AM",
+                  "course": "IDSN 538 Extended Reality Technologies",
+                  "section": "34094",
+                  "previous": 15,
+                  "current": 14
+            },
+            {
+                  "date": "8/31/2026 AM",
+                  "course": "IDSN 577 Finance for Entrepreneurs",
+                  "section": "34147",
+                  "previous": 13,
+                  "current": 12
+            },
+            {
+                  "date": "8/31/2026 AM",
+                  "course": "IDSN 579 Social Media Incubator: Data-Driven Growth for Founders",
+                  "section": "34150",
+                  "previous": 34,
+                  "current": 33
+            },
+            {
+                  "date": "8/31/2026 AM",
+                  "course": "IDSN 597 Industry Practicum in Fashion Innovation",
+                  "section": "34191",
+                  "previous": 38,
+                  "current": 37
+            },
             {
                   "date": "8/30/2026 AM",
                   "course": "ACAD 176 Rapid Visualization",
@@ -5040,9 +5089,17 @@ window.dashboardData = {
                   "dropped": 10,
                   "fullSections": 23,
                   "notes": "Automated USC SOC refresh; 13 sections changed enrollment (+4/-10 seats)."
+            },
+            {
+                  "date": "August 31, 2026",
+                  "snapshot": "Morning update - 5:33 AM PT (PDT)",
+                  "added": 0,
+                  "dropped": 8,
+                  "fullSections": 22,
+                  "notes": "Automated USC SOC refresh; 7 sections changed enrollment (+0/-8 seats)."
             }
       ],
-      "netChangeLabel": "08/30/26 morning PT from 08/29 morning"
+      "netChangeLabel": "08/31/26 morning PT from 08/30 morning"
 };
 
 window.sectionCredits = {
