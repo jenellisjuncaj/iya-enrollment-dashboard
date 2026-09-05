@@ -1,6 +1,6 @@
 window.dashboardData = {
       "title": "USC Iovine and Young Academy Enrollment and Capacity Tracker",
-      "currentSnapshot": "September 4, 2026 - 5:37 AM PT (PDT) ACAD + IDSN + PRIN update",
+      "currentSnapshot": "September 5, 2026 - 6:11 AM PT (PDT) ACAD + IDSN + PRIN update",
       "baselineSnapshot": "July 28, 2026",
       "lowThreshold": 50,
       "nearThreshold": 80,
@@ -213,7 +213,7 @@ window.dashboardData = {
                   "course": "ACAD 190 Making with Materials",
                   "section": "10218",
                   "instructor": "Kia McCormick",
-                  "enrolled": 32,
+                  "enrolled": 31,
                   "capacity": 32,
                   "waitlisted": 0
             },
@@ -222,7 +222,7 @@ window.dashboardData = {
                   "course": "ACAD 191 Python for Machine Intelligence",
                   "section": "10219",
                   "instructor": "John Bruneau",
-                  "enrolled": 33,
+                  "enrolled": 32,
                   "capacity": 33,
                   "waitlisted": 0
             },
@@ -232,7 +232,7 @@ window.dashboardData = {
                   "section": "10225",
                   "instructor": "Carsten Becker",
                   "enrolled": 14,
-                  "capacity": 14,
+                  "capacity": 30,
                   "waitlisted": 0
             },
             {
@@ -431,7 +431,7 @@ window.dashboardData = {
                   "course": "ACAD 499 Special Topics",
                   "section": "10292",
                   "instructor": "Doug Thomas",
-                  "enrolled": 40,
+                  "enrolled": 39,
                   "capacity": 40,
                   "waitlisted": 0,
                   "note": "Understanding AI"
@@ -441,7 +441,7 @@ window.dashboardData = {
                   "course": "IDSN 515 Professional Practices Residential",
                   "section": "34062",
                   "instructor": "Stephen Child",
-                  "enrolled": 26,
+                  "enrolled": 25,
                   "capacity": 30,
                   "waitlisted": 0
             },
@@ -477,7 +477,7 @@ window.dashboardData = {
                   "course": "IDSN 521 Designing Brand Identity for Startups",
                   "section": "34076",
                   "instructor": "Stephen Child",
-                  "enrolled": 34,
+                  "enrolled": 35,
                   "capacity": 35,
                   "waitlisted": 0
             },
@@ -513,8 +513,8 @@ window.dashboardData = {
                   "course": "IDSN 533 iOS Application Design and Development",
                   "section": "34155",
                   "instructor": "John Bruneau",
-                  "enrolled": 26,
-                  "capacity": 26,
+                  "enrolled": 27,
+                  "capacity": 27,
                   "waitlisted": 0
             },
             {
@@ -687,7 +687,7 @@ window.dashboardData = {
                   "course": "IDSN 590 Directed Research",
                   "section": "34175",
                   "instructor": "Yihyun Lim",
-                  "enrolled": 1,
+                  "enrolled": 2,
                   "capacity": 2,
                   "waitlisted": 0
             },
@@ -696,7 +696,7 @@ window.dashboardData = {
                   "course": "IDSN 597 Industry Practicum in Fashion Innovation",
                   "section": "34191",
                   "instructor": "Keanan Duffty",
-                  "enrolled": 38,
+                  "enrolled": 39,
                   "capacity": 40,
                   "waitlisted": 0,
                   "note": "Hybrid - in-person; paired with section 34192 online"
@@ -736,7 +736,7 @@ window.dashboardData = {
                   "course": "PRIN 520 Creators Studio",
                   "section": "34730",
                   "instructor": "Grant Delgatty",
-                  "enrolled": 15,
+                  "enrolled": 16,
                   "capacity": 30,
                   "waitlisted": 0
             },
@@ -818,6 +818,69 @@ window.dashboardData = {
             }
       ],
       "trendLog": [
+            {
+                  "date": "9/5/2026 AM",
+                  "course": "ACAD 190 Making with Materials",
+                  "section": "10218",
+                  "previous": 32,
+                  "current": 31
+            },
+            {
+                  "date": "9/5/2026 AM",
+                  "course": "ACAD 191 Python for Machine Intelligence",
+                  "section": "10219",
+                  "previous": 33,
+                  "current": 32
+            },
+            {
+                  "date": "9/5/2026 AM",
+                  "course": "ACAD 499 Special Topics",
+                  "section": "10292",
+                  "previous": 40,
+                  "current": 39
+            },
+            {
+                  "date": "9/5/2026 AM",
+                  "course": "IDSN 515 Professional Practices Residential",
+                  "section": "34062",
+                  "previous": 26,
+                  "current": 25
+            },
+            {
+                  "date": "9/5/2026 AM",
+                  "course": "IDSN 521 Designing Brand Identity for Startups",
+                  "section": "34076",
+                  "previous": 34,
+                  "current": 35
+            },
+            {
+                  "date": "9/5/2026 AM",
+                  "course": "IDSN 533 iOS Application Design and Development",
+                  "section": "34155",
+                  "previous": 26,
+                  "current": 27
+            },
+            {
+                  "date": "9/5/2026 AM",
+                  "course": "IDSN 590 Directed Research",
+                  "section": "34175",
+                  "previous": 1,
+                  "current": 2
+            },
+            {
+                  "date": "9/5/2026 AM",
+                  "course": "IDSN 597 Industry Practicum in Fashion Innovation",
+                  "section": "34191",
+                  "previous": 38,
+                  "current": 39
+            },
+            {
+                  "date": "9/5/2026 AM",
+                  "course": "PRIN 520 Creators Studio",
+                  "section": "34730",
+                  "previous": 15,
+                  "current": 16
+            },
             {
                   "date": "9/4/2026 AM",
                   "course": "ACAD 188 Modeling Products with Solidworks",
@@ -5758,9 +5821,17 @@ window.dashboardData = {
                   "dropped": 12,
                   "fullSections": 44,
                   "notes": "Automated USC SOC refresh; 17 sections changed enrollment (+5/-12 seats)."
+            },
+            {
+                  "date": "September 5, 2026",
+                  "snapshot": "Morning update - 6:11 AM PT (PDT)",
+                  "added": 5,
+                  "dropped": 4,
+                  "fullSections": 42,
+                  "notes": "Automated USC SOC refresh; 9 sections changed enrollment (+5/-4 seats)."
             }
       ],
-      "netChangeLabel": "09/04/26 morning PT from 09/03 morning"
+      "netChangeLabel": "09/05/26 morning PT from 09/04 morning"
 };
 
 window.sectionCredits = {
