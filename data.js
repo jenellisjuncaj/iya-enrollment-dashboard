@@ -1,6 +1,6 @@
 window.dashboardData = {
       "title": "USC Iovine and Young Academy Enrollment and Capacity Tracker",
-      "currentSnapshot": "September 5, 2026 - 6:11 AM PT (PDT) ACAD + IDSN + PRIN update",
+      "currentSnapshot": "September 6, 2026 - 8:48 AM PT (PDT) ACAD + IDSN + PRIN update",
       "baselineSnapshot": "July 28, 2026",
       "lowThreshold": 50,
       "nearThreshold": 80,
@@ -186,7 +186,7 @@ window.dashboardData = {
                   "course": "ACAD 185 Analytics and Marketing for Challenge-Based Innovation",
                   "section": "10212",
                   "instructor": "Chris Swain",
-                  "enrolled": 43,
+                  "enrolled": 42,
                   "capacity": 43,
                   "waitlisted": 0
             },
@@ -213,7 +213,7 @@ window.dashboardData = {
                   "course": "ACAD 190 Making with Materials",
                   "section": "10218",
                   "instructor": "Kia McCormick",
-                  "enrolled": 31,
+                  "enrolled": 30,
                   "capacity": 32,
                   "waitlisted": 0
             },
@@ -294,7 +294,7 @@ window.dashboardData = {
                   "course": "ACAD 324g The Practice of Design: Ideation to Innovation",
                   "section": "10248",
                   "instructor": "Davina Wolter, Olamiposi Somoye",
-                  "enrolled": 44,
+                  "enrolled": 43,
                   "capacity": 44,
                   "waitlisted": 0
             },
@@ -321,7 +321,7 @@ window.dashboardData = {
                   "course": "ACAD 376 Industry Practicum I: Designing and Implementing Real-World Solutions",
                   "section": "10269",
                   "instructor": "Yihyun Lim, Thomas Dadourian",
-                  "enrolled": 77,
+                  "enrolled": 76,
                   "capacity": 77,
                   "waitlisted": 0
             },
@@ -330,7 +330,7 @@ window.dashboardData = {
                   "course": "ACAD 406 Purpose-Driven Innovation Incubator",
                   "section": "10256",
                   "instructor": "Chris Swain",
-                  "enrolled": 49,
+                  "enrolled": 48,
                   "capacity": 50,
                   "waitlisted": 0,
                   "note": "Hybrid - in-person; paired with section 10257 online"
@@ -340,7 +340,7 @@ window.dashboardData = {
                   "course": "ACAD 406 Purpose-Driven Innovation Incubator",
                   "section": "10257",
                   "instructor": "Chris Swain",
-                  "enrolled": 10,
+                  "enrolled": 11,
                   "capacity": 11,
                   "waitlisted": 0,
                   "note": "Hybrid - online; paired with section 10256 in-person"
@@ -570,7 +570,7 @@ window.dashboardData = {
                   "course": "IDSN 542 Introduction to Machine Intelligence",
                   "section": "34197",
                   "instructor": "Thanassis Rikakis",
-                  "enrolled": 8,
+                  "enrolled": 7,
                   "capacity": 30,
                   "waitlisted": 0,
                   "note": "Hybrid; paired with section 34198"
@@ -812,12 +812,68 @@ window.dashboardData = {
                   "course": "ACAD 490x Directed Research",
                   "section": "10291",
                   "instructor": "Thanassis Rikakis",
-                  "enrolled": 0,
+                  "enrolled": 1,
                   "capacity": 1,
                   "waitlisted": 0
             }
       ],
       "trendLog": [
+            {
+                  "date": "9/6/2026 AM",
+                  "course": "ACAD 185 Analytics and Marketing for Challenge-Based Innovation",
+                  "section": "10212",
+                  "previous": 43,
+                  "current": 42
+            },
+            {
+                  "date": "9/6/2026 AM",
+                  "course": "ACAD 190 Making with Materials",
+                  "section": "10218",
+                  "previous": 31,
+                  "current": 30
+            },
+            {
+                  "date": "9/6/2026 AM",
+                  "course": "ACAD 324g The Practice of Design: Ideation to Innovation",
+                  "section": "10248",
+                  "previous": 44,
+                  "current": 43
+            },
+            {
+                  "date": "9/6/2026 AM",
+                  "course": "ACAD 376 Industry Practicum I: Designing and Implementing Real-World Solutions",
+                  "section": "10269",
+                  "previous": 77,
+                  "current": 76
+            },
+            {
+                  "date": "9/6/2026 AM",
+                  "course": "ACAD 406 Purpose-Driven Innovation Incubator",
+                  "section": "10256",
+                  "previous": 49,
+                  "current": 48
+            },
+            {
+                  "date": "9/6/2026 AM",
+                  "course": "ACAD 406 Purpose-Driven Innovation Incubator",
+                  "section": "10257",
+                  "previous": 10,
+                  "current": 11
+            },
+            {
+                  "date": "9/6/2026 AM",
+                  "course": "IDSN 542 Introduction to Machine Intelligence",
+                  "section": "34197",
+                  "previous": 8,
+                  "current": 7
+            },
+            {
+                  "date": "9/6/2026 AM",
+                  "course": "ACAD 490x Directed Research",
+                  "section": "10291",
+                  "previous": 0,
+                  "current": 1
+            },
             {
                   "date": "9/5/2026 AM",
                   "course": "ACAD 190 Making with Materials",
@@ -5829,9 +5885,17 @@ window.dashboardData = {
                   "dropped": 4,
                   "fullSections": 42,
                   "notes": "Automated USC SOC refresh; 9 sections changed enrollment (+5/-4 seats)."
+            },
+            {
+                  "date": "September 6, 2026",
+                  "snapshot": "Morning update - 8:48 AM PT (PDT)",
+                  "added": 2,
+                  "dropped": 6,
+                  "fullSections": 41,
+                  "notes": "Automated USC SOC refresh; 8 sections changed enrollment (+2/-6 seats)."
             }
       ],
-      "netChangeLabel": "09/05/26 morning PT from 09/04 morning"
+      "netChangeLabel": "09/06/26 morning PT from 09/05 morning"
 };
 
 window.sectionCredits = {
