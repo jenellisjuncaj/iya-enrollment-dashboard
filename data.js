@@ -1,6 +1,6 @@
 window.dashboardData = {
       "title": "USC Iovine and Young Academy Enrollment and Capacity Tracker",
-      "currentSnapshot": "September 6, 2026 - 8:48 AM PT (PDT) ACAD + IDSN + PRIN update",
+      "currentSnapshot": "September 7, 2026 - 7:58 AM PT (PDT) ACAD + IDSN + PRIN update",
       "baselineSnapshot": "July 28, 2026",
       "lowThreshold": 50,
       "nearThreshold": 80,
@@ -213,7 +213,7 @@ window.dashboardData = {
                   "course": "ACAD 190 Making with Materials",
                   "section": "10218",
                   "instructor": "Kia McCormick",
-                  "enrolled": 30,
+                  "enrolled": 29,
                   "capacity": 32,
                   "waitlisted": 0
             },
@@ -303,7 +303,7 @@ window.dashboardData = {
                   "course": "ACAD 324g The Practice of Design: Ideation to Innovation",
                   "section": "10249",
                   "instructor": "Davina Wolter, Olamiposi Somoye",
-                  "enrolled": 36,
+                  "enrolled": 35,
                   "capacity": 36,
                   "waitlisted": 0
             },
@@ -736,7 +736,7 @@ window.dashboardData = {
                   "course": "PRIN 520 Creators Studio",
                   "section": "34730",
                   "instructor": "Grant Delgatty",
-                  "enrolled": 16,
+                  "enrolled": 15,
                   "capacity": 30,
                   "waitlisted": 0
             },
@@ -818,6 +818,27 @@ window.dashboardData = {
             }
       ],
       "trendLog": [
+            {
+                  "date": "9/7/2026 AM",
+                  "course": "ACAD 190 Making with Materials",
+                  "section": "10218",
+                  "previous": 30,
+                  "current": 29
+            },
+            {
+                  "date": "9/7/2026 AM",
+                  "course": "ACAD 324g The Practice of Design: Ideation to Innovation",
+                  "section": "10249",
+                  "previous": 36,
+                  "current": 35
+            },
+            {
+                  "date": "9/7/2026 AM",
+                  "course": "PRIN 520 Creators Studio",
+                  "section": "34730",
+                  "previous": 16,
+                  "current": 15
+            },
             {
                   "date": "9/6/2026 AM",
                   "course": "ACAD 185 Analytics and Marketing for Challenge-Based Innovation",
@@ -5893,9 +5914,17 @@ window.dashboardData = {
                   "dropped": 6,
                   "fullSections": 41,
                   "notes": "Automated USC SOC refresh; 8 sections changed enrollment (+2/-6 seats)."
+            },
+            {
+                  "date": "September 7, 2026",
+                  "snapshot": "Morning update - 7:58 AM PT (PDT)",
+                  "added": 0,
+                  "dropped": 3,
+                  "fullSections": 40,
+                  "notes": "Automated USC SOC refresh; 3 sections changed enrollment (+0/-3 seats)."
             }
       ],
-      "netChangeLabel": "09/06/26 morning PT from 09/05 morning"
+      "netChangeLabel": "09/07/26 morning PT from 09/06 morning"
 };
 
 window.sectionCredits = {
