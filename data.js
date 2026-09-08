@@ -1,6 +1,6 @@
 window.dashboardData = {
       "title": "USC Iovine and Young Academy Enrollment and Capacity Tracker",
-      "currentSnapshot": "September 7, 2026 - 7:58 AM PT (PDT) ACAD + IDSN + PRIN update",
+      "currentSnapshot": "September 8, 2026 - 6:57 AM PT (PDT) ACAD + IDSN + PRIN update",
       "baselineSnapshot": "July 28, 2026",
       "lowThreshold": 50,
       "nearThreshold": 80,
@@ -330,7 +330,7 @@ window.dashboardData = {
                   "course": "ACAD 406 Purpose-Driven Innovation Incubator",
                   "section": "10256",
                   "instructor": "Chris Swain",
-                  "enrolled": 48,
+                  "enrolled": 46,
                   "capacity": 50,
                   "waitlisted": 0,
                   "note": "Hybrid - in-person; paired with section 10257 online"
@@ -340,7 +340,7 @@ window.dashboardData = {
                   "course": "ACAD 406 Purpose-Driven Innovation Incubator",
                   "section": "10257",
                   "instructor": "Chris Swain",
-                  "enrolled": 11,
+                  "enrolled": 10,
                   "capacity": 11,
                   "waitlisted": 0,
                   "note": "Hybrid - online; paired with section 10256 in-person"
@@ -468,7 +468,7 @@ window.dashboardData = {
                   "course": "IDSN 521 Designing Brand Identity for Startups",
                   "section": "34060",
                   "instructor": "Sue-Tze Tan, Stephen Child",
-                  "enrolled": 35,
+                  "enrolled": 34,
                   "capacity": 35,
                   "waitlisted": 0
             },
@@ -522,7 +522,7 @@ window.dashboardData = {
                   "course": "IDSN 538 Extended Reality Technologies",
                   "section": "34070",
                   "instructor": "Carsten Becker",
-                  "enrolled": 22,
+                  "enrolled": 21,
                   "capacity": 32,
                   "waitlisted": 0,
                   "note": "In person Thursdays, 6–7:50 p.m.; not hybrid."
@@ -532,7 +532,7 @@ window.dashboardData = {
                   "course": "IDSN 538 Extended Reality Technologies",
                   "section": "34094",
                   "instructor": "Carsten Becker",
-                  "enrolled": 15,
+                  "enrolled": 14,
                   "capacity": 30,
                   "waitlisted": 0,
                   "note": "Online Tuesdays, 4–5:50 p.m.; not hybrid."
@@ -818,6 +818,41 @@ window.dashboardData = {
             }
       ],
       "trendLog": [
+            {
+                  "date": "9/8/2026 AM",
+                  "course": "ACAD 406 Purpose-Driven Innovation Incubator",
+                  "section": "10256",
+                  "previous": 48,
+                  "current": 46
+            },
+            {
+                  "date": "9/8/2026 AM",
+                  "course": "ACAD 406 Purpose-Driven Innovation Incubator",
+                  "section": "10257",
+                  "previous": 11,
+                  "current": 10
+            },
+            {
+                  "date": "9/8/2026 AM",
+                  "course": "IDSN 521 Designing Brand Identity for Startups",
+                  "section": "34060",
+                  "previous": 35,
+                  "current": 34
+            },
+            {
+                  "date": "9/8/2026 AM",
+                  "course": "IDSN 538 Extended Reality Technologies",
+                  "section": "34070",
+                  "previous": 22,
+                  "current": 21
+            },
+            {
+                  "date": "9/8/2026 AM",
+                  "course": "IDSN 538 Extended Reality Technologies",
+                  "section": "34094",
+                  "previous": 15,
+                  "current": 14
+            },
             {
                   "date": "9/7/2026 AM",
                   "course": "ACAD 190 Making with Materials",
@@ -5922,9 +5957,17 @@ window.dashboardData = {
                   "dropped": 3,
                   "fullSections": 40,
                   "notes": "Automated USC SOC refresh; 3 sections changed enrollment (+0/-3 seats)."
+            },
+            {
+                  "date": "September 8, 2026",
+                  "snapshot": "Morning update - 6:57 AM PT (PDT)",
+                  "added": 0,
+                  "dropped": 6,
+                  "fullSections": 38,
+                  "notes": "Automated USC SOC refresh; 5 sections changed enrollment (+0/-6 seats)."
             }
       ],
-      "netChangeLabel": "09/07/26 morning PT from 09/06 morning"
+      "netChangeLabel": "09/08/26 morning PT from 09/07 morning"
 };
 
 window.sectionCredits = {
