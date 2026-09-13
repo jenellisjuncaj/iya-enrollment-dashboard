@@ -1,6 +1,6 @@
 window.dashboardData = {
       "title": "USC Iovine and Young Academy Enrollment and Capacity Tracker",
-      "currentSnapshot": "September 12, 2026 - 6:08 AM PT (PDT) ACAD + IDSN + PRIN update",
+      "currentSnapshot": "September 13, 2026 - 9:33 AM PT (PDT) ACAD + IDSN + PRIN update",
       "baselineSnapshot": "July 28, 2026",
       "lowThreshold": 50,
       "nearThreshold": 80,
@@ -495,7 +495,7 @@ window.dashboardData = {
                   "course": "IDSN 524 Physical Product Design",
                   "section": "34079",
                   "instructor": "Safir Bellali",
-                  "enrolled": 35,
+                  "enrolled": 34,
                   "capacity": 35,
                   "waitlisted": 0
             },
@@ -854,6 +854,13 @@ window.dashboardData = {
             }
       ],
       "trendLog": [
+            {
+                  "date": "9/13/2026 AM",
+                  "course": "IDSN 524 Physical Product Design",
+                  "section": "34079",
+                  "previous": 35,
+                  "current": 34
+            },
             {
                   "date": "9/12/2026 AM",
                   "course": "ACAD 177 Digital Toolbox: Design",
@@ -6572,9 +6579,17 @@ window.dashboardData = {
                   "dropped": 17,
                   "fullSections": 32,
                   "notes": "Automated USC SOC refresh; 22 sections changed enrollment (+10/-17 seats)."
+            },
+            {
+                  "date": "September 13, 2026",
+                  "snapshot": "Morning update - 9:33 AM PT (PDT)",
+                  "added": 0,
+                  "dropped": 1,
+                  "fullSections": 31,
+                  "notes": "Automated USC SOC refresh; 1 sections changed enrollment (+0/-1 seats)."
             }
       ],
-      "netChangeLabel": "09/12/26 morning PT from 09/11 morning"
+      "netChangeLabel": "09/13/26 morning PT from 09/12 morning"
 };
 
 window.sectionCredits = {
