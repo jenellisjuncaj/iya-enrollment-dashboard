@@ -1,6 +1,6 @@
 window.dashboardData = {
       "title": "USC Iovine and Young Academy Enrollment and Capacity Tracker",
-      "currentSnapshot": "September 13, 2026 - 9:33 AM PT (PDT) ACAD + IDSN + PRIN update",
+      "currentSnapshot": "September 14, 2026 - 8:40 AM PT (PDT) ACAD + IDSN + PRIN update",
       "baselineSnapshot": "July 28, 2026",
       "lowThreshold": 50,
       "nearThreshold": 80,
@@ -340,7 +340,7 @@ window.dashboardData = {
                   "course": "ACAD 406 Purpose-Driven Innovation Incubator",
                   "section": "10257",
                   "instructor": "Chris Swain",
-                  "enrolled": 9,
+                  "enrolled": 8,
                   "capacity": 11,
                   "waitlisted": 0,
                   "note": "Hybrid - online; paired with section 10256 in-person"
@@ -854,6 +854,13 @@ window.dashboardData = {
             }
       ],
       "trendLog": [
+            {
+                  "date": "9/14/2026 AM",
+                  "course": "ACAD 406 Purpose-Driven Innovation Incubator",
+                  "section": "10257",
+                  "previous": 9,
+                  "current": 8
+            },
             {
                   "date": "9/13/2026 AM",
                   "course": "IDSN 524 Physical Product Design",
@@ -6587,9 +6594,17 @@ window.dashboardData = {
                   "dropped": 1,
                   "fullSections": 31,
                   "notes": "Automated USC SOC refresh; 1 sections changed enrollment (+0/-1 seats)."
+            },
+            {
+                  "date": "September 14, 2026",
+                  "snapshot": "Morning update - 8:40 AM PT (PDT)",
+                  "added": 0,
+                  "dropped": 1,
+                  "fullSections": 31,
+                  "notes": "Automated USC SOC refresh; 1 sections changed enrollment (+0/-1 seats)."
             }
       ],
-      "netChangeLabel": "09/13/26 morning PT from 09/12 morning"
+      "netChangeLabel": "09/14/26 morning PT from 09/13 morning"
 };
 
 window.sectionCredits = {
