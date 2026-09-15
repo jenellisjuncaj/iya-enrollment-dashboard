@@ -1,6 +1,6 @@
 window.dashboardData = {
       "title": "USC Iovine and Young Academy Enrollment and Capacity Tracker",
-      "currentSnapshot": "September 14, 2026 - 8:40 AM PT (PDT) ACAD + IDSN + PRIN update",
+      "currentSnapshot": "September 15, 2026 - 10:01 AM PT (PDT) ACAD + IDSN + PRIN update",
       "baselineSnapshot": "July 28, 2026",
       "lowThreshold": 50,
       "nearThreshold": 80,
@@ -160,7 +160,7 @@ window.dashboardData = {
                   "section": "10204",
                   "instructor": "Olamiposi Somoye",
                   "enrolled": 16,
-                  "capacity": 18,
+                  "capacity": 32,
                   "waitlisted": 0
             },
             {
@@ -169,7 +169,7 @@ window.dashboardData = {
                   "section": "10211",
                   "instructor": "Chris Swain",
                   "enrolled": 12,
-                  "capacity": 12,
+                  "capacity": 32,
                   "waitlisted": 0
             },
             {
@@ -178,7 +178,7 @@ window.dashboardData = {
                   "section": "10210",
                   "instructor": "Michael Kanazawa",
                   "enrolled": 76,
-                  "capacity": 77,
+                  "capacity": 76,
                   "waitlisted": 0
             },
             {
@@ -187,7 +187,7 @@ window.dashboardData = {
                   "section": "10212",
                   "instructor": "Chris Swain",
                   "enrolled": 42,
-                  "capacity": 43,
+                  "capacity": 80,
                   "waitlisted": 0
             },
             {
@@ -196,7 +196,7 @@ window.dashboardData = {
                   "section": "10215",
                   "instructor": "Kia McCormick",
                   "enrolled": 29,
-                  "capacity": 31,
+                  "capacity": 32,
                   "waitlisted": 0
             },
             {
@@ -205,7 +205,7 @@ window.dashboardData = {
                   "section": "10217",
                   "instructor": "Aaron Siegel",
                   "enrolled": 14,
-                  "capacity": 16,
+                  "capacity": 32,
                   "waitlisted": 0
             },
             {
@@ -223,7 +223,7 @@ window.dashboardData = {
                   "section": "10219",
                   "instructor": "John Bruneau",
                   "enrolled": 30,
-                  "capacity": 33,
+                  "capacity": 40,
                   "waitlisted": 0
             },
             {
@@ -250,7 +250,7 @@ window.dashboardData = {
                   "section": "10231",
                   "instructor": "Safir Bellali",
                   "enrolled": 18,
-                  "capacity": 19,
+                  "capacity": 35,
                   "waitlisted": 0
             },
             {
@@ -259,7 +259,7 @@ window.dashboardData = {
                   "section": "10232",
                   "instructor": "Grant Delgatty",
                   "enrolled": 20,
-                  "capacity": 20,
+                  "capacity": 35,
                   "waitlisted": 0
             },
             {
@@ -268,7 +268,7 @@ window.dashboardData = {
                   "section": "10238",
                   "instructor": "Patrick Dent",
                   "enrolled": 25,
-                  "capacity": 26,
+                  "capacity": 40,
                   "waitlisted": 0
             },
             {
@@ -277,7 +277,7 @@ window.dashboardData = {
                   "section": "10242",
                   "instructor": "Patrick Dent",
                   "enrolled": 18,
-                  "capacity": 18,
+                  "capacity": 40,
                   "waitlisted": 0
             },
             {
@@ -304,7 +304,7 @@ window.dashboardData = {
                   "section": "10249",
                   "instructor": "Davina Wolter, Olamiposi Somoye",
                   "enrolled": 35,
-                  "capacity": 36,
+                  "capacity": 40,
                   "waitlisted": 0
             },
             {
@@ -313,7 +313,7 @@ window.dashboardData = {
                   "section": "10250",
                   "instructor": "SeoYoon Sung",
                   "enrolled": 23,
-                  "capacity": 23,
+                  "capacity": 40,
                   "waitlisted": 0
             },
             {
@@ -330,7 +330,7 @@ window.dashboardData = {
                   "course": "ACAD 406 Purpose-Driven Innovation Incubator",
                   "section": "10256",
                   "instructor": "Chris Swain",
-                  "enrolled": 42,
+                  "enrolled": 41,
                   "capacity": 50,
                   "waitlisted": 0,
                   "note": "Hybrid - in-person; paired with section 10257 online"
@@ -341,7 +341,7 @@ window.dashboardData = {
                   "section": "10257",
                   "instructor": "Chris Swain",
                   "enrolled": 8,
-                  "capacity": 11,
+                  "capacity": 25,
                   "waitlisted": 0,
                   "note": "Hybrid - online; paired with section 10256 in-person"
             },
@@ -351,7 +351,7 @@ window.dashboardData = {
                   "section": "10259",
                   "instructor": "Patrick Dent",
                   "enrolled": 10,
-                  "capacity": 13,
+                  "capacity": 15,
                   "waitlisted": 0
             },
             {
@@ -450,7 +450,7 @@ window.dashboardData = {
                   "course": "IDSN 515 Professional Practices Residential",
                   "section": "34063",
                   "instructor": "Safir Bellali",
-                  "enrolled": 36,
+                  "enrolled": 35,
                   "capacity": 36,
                   "waitlisted": 0
             },
@@ -542,7 +542,7 @@ window.dashboardData = {
                   "course": "IDSN 540 Processes and Perspectives",
                   "section": "34101",
                   "instructor": "Aaron Siegel",
-                  "enrolled": 47,
+                  "enrolled": 46,
                   "capacity": 55,
                   "waitlisted": 0
             },
@@ -854,6 +854,27 @@ window.dashboardData = {
             }
       ],
       "trendLog": [
+            {
+                  "date": "9/15/2026 AM",
+                  "course": "ACAD 406 Purpose-Driven Innovation Incubator",
+                  "section": "10256",
+                  "previous": 42,
+                  "current": 41
+            },
+            {
+                  "date": "9/15/2026 AM",
+                  "course": "IDSN 515 Professional Practices Residential",
+                  "section": "34063",
+                  "previous": 36,
+                  "current": 35
+            },
+            {
+                  "date": "9/15/2026 AM",
+                  "course": "IDSN 540 Processes and Perspectives",
+                  "section": "34101",
+                  "previous": 47,
+                  "current": 46
+            },
             {
                   "date": "9/14/2026 AM",
                   "course": "ACAD 406 Purpose-Driven Innovation Incubator",
@@ -6602,9 +6623,17 @@ window.dashboardData = {
                   "dropped": 1,
                   "fullSections": 31,
                   "notes": "Automated USC SOC refresh; 1 sections changed enrollment (+0/-1 seats)."
+            },
+            {
+                  "date": "September 15, 2026",
+                  "snapshot": "Morning update - 10:01 AM PT (PDT)",
+                  "added": 0,
+                  "dropped": 3,
+                  "fullSections": 27,
+                  "notes": "Automated USC SOC refresh; 3 sections changed enrollment (+0/-3 seats)."
             }
       ],
-      "netChangeLabel": "09/14/26 morning PT from 09/13 morning"
+      "netChangeLabel": "09/15/26 morning PT from 09/14 morning"
 };
 
 window.sectionCredits = {
