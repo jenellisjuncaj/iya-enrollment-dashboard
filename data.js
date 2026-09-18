@@ -1,6 +1,6 @@
 window.dashboardData = {
       "title": "USC Iovine and Young Academy Enrollment and Capacity Tracker",
-      "currentSnapshot": "September 15, 2026 - 10:01 AM PT (PDT) ACAD + IDSN + PRIN update",
+      "currentSnapshot": "September 18, 2026 - 1:09 PM PT (PDT) ACAD + IDSN + PRIN update",
       "baselineSnapshot": "July 28, 2026",
       "lowThreshold": 50,
       "nearThreshold": 80,
@@ -213,7 +213,7 @@ window.dashboardData = {
                   "course": "ACAD 190 Making with Materials",
                   "section": "10218",
                   "instructor": "Kia McCormick",
-                  "enrolled": 29,
+                  "enrolled": 28,
                   "capacity": 32,
                   "waitlisted": 0
             },
@@ -312,7 +312,7 @@ window.dashboardData = {
                   "course": "ACAD 325 Human Technology Interaction and the User Experience",
                   "section": "10250",
                   "instructor": "SeoYoon Sung",
-                  "enrolled": 23,
+                  "enrolled": 22,
                   "capacity": 40,
                   "waitlisted": 0
             },
@@ -450,7 +450,7 @@ window.dashboardData = {
                   "course": "IDSN 515 Professional Practices Residential",
                   "section": "34063",
                   "instructor": "Safir Bellali",
-                  "enrolled": 35,
+                  "enrolled": 36,
                   "capacity": 36,
                   "waitlisted": 0
             },
@@ -514,7 +514,7 @@ window.dashboardData = {
                   "section": "34155",
                   "instructor": "John Bruneau",
                   "enrolled": 26,
-                  "capacity": 27,
+                  "capacity": 26,
                   "waitlisted": 0
             },
             {
@@ -854,6 +854,27 @@ window.dashboardData = {
             }
       ],
       "trendLog": [
+            {
+                  "date": "9/18/2026 PM",
+                  "course": "ACAD 190 Making with Materials",
+                  "section": "10218",
+                  "previous": 29,
+                  "current": 28
+            },
+            {
+                  "date": "9/18/2026 PM",
+                  "course": "ACAD 325 Human Technology Interaction and the User Experience",
+                  "section": "10250",
+                  "previous": 23,
+                  "current": 22
+            },
+            {
+                  "date": "9/18/2026 PM",
+                  "course": "IDSN 515 Professional Practices Residential",
+                  "section": "34063",
+                  "previous": 35,
+                  "current": 36
+            },
             {
                   "date": "9/15/2026 AM",
                   "course": "ACAD 406 Purpose-Driven Innovation Incubator",
@@ -6631,9 +6652,17 @@ window.dashboardData = {
                   "dropped": 3,
                   "fullSections": 27,
                   "notes": "Automated USC SOC refresh; 3 sections changed enrollment (+0/-3 seats)."
+            },
+            {
+                  "date": "September 18, 2026",
+                  "snapshot": "Afternoon update - 1:09 PM PT (PDT)",
+                  "added": 1,
+                  "dropped": 2,
+                  "fullSections": 29,
+                  "notes": "Automated USC SOC refresh; 3 sections changed enrollment (+1/-2 seats)."
             }
       ],
-      "netChangeLabel": "09/15/26 morning PT from 09/14 morning"
+      "netChangeLabel": "09/18/26 afternoon PT from 09/15 morning"
 };
 
 window.sectionCredits = {
