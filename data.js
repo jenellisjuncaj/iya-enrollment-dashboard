@@ -1,6 +1,6 @@
 window.dashboardData = {
       "title": "USC Iovine and Young Academy Enrollment and Capacity Tracker",
-      "currentSnapshot": "September 18, 2026 - 1:09 PM PT (PDT) ACAD + IDSN + PRIN update",
+      "currentSnapshot": "September 20, 2026 - 6:21 PM PT (PDT) ACAD + IDSN + PRIN update",
       "baselineSnapshot": "July 28, 2026",
       "lowThreshold": 50,
       "nearThreshold": 80,
@@ -240,7 +240,7 @@ window.dashboardData = {
                   "course": "ACAD 230 Introduction to Interactive Physical Computing",
                   "section": "10227",
                   "instructor": "John Bruneau",
-                  "enrolled": 32,
+                  "enrolled": 31,
                   "capacity": 32,
                   "waitlisted": 0
             },
@@ -321,7 +321,7 @@ window.dashboardData = {
                   "course": "ACAD 376 Industry Practicum I: Designing and Implementing Real-World Solutions",
                   "section": "10269",
                   "instructor": "Yihyun Lim, Thomas Dadourian",
-                  "enrolled": 75,
+                  "enrolled": 74,
                   "capacity": 77,
                   "waitlisted": 0
             },
@@ -477,7 +477,7 @@ window.dashboardData = {
                   "course": "IDSN 521 Designing Brand Identity for Startups",
                   "section": "34076",
                   "instructor": "Stephen Child",
-                  "enrolled": 34,
+                  "enrolled": 33,
                   "capacity": 35,
                   "waitlisted": 0
             },
@@ -504,7 +504,7 @@ window.dashboardData = {
                   "course": "IDSN 529 Marketing Strategy for Startups",
                   "section": "34091",
                   "instructor": "Tina Sharkey",
-                  "enrolled": 38,
+                  "enrolled": 37,
                   "capacity": 40,
                   "waitlisted": 0
             },
@@ -612,7 +612,7 @@ window.dashboardData = {
                   "course": "IDSN 577 Finance for Entrepreneurs",
                   "section": "34147",
                   "instructor": "Eric Quick",
-                  "enrolled": 13,
+                  "enrolled": 12,
                   "capacity": 25,
                   "waitlisted": 0,
                   "note": "Hybrid - in-person; paired with section 34167 online"
@@ -854,6 +854,41 @@ window.dashboardData = {
             }
       ],
       "trendLog": [
+            {
+                  "date": "9/20/2026 PM",
+                  "course": "ACAD 230 Introduction to Interactive Physical Computing",
+                  "section": "10227",
+                  "previous": 32,
+                  "current": 31
+            },
+            {
+                  "date": "9/20/2026 PM",
+                  "course": "ACAD 376 Industry Practicum I: Designing and Implementing Real-World Solutions",
+                  "section": "10269",
+                  "previous": 75,
+                  "current": 74
+            },
+            {
+                  "date": "9/20/2026 PM",
+                  "course": "IDSN 521 Designing Brand Identity for Startups",
+                  "section": "34076",
+                  "previous": 34,
+                  "current": 33
+            },
+            {
+                  "date": "9/20/2026 PM",
+                  "course": "IDSN 529 Marketing Strategy for Startups",
+                  "section": "34091",
+                  "previous": 38,
+                  "current": 37
+            },
+            {
+                  "date": "9/20/2026 PM",
+                  "course": "IDSN 577 Finance for Entrepreneurs",
+                  "section": "34147",
+                  "previous": 13,
+                  "current": 12
+            },
             {
                   "date": "9/18/2026 PM",
                   "course": "ACAD 190 Making with Materials",
@@ -6660,9 +6695,17 @@ window.dashboardData = {
                   "dropped": 2,
                   "fullSections": 29,
                   "notes": "Automated USC SOC refresh; 3 sections changed enrollment (+1/-2 seats)."
+            },
+            {
+                  "date": "September 20, 2026",
+                  "snapshot": "Afternoon update - 6:21 PM PT (PDT)",
+                  "added": 0,
+                  "dropped": 5,
+                  "fullSections": 28,
+                  "notes": "Automated USC SOC refresh; 5 sections changed enrollment (+0/-5 seats)."
             }
       ],
-      "netChangeLabel": "09/18/26 afternoon PT from 09/15 morning"
+      "netChangeLabel": "09/20/26 afternoon PT from 09/18 afternoon"
 };
 
 window.sectionCredits = {
