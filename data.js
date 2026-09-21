@@ -1,6 +1,6 @@
 window.dashboardData = {
       "title": "USC Iovine and Young Academy Enrollment and Capacity Tracker",
-      "currentSnapshot": "September 20, 2026 - 6:21 PM PT (PDT) ACAD + IDSN + PRIN update",
+      "currentSnapshot": "September 21, 2026 - 10:03 AM PT (PDT) ACAD + IDSN + PRIN update",
       "baselineSnapshot": "July 28, 2026",
       "lowThreshold": 50,
       "nearThreshold": 80,
@@ -6703,9 +6703,17 @@ window.dashboardData = {
                   "dropped": 5,
                   "fullSections": 28,
                   "notes": "Automated USC SOC refresh; 5 sections changed enrollment (+0/-5 seats)."
+            },
+            {
+                  "date": "September 21, 2026",
+                  "snapshot": "Morning update - 10:03 AM PT (PDT)",
+                  "added": 0,
+                  "dropped": 0,
+                  "fullSections": 28,
+                  "notes": "Automated USC SOC refresh; 0 sections changed enrollment (+0/-0 seats)."
             }
       ],
-      "netChangeLabel": "09/20/26 afternoon PT from 09/18 afternoon"
+      "netChangeLabel": "09/21/26 morning PT from 09/20 afternoon"
 };
 
 window.sectionCredits = {
