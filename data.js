@@ -1,6 +1,6 @@
 window.dashboardData = {
       "title": "USC Iovine and Young Academy Enrollment and Capacity Tracker",
-      "currentSnapshot": "September 21, 2026 - 10:03 AM PT (PDT) ACAD + IDSN + PRIN update",
+      "currentSnapshot": "September 25, 2026 - 2:43 PM PT (PDT) ACAD + IDSN + PRIN update",
       "baselineSnapshot": "July 28, 2026",
       "lowThreshold": 50,
       "nearThreshold": 80,
@@ -450,7 +450,7 @@ window.dashboardData = {
                   "course": "IDSN 515 Professional Practices Residential",
                   "section": "34063",
                   "instructor": "Safir Bellali",
-                  "enrolled": 36,
+                  "enrolled": 35,
                   "capacity": 36,
                   "waitlisted": 0
             },
@@ -851,9 +851,52 @@ window.dashboardData = {
                   "enrolled": 3,
                   "capacity": 20,
                   "waitlisted": 0
+            },
+            {
+                  "program": "Graduate IDSN",
+                  "course": "IDSN 518 Innovation Practicum",
+                  "section": "34099",
+                  "instructor": "Patrick Dent",
+                  "enrolled": 0,
+                  "capacity": 20,
+                  "waitlisted": 0
+            },
+            {
+                  "program": "Graduate IDSN",
+                  "course": "IDSN 519 Professional Internship",
+                  "section": "34097",
+                  "instructor": "Patrick Dent",
+                  "enrolled": 0,
+                  "capacity": 10,
+                  "waitlisted": 0
+            },
+            {
+                  "program": "Undergraduate ACAD",
+                  "course": "ACAD 418 Innovation Practicum",
+                  "section": "10261",
+                  "instructor": "Patrick Dent",
+                  "enrolled": 0,
+                  "capacity": 20,
+                  "waitlisted": 0
+            },
+            {
+                  "program": "Undergraduate ACAD",
+                  "course": "ACAD 419 Professional Internship",
+                  "section": "10262",
+                  "instructor": "Patrick Dent",
+                  "enrolled": 1,
+                  "capacity": 10,
+                  "waitlisted": 0
             }
       ],
       "trendLog": [
+            {
+                  "date": "9/25/2026 PM",
+                  "course": "IDSN 515 Professional Practices Residential",
+                  "section": "34063",
+                  "previous": 36,
+                  "current": 35
+            },
             {
                   "date": "9/20/2026 PM",
                   "course": "ACAD 230 Introduction to Interactive Physical Computing",
@@ -6711,9 +6754,17 @@ window.dashboardData = {
                   "dropped": 0,
                   "fullSections": 28,
                   "notes": "Automated USC SOC refresh; 0 sections changed enrollment (+0/-0 seats)."
+            },
+            {
+                  "date": "September 25, 2026",
+                  "snapshot": "Afternoon update - 2:43 PM PT (PDT)",
+                  "added": 0,
+                  "dropped": 1,
+                  "fullSections": 27,
+                  "notes": "Automated USC SOC refresh; 1 sections changed enrollment (+0/-1 seats)."
             }
       ],
-      "netChangeLabel": "09/21/26 morning PT from 09/20 afternoon"
+      "netChangeLabel": "09/25/26 afternoon PT from 09/21 morning"
 };
 
 window.sectionCredits = {
