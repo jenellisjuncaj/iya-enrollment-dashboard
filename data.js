@@ -1,6 +1,6 @@
 window.dashboardData = {
       "title": "USC Iovine and Young Academy Enrollment and Capacity Tracker",
-      "currentSnapshot": "September 25, 2026 - 2:43 PM PT (PDT) ACAD + IDSN + PRIN update",
+      "currentSnapshot": "September 29, 2026 - 2:25 PM PT (PDT) ACAD + IDSN + PRIN update",
       "baselineSnapshot": "July 28, 2026",
       "lowThreshold": 50,
       "nearThreshold": 80,
@@ -450,7 +450,7 @@ window.dashboardData = {
                   "course": "IDSN 515 Professional Practices Residential",
                   "section": "34063",
                   "instructor": "Safir Bellali",
-                  "enrolled": 35,
+                  "enrolled": 34,
                   "capacity": 36,
                   "waitlisted": 0
             },
@@ -857,7 +857,7 @@ window.dashboardData = {
                   "course": "IDSN 518 Innovation Practicum",
                   "section": "34099",
                   "instructor": "Patrick Dent",
-                  "enrolled": 0,
+                  "enrolled": 1,
                   "capacity": 20,
                   "waitlisted": 0
             },
@@ -890,6 +890,20 @@ window.dashboardData = {
             }
       ],
       "trendLog": [
+            {
+                  "date": "9/29/2026 PM",
+                  "course": "IDSN 515 Professional Practices Residential",
+                  "section": "34063",
+                  "previous": 35,
+                  "current": 34
+            },
+            {
+                  "date": "9/29/2026 PM",
+                  "course": "IDSN 518 Innovation Practicum",
+                  "section": "34099",
+                  "previous": 0,
+                  "current": 1
+            },
             {
                   "date": "9/25/2026 PM",
                   "course": "IDSN 515 Professional Practices Residential",
@@ -6762,9 +6776,17 @@ window.dashboardData = {
                   "dropped": 1,
                   "fullSections": 27,
                   "notes": "Automated USC SOC refresh; 1 sections changed enrollment (+0/-1 seats)."
+            },
+            {
+                  "date": "September 29, 2026",
+                  "snapshot": "Afternoon update - 2:25 PM PT (PDT)",
+                  "added": 1,
+                  "dropped": 1,
+                  "fullSections": 27,
+                  "notes": "Automated USC SOC refresh; 2 sections changed enrollment (+1/-1 seats)."
             }
       ],
-      "netChangeLabel": "09/25/26 afternoon PT from 09/21 morning"
+      "netChangeLabel": "09/29/26 afternoon PT from 09/25 afternoon"
 };
 
 window.sectionCredits = {
