@@ -1,6 +1,6 @@
 window.dashboardData = {
       "title": "USC Iovine and Young Academy Enrollment and Capacity Tracker",
-      "currentSnapshot": "September 29, 2026 - 2:25 PM PT (PDT) ACAD + IDSN + PRIN update",
+      "currentSnapshot": "October 1, 2026 - 8:42 AM PT (PDT) ACAD + IDSN + PRIN update",
       "baselineSnapshot": "July 28, 2026",
       "lowThreshold": 50,
       "nearThreshold": 80,
@@ -213,7 +213,7 @@ window.dashboardData = {
                   "course": "ACAD 190 Making with Materials",
                   "section": "10218",
                   "instructor": "Kia McCormick",
-                  "enrolled": 28,
+                  "enrolled": 27,
                   "capacity": 32,
                   "waitlisted": 0
             },
@@ -450,7 +450,7 @@ window.dashboardData = {
                   "course": "IDSN 515 Professional Practices Residential",
                   "section": "34063",
                   "instructor": "Safir Bellali",
-                  "enrolled": 34,
+                  "enrolled": 33,
                   "capacity": 36,
                   "waitlisted": 0
             },
@@ -890,6 +890,20 @@ window.dashboardData = {
             }
       ],
       "trendLog": [
+            {
+                  "date": "10/1/2026 AM",
+                  "course": "ACAD 190 Making with Materials",
+                  "section": "10218",
+                  "previous": 28,
+                  "current": 27
+            },
+            {
+                  "date": "10/1/2026 AM",
+                  "course": "IDSN 515 Professional Practices Residential",
+                  "section": "34063",
+                  "previous": 34,
+                  "current": 33
+            },
             {
                   "date": "9/29/2026 PM",
                   "course": "IDSN 515 Professional Practices Residential",
@@ -6784,9 +6798,17 @@ window.dashboardData = {
                   "dropped": 1,
                   "fullSections": 27,
                   "notes": "Automated USC SOC refresh; 2 sections changed enrollment (+1/-1 seats)."
+            },
+            {
+                  "date": "October 1, 2026",
+                  "snapshot": "Morning update - 8:42 AM PT (PDT)",
+                  "added": 0,
+                  "dropped": 2,
+                  "fullSections": 27,
+                  "notes": "Automated USC SOC refresh; 2 sections changed enrollment (+0/-2 seats)."
             }
       ],
-      "netChangeLabel": "09/29/26 afternoon PT from 09/25 afternoon"
+      "netChangeLabel": "10/01/26 morning PT from 09/29 afternoon"
 };
 
 window.sectionCredits = {
