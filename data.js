@@ -1,6 +1,6 @@
 window.dashboardData = {
       "title": "USC Iovine and Young Academy Enrollment and Capacity Tracker",
-      "currentSnapshot": "October 2, 2026 - 6:12 AM PT (PDT) ACAD + IDSN + PRIN update",
+      "currentSnapshot": "October 5, 2026 - 6:31 AM PT (PDT) ACAD + IDSN + PRIN update",
       "baselineSnapshot": "July 28, 2026",
       "lowThreshold": 50,
       "nearThreshold": 80,
@@ -249,7 +249,7 @@ window.dashboardData = {
                   "course": "ACAD 245 Fundamentals of Product Design",
                   "section": "10231",
                   "instructor": "Safir Bellali",
-                  "enrolled": 18,
+                  "enrolled": 17,
                   "capacity": 35,
                   "waitlisted": 0
             },
@@ -890,6 +890,13 @@ window.dashboardData = {
             }
       ],
       "trendLog": [
+            {
+                  "date": "10/5/2026 AM",
+                  "course": "ACAD 245 Fundamentals of Product Design",
+                  "section": "10231",
+                  "previous": 18,
+                  "current": 17
+            },
             {
                   "date": "10/1/2026 AM",
                   "course": "ACAD 190 Making with Materials",
@@ -6814,9 +6821,17 @@ window.dashboardData = {
                   "dropped": 0,
                   "fullSections": 27,
                   "notes": "Automated USC SOC refresh; 0 sections changed enrollment (+0/-0 seats)."
+            },
+            {
+                  "date": "October 5, 2026",
+                  "snapshot": "Morning update - 6:31 AM PT (PDT)",
+                  "added": 0,
+                  "dropped": 1,
+                  "fullSections": 27,
+                  "notes": "Automated USC SOC refresh; 1 sections changed enrollment (+0/-1 seats)."
             }
       ],
-      "netChangeLabel": "10/02/26 morning PT from 10/01 morning"
+      "netChangeLabel": "10/05/26 morning PT from 10/02 morning"
 };
 
 window.sectionCredits = {
