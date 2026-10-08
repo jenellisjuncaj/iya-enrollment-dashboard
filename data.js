@@ -1,6 +1,6 @@
 window.dashboardData = {
       "title": "USC Iovine and Young Academy Enrollment and Capacity Tracker",
-      "currentSnapshot": "October 5, 2026 - 6:31 AM PT (PDT) ACAD + IDSN + PRIN update",
+      "currentSnapshot": "October 8, 2026 - 6:01 AM PT (PDT) ACAD + IDSN + PRIN update",
       "baselineSnapshot": "July 28, 2026",
       "lowThreshold": 50,
       "nearThreshold": 80,
@@ -340,7 +340,7 @@ window.dashboardData = {
                   "course": "ACAD 406 Purpose-Driven Innovation Incubator",
                   "section": "10257",
                   "instructor": "Chris Swain",
-                  "enrolled": 8,
+                  "enrolled": 7,
                   "capacity": 25,
                   "waitlisted": 0,
                   "note": "Hybrid - online; paired with section 10256 in-person"
@@ -857,7 +857,7 @@ window.dashboardData = {
                   "course": "IDSN 518 Innovation Practicum",
                   "section": "34099",
                   "instructor": "Patrick Dent",
-                  "enrolled": 1,
+                  "enrolled": 2,
                   "capacity": 20,
                   "waitlisted": 0
             },
@@ -890,6 +890,20 @@ window.dashboardData = {
             }
       ],
       "trendLog": [
+            {
+                  "date": "10/8/2026 AM",
+                  "course": "ACAD 406 Purpose-Driven Innovation Incubator",
+                  "section": "10257",
+                  "previous": 8,
+                  "current": 7
+            },
+            {
+                  "date": "10/8/2026 AM",
+                  "course": "IDSN 518 Innovation Practicum",
+                  "section": "34099",
+                  "previous": 1,
+                  "current": 2
+            },
             {
                   "date": "10/5/2026 AM",
                   "course": "ACAD 245 Fundamentals of Product Design",
@@ -6829,9 +6843,17 @@ window.dashboardData = {
                   "dropped": 1,
                   "fullSections": 27,
                   "notes": "Automated USC SOC refresh; 1 sections changed enrollment (+0/-1 seats)."
+            },
+            {
+                  "date": "October 8, 2026",
+                  "snapshot": "Morning update - 6:01 AM PT (PDT)",
+                  "added": 1,
+                  "dropped": 1,
+                  "fullSections": 27,
+                  "notes": "Automated USC SOC refresh; 2 sections changed enrollment (+1/-1 seats)."
             }
       ],
-      "netChangeLabel": "10/05/26 morning PT from 10/02 morning"
+      "netChangeLabel": "10/08/26 morning PT from 10/05 morning"
 };
 
 window.sectionCredits = {
