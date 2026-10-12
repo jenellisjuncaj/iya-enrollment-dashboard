@@ -1,6 +1,6 @@
 window.dashboardData = {
       "title": "USC Iovine and Young Academy Enrollment and Capacity Tracker",
-      "currentSnapshot": "October 9, 2026 - 7:12 AM PT (PDT) ACAD + IDSN + PRIN update",
+      "currentSnapshot": "October 12, 2026 - 5:09 AM PT (PDT) ACAD + IDSN + PRIN update",
       "baselineSnapshot": "July 28, 2026",
       "lowThreshold": 50,
       "nearThreshold": 80,
@@ -240,7 +240,7 @@ window.dashboardData = {
                   "course": "ACAD 230 Introduction to Interactive Physical Computing",
                   "section": "10227",
                   "instructor": "John Bruneau",
-                  "enrolled": 31,
+                  "enrolled": 30,
                   "capacity": 32,
                   "waitlisted": 0
             },
@@ -890,6 +890,13 @@ window.dashboardData = {
             }
       ],
       "trendLog": [
+            {
+                  "date": "10/12/2026 AM",
+                  "course": "ACAD 230 Introduction to Interactive Physical Computing",
+                  "section": "10227",
+                  "previous": 31,
+                  "current": 30
+            },
             {
                   "date": "10/8/2026 AM",
                   "course": "ACAD 406 Purpose-Driven Innovation Incubator",
@@ -6859,9 +6866,17 @@ window.dashboardData = {
                   "dropped": 0,
                   "fullSections": 27,
                   "notes": "Automated USC SOC refresh; 0 sections changed enrollment (+0/-0 seats)."
+            },
+            {
+                  "date": "October 12, 2026",
+                  "snapshot": "Morning update - 5:09 AM PT (PDT)",
+                  "added": 0,
+                  "dropped": 1,
+                  "fullSections": 27,
+                  "notes": "Automated USC SOC refresh; 1 sections changed enrollment (+0/-1 seats)."
             }
       ],
-      "netChangeLabel": "10/09/26 morning PT from 10/08 morning"
+      "netChangeLabel": "10/12/26 morning PT from 10/09 morning"
 };
 
 window.sectionCredits = {
