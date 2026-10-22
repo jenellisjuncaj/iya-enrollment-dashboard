@@ -1,6 +1,6 @@
 window.dashboardData = {
       "title": "USC Iovine and Young Academy Enrollment and Capacity Tracker",
-      "currentSnapshot": "October 12, 2026 - 5:09 AM PT (PDT) ACAD + IDSN + PRIN update",
+      "currentSnapshot": "October 22, 2026 - 4:22 PM PT (PDT) ACAD + IDSN + PRIN update",
       "baselineSnapshot": "July 28, 2026",
       "lowThreshold": 50,
       "nearThreshold": 80,
@@ -195,7 +195,7 @@ window.dashboardData = {
                   "course": "ACAD 188 Modeling Products with Solidworks",
                   "section": "10215",
                   "instructor": "Kia McCormick",
-                  "enrolled": 29,
+                  "enrolled": 28,
                   "capacity": 32,
                   "waitlisted": 0
             },
@@ -213,7 +213,7 @@ window.dashboardData = {
                   "course": "ACAD 190 Making with Materials",
                   "section": "10218",
                   "instructor": "Kia McCormick",
-                  "enrolled": 27,
+                  "enrolled": 26,
                   "capacity": 32,
                   "waitlisted": 0
             },
@@ -504,7 +504,7 @@ window.dashboardData = {
                   "course": "IDSN 529 Marketing Strategy for Startups",
                   "section": "34091",
                   "instructor": "Tina Sharkey",
-                  "enrolled": 37,
+                  "enrolled": 36,
                   "capacity": 40,
                   "waitlisted": 0
             },
@@ -726,7 +726,7 @@ window.dashboardData = {
                   "course": "IDSN 599 Special Topics",
                   "section": "34154",
                   "instructor": "Michael Kanazawa",
-                  "enrolled": 13,
+                  "enrolled": 12,
                   "capacity": 25,
                   "waitlisted": 0,
                   "note": "Hybrid - online; paired with section 34153 in-person"
@@ -890,6 +890,34 @@ window.dashboardData = {
             }
       ],
       "trendLog": [
+            {
+                  "date": "10/22/2026 PM",
+                  "course": "ACAD 188 Modeling Products with Solidworks",
+                  "section": "10215",
+                  "previous": 29,
+                  "current": 28
+            },
+            {
+                  "date": "10/22/2026 PM",
+                  "course": "ACAD 190 Making with Materials",
+                  "section": "10218",
+                  "previous": 27,
+                  "current": 26
+            },
+            {
+                  "date": "10/22/2026 PM",
+                  "course": "IDSN 529 Marketing Strategy for Startups",
+                  "section": "34091",
+                  "previous": 37,
+                  "current": 36
+            },
+            {
+                  "date": "10/22/2026 PM",
+                  "course": "IDSN 599 Special Topics",
+                  "section": "34154",
+                  "previous": 13,
+                  "current": 12
+            },
             {
                   "date": "10/12/2026 AM",
                   "course": "ACAD 230 Introduction to Interactive Physical Computing",
@@ -6874,9 +6902,17 @@ window.dashboardData = {
                   "dropped": 1,
                   "fullSections": 27,
                   "notes": "Automated USC SOC refresh; 1 sections changed enrollment (+0/-1 seats)."
+            },
+            {
+                  "date": "October 22, 2026",
+                  "snapshot": "Afternoon update - 4:22 PM PT (PDT)",
+                  "added": 0,
+                  "dropped": 4,
+                  "fullSections": 27,
+                  "notes": "Automated USC SOC refresh; 4 sections changed enrollment (+0/-4 seats)."
             }
       ],
-      "netChangeLabel": "10/12/26 morning PT from 10/09 morning"
+      "netChangeLabel": "10/22/26 afternoon PT from 10/12 morning"
 };
 
 window.sectionCredits = {
