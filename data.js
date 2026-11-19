@@ -1,6 +1,6 @@
 window.dashboardData = {
       "title": "USC Iovine and Young Academy Enrollment and Capacity Tracker",
-      "currentSnapshot": "October 22, 2026 - 4:22 PM PT (PDT) ACAD + IDSN + PRIN update",
+      "currentSnapshot": "November 18, 2026 - 4:24 PM PT (PST) ACAD + IDSN + PRIN update",
       "baselineSnapshot": "July 28, 2026",
       "lowThreshold": 50,
       "nearThreshold": 80,
@@ -267,7 +267,7 @@ window.dashboardData = {
                   "course": "ACAD 274 Designing Interactive Data Systems",
                   "section": "10238",
                   "instructor": "Patrick Dent",
-                  "enrolled": 25,
+                  "enrolled": 24,
                   "capacity": 40,
                   "waitlisted": 0
             },
@@ -477,7 +477,7 @@ window.dashboardData = {
                   "course": "IDSN 521 Designing Brand Identity for Startups",
                   "section": "34076",
                   "instructor": "Stephen Child",
-                  "enrolled": 33,
+                  "enrolled": 32,
                   "capacity": 35,
                   "waitlisted": 0
             },
@@ -495,7 +495,7 @@ window.dashboardData = {
                   "course": "IDSN 524 Physical Product Design",
                   "section": "34079",
                   "instructor": "Safir Bellali",
-                  "enrolled": 34,
+                  "enrolled": 33,
                   "capacity": 35,
                   "waitlisted": 0
             },
@@ -532,7 +532,7 @@ window.dashboardData = {
                   "course": "IDSN 538 Extended Reality Technologies",
                   "section": "34094",
                   "instructor": "Carsten Becker",
-                  "enrolled": 14,
+                  "enrolled": 13,
                   "capacity": 30,
                   "waitlisted": 0,
                   "note": "Online Tuesdays, 4–5:50 p.m.; not hybrid."
@@ -551,7 +551,7 @@ window.dashboardData = {
                   "course": "IDSN 540 Processes and Perspectives",
                   "section": "34080",
                   "instructor": "Yihyun Lim",
-                  "enrolled": 37,
+                  "enrolled": 36,
                   "capacity": 40,
                   "waitlisted": 0
             },
@@ -631,7 +631,7 @@ window.dashboardData = {
                   "course": "IDSN 579 Social Media Incubator: Data-Driven Growth for Founders",
                   "section": "34150",
                   "instructor": "Thomas Dadourian",
-                  "enrolled": 31,
+                  "enrolled": 30,
                   "capacity": 35,
                   "waitlisted": 0
             },
@@ -716,7 +716,7 @@ window.dashboardData = {
                   "course": "IDSN 599 Special Topics",
                   "section": "34153",
                   "instructor": "Michael Kanazawa",
-                  "enrolled": 38,
+                  "enrolled": 37,
                   "capacity": 50,
                   "waitlisted": 0,
                   "note": "Hybrid - in-person; paired with section 34154 online"
@@ -887,9 +887,76 @@ window.dashboardData = {
                   "enrolled": 1,
                   "capacity": 10,
                   "waitlisted": 0
+            },
+            {
+                  "program": "Graduate IDSN",
+                  "course": "IDSN 518 Innovation Practicum",
+                  "section": "34096",
+                  "instructor": "Patrick Dent",
+                  "enrolled": 3,
+                  "capacity": 20,
+                  "waitlisted": 0
+            },
+            {
+                  "program": "Undergraduate ACAD",
+                  "course": "ACAD 418 Innovation Practicum",
+                  "section": "10263",
+                  "instructor": "Patrick Dent",
+                  "enrolled": 3,
+                  "capacity": 20,
+                  "waitlisted": 0
             }
       ],
       "trendLog": [
+            {
+                  "date": "11/18/2026 PM",
+                  "course": "ACAD 274 Designing Interactive Data Systems",
+                  "section": "10238",
+                  "previous": 25,
+                  "current": 24
+            },
+            {
+                  "date": "11/18/2026 PM",
+                  "course": "IDSN 521 Designing Brand Identity for Startups",
+                  "section": "34076",
+                  "previous": 33,
+                  "current": 32
+            },
+            {
+                  "date": "11/18/2026 PM",
+                  "course": "IDSN 524 Physical Product Design",
+                  "section": "34079",
+                  "previous": 34,
+                  "current": 33
+            },
+            {
+                  "date": "11/18/2026 PM",
+                  "course": "IDSN 538 Extended Reality Technologies",
+                  "section": "34094",
+                  "previous": 14,
+                  "current": 13
+            },
+            {
+                  "date": "11/18/2026 PM",
+                  "course": "IDSN 540 Processes and Perspectives",
+                  "section": "34080",
+                  "previous": 37,
+                  "current": 36
+            },
+            {
+                  "date": "11/18/2026 PM",
+                  "course": "IDSN 579 Social Media Incubator: Data-Driven Growth for Founders",
+                  "section": "34150",
+                  "previous": 31,
+                  "current": 30
+            },
+            {
+                  "date": "11/18/2026 PM",
+                  "course": "IDSN 599 Special Topics",
+                  "section": "34153",
+                  "previous": 38,
+                  "current": 37
+            },
             {
                   "date": "10/22/2026 PM",
                   "course": "ACAD 188 Modeling Products with Solidworks",
@@ -6910,9 +6977,17 @@ window.dashboardData = {
                   "dropped": 4,
                   "fullSections": 27,
                   "notes": "Automated USC SOC refresh; 4 sections changed enrollment (+0/-4 seats)."
+            },
+            {
+                  "date": "November 18, 2026",
+                  "snapshot": "Afternoon update - 4:24 PM PT (PST)",
+                  "added": 0,
+                  "dropped": 7,
+                  "fullSections": 27,
+                  "notes": "Automated USC SOC refresh; 7 sections changed enrollment (+0/-7 seats)."
             }
       ],
-      "netChangeLabel": "10/22/26 afternoon PT from 10/12 morning"
+      "netChangeLabel": "11/18/26 afternoon PT from 10/22 afternoon"
 };
 
 window.sectionCredits = {
