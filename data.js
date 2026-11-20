@@ -1,6 +1,6 @@
 window.dashboardData = {
       "title": "USC Iovine and Young Academy Enrollment and Capacity Tracker",
-      "currentSnapshot": "November 20, 2026 - 9:58 AM PT (PST) ACAD + IDSN + PRIN update",
+      "currentSnapshot": "November 20, 2026 - 10:16 AM PT (PST) ACAD + IDSN + PRIN update",
       "baselineSnapshot": "July 28, 2026",
       "lowThreshold": 50,
       "nearThreshold": 80,
@@ -331,7 +331,7 @@ window.dashboardData = {
                   "section": "10256",
                   "instructor": "Chris Swain",
                   "enrolled": 41,
-                  "capacity": 50,
+                  "capacity": 45,
                   "waitlisted": 0,
                   "note": "Hybrid - in-person; paired with section 10257 online"
             },
@@ -341,7 +341,7 @@ window.dashboardData = {
                   "section": "10257",
                   "instructor": "Chris Swain",
                   "enrolled": 7,
-                  "capacity": 25,
+                  "capacity": 10,
                   "waitlisted": 0,
                   "note": "Hybrid - online; paired with section 10256 in-person"
             },
@@ -7005,6 +7005,14 @@ window.dashboardData = {
             {
                   "date": "November 20, 2026",
                   "snapshot": "Morning update - 9:58 AM PT (PST)",
+                  "added": 0,
+                  "dropped": 0,
+                  "fullSections": 31,
+                  "notes": "Automated USC SOC refresh; 0 sections changed enrollment (+0/-0 seats)."
+            },
+            {
+                  "date": "November 20, 2026",
+                  "snapshot": "Morning update - 10:16 AM PT (PST)",
                   "added": 0,
                   "dropped": 0,
                   "fullSections": 31,
