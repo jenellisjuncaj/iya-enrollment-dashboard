@@ -1,6 +1,6 @@
 window.dashboardData = {
       "title": "USC Iovine and Young Academy Enrollment and Capacity Tracker",
-      "currentSnapshot": "November 20, 2026 - 9:52 AM PT (PST) ACAD + IDSN + PRIN update",
+      "currentSnapshot": "November 20, 2026 - 9:57 AM PT (PST) ACAD + IDSN + PRIN update",
       "baselineSnapshot": "July 28, 2026",
       "lowThreshold": 50,
       "nearThreshold": 80,
@@ -849,7 +849,7 @@ window.dashboardData = {
                   "section": "10258",
                   "instructor": "Patrick Dent",
                   "enrolled": 3,
-                  "capacity": 5,
+                  "capacity": 3,
                   "waitlisted": 0
             },
             {
@@ -876,7 +876,7 @@ window.dashboardData = {
                   "section": "10261",
                   "instructor": "Patrick Dent",
                   "enrolled": 0,
-                  "capacity": 5,
+                  "capacity": 1,
                   "waitlisted": 0
             },
             {
@@ -903,7 +903,7 @@ window.dashboardData = {
                   "section": "10263",
                   "instructor": "Patrick Dent",
                   "enrolled": 3,
-                  "capacity": 5,
+                  "capacity": 3,
                   "waitlisted": 0
             }
       ],
@@ -6993,9 +6993,17 @@ window.dashboardData = {
                   "dropped": 0,
                   "fullSections": 29,
                   "notes": "Automated USC SOC refresh; 0 sections changed enrollment (+0/-0 seats)."
+            },
+            {
+                  "date": "November 20, 2026",
+                  "snapshot": "Morning update - 9:57 AM PT (PST)",
+                  "added": 0,
+                  "dropped": 0,
+                  "fullSections": 31,
+                  "notes": "Automated USC SOC refresh; 0 sections changed enrollment (+0/-0 seats)."
             }
       ],
-      "netChangeLabel": "11/20/26 morning PT from 11/18 afternoon"
+      "netChangeLabel": "11/20/26 morning PT from 11/20 morning"
 };
 
 window.sectionCredits = {
